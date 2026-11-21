@@ -1,0 +1,59 @@
+{% extends "admin/layout.html" %}
+{% block title %}{{ 'Edit' if c.id else 'Add' }} Evacuation Center{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.css') }}">{% endblock %}
+{% block page_title %}{{ 'Edit evacuation center' if c.id else 'Add evacuation center' }}{% endblock %}
+{% block page_sub %}<p><a class="link" href="{{ url_for('admin_centers') }}">← All centers</a></p>{% endblock %}
+{% block content %}
+<form method="post" class="two-col form" novalidate>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <section class="card">
+    <h3>Details</h3>
+    <label class="field"><span>Name *</span><input name="name" value="{{ request.form.name or c.name or '' }}" required maxlength="200"></label>
+    <label class="field"><span>Location / address (as in source)</span><input name="location" value="{{ c.location or '' }}" maxlength="200"></label>
+    <label class="field"><span>Barangay</span><input name="barangay" value="{{ c.barangay or '' }}" list="brgy-list" maxlength="80">
+      <datalist id="brgy-list">{% for b in barangays %}<option>{{ b }}</option>{% endfor %}</datalist></label>
+    <div class="two-col tight">
+      <label class="field"><span>Capacity (families)</span><input type="number" min="0" name="capacity_families" value="{{ c.capacity_families if c.capacity_families is not none else '' }}"></label>
+      <label class="field"><span>Capacity (persons)</span><input type="number" min="0" name="capacity_persons" value="{{ c.capacity_persons if c.capacity_persons is not none else '' }}"></label>
+    </div>
+    <label class="field"><span>Source</span><input name="source" value="{{ c.source or '' }}" maxlength="200"></label>
+    <label class="field"><span>Notes</span><input name="source_note" value="{{ c.source_note or '' }}" maxlength="255"></label>
+    <fieldset class="field">
+      <legend>Verified hazard suitability <small class="muted">(only set when confirmed by the authorized office)</small></legend>
+      <div class="checks">
+        {% for cat in categories if cat.code != 'other' %}
+          <label class="check-pill"><input type="checkbox" name="hazards" value="{{ cat.code }}" {{ 'checked' if cat.code in c.hazard_list }}><span>{{ cat.name }}</span></label>
+        {% endfor %}
+      </div>
+    </fieldset>
+    <label class="field"><span>Operational status (shown to residents with timestamp)</span>
+      <select name="operational_status">{% for s in op_statuses %}<option value="{{ s }}" {{ 'selected' if c.operational_status == s }}>{{ s|capitalize }}</option>{% endfor %}</select></label>
+    <label class="check"><input type="checkbox" name="verified" {{ 'checked' if c.verified }}> Information verified by administrator</label>
+    <label class="check"><input type="checkbox" name="active" {{ 'checked' if c.active }}> Active (visible to residents)</label>
+  </section>
+  <section class="card">
+    <h3>Location on map</h3>
+    <p class="tiny muted">Click the map to set coordinates. Must be inside Batangas City.</p>
+    <div id="cf-map" class="admin-map"></div>
+    <div class="two-col tight">
+      <label class="field"><span>Latitude (Y)</span><input name="latitude" id="lat" value="{{ c.latitude if c.latitude is not none else '' }}" inputmode="decimal"></label>
+      <label class="field"><span>Longitude (X)</span><input name="longitude" id="lng" value="{{ c.longitude if c.longitude is not none else '' }}" inputmode="decimal"></label>
+    </div>
+    <div class="row-actions"><button class="btn btn-red btn-lg">Save center</button><a class="btn btn-ghost" href="{{ url_for('admin_centers') }}">Cancel</a></div>
+  </section>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.js') }}"></script>
+<script>
+(function () {
+  var lat = document.getElementById('lat'), lng = document.getElementById('lng');
+  var start = lat.value ? [parseFloat(lat.value), parseFloat(lng.value)] : {{ city_center|tojson }};
+  var map = L.map('cf-map').setView(start, lat.value ? 16 : 12);
+  ALERTIFY.addBaseMap(map);
+  var mk = lat.value ? L.marker(start).addTo(map) : null;
+  function set(ll) { lat.value = ll.lat.toFixed(6); lng.value = ll.lng.toFixed(6); if (mk) mk.setLatLng(ll); else mk = L.marker(ll).addTo(map); }
+  map.on('click', function (e) { set(e.latlng); });
+})();
+</script>
+{% endblock %}

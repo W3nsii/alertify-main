@@ -1,0 +1,653 @@
+[
+  {
+    "disaster": "general",
+    "section": "immediate",
+    "condition": "trapped",
+    "text": "Call 911 now. Give your exact location (barangay, street, landmark), how many people are with you, and any injuries.",
+    "priority": 1
+  },
+  {
+    "disaster": "general",
+    "section": "immediate",
+    "condition": "trapped",
+    "text": "Stay where rescuers can find you. Signal with a flashlight, whistle, bright cloth, or by tapping on pipes or walls.",
+    "priority": 2
+  },
+  {
+    "disaster": "general",
+    "section": "immediate",
+    "condition": "trapped",
+    "text": "Save phone battery: lower screen brightness and send text messages if calls do not go through.",
+    "priority": 3
+  },
+  {
+    "disaster": "general",
+    "section": "immediate",
+    "condition": "injured",
+    "text": "Give first aid only if you are trained: apply firm, direct pressure on bleeding wounds. Do not move a person with a suspected head, neck, or back injury unless they are in immediate danger.",
+    "priority": 5
+  },
+  {
+    "disaster": "general",
+    "section": "immediate",
+    "condition": "vulnerable",
+    "text": "Prioritize children, older adults, pregnant individuals, persons with disabilities, and anyone with medical conditions. Keep their medicines and assistive devices with them.",
+    "priority": 20
+  },
+  {
+    "disaster": "general",
+    "section": "avoid",
+    "condition": "trapped",
+    "text": "Do not attempt risky self-rescue through floodwater, fire, smoke, or collapsed structures.",
+    "priority": 1
+  },
+  {
+    "disaster": "general",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not spread or act on unverified information. Rely on official advisories from the Batangas City government, CDRRMO, PAGASA, and PHIVOLCS.",
+    "priority": 90
+  },
+  {
+    "disaster": "general",
+    "section": "bring",
+    "condition": "base",
+    "text": "Drinking water and ready-to-eat food for at least 3 days.",
+    "priority": 10
+  },
+  {
+    "disaster": "general",
+    "section": "bring",
+    "condition": "base",
+    "text": "Maintenance medicines, prescriptions, and a first aid kit.",
+    "priority": 11
+  },
+  {
+    "disaster": "general",
+    "section": "bring",
+    "condition": "base",
+    "text": "Flashlight, whistle, charged phone and power bank, battery-powered radio.",
+    "priority": 12
+  },
+  {
+    "disaster": "general",
+    "section": "bring",
+    "condition": "base",
+    "text": "Important documents (IDs, certificates, insurance) in a waterproof bag, and some cash.",
+    "priority": 13
+  },
+  {
+    "disaster": "general",
+    "section": "bring",
+    "condition": "base",
+    "text": "Extra clothing, blanket, face masks, and hygiene items.",
+    "priority": 14
+  },
+  {
+    "disaster": "general",
+    "section": "bring",
+    "condition": "vulnerable",
+    "text": "Baby supplies, mobility aids, hearing aids, eyeglasses, and any special medical equipment.",
+    "priority": 15
+  },
+  {
+    "disaster": "general",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Follow evacuation orders from the Batangas City government, CDRRMO, and your barangay officials. ALERTIFY's automated assessment does not replace official orders.",
+    "priority": 90
+  },
+  {
+    "disaster": "general",
+    "section": "evacuate",
+    "condition": "vulnerable",
+    "text": "Evacuate early. People who need assistance should leave before conditions worsen — tell responders about special needs when you call.",
+    "priority": 20
+  },
+  {
+    "disaster": "general",
+    "section": "contact",
+    "condition": "base",
+    "text": "If anyone is in immediate danger, call 911 (national emergency hotline).",
+    "priority": 10
+  },
+  {
+    "disaster": "general",
+    "section": "contact",
+    "condition": "base",
+    "text": "Batangas City CDRRMO coordinates local rescue and evacuation — see the Emergency Contacts page.",
+    "priority": 20
+  },
+  {
+    "disaster": "general",
+    "section": "contact",
+    "condition": "injured",
+    "text": "For medical emergencies call 911 or the Philippine Red Cross (143 / Emergency Medical Services).",
+    "priority": 5
+  },
+  {
+    "disaster": "flood",
+    "section": "immediate",
+    "condition": "flood.rising",
+    "text": "Water is rising — move to higher ground now if it is safe to do so. Do not wait for the water to reach your knees.",
+    "priority": 3
+  },
+  {
+    "disaster": "flood",
+    "section": "immediate",
+    "condition": "flood.deep",
+    "text": "Water at waist level or higher is very dangerous. Move to the highest safe floor of a sturdy building and call for rescue instead of wading out. Avoid enclosed attics where rising water could trap you.",
+    "priority": 2
+  },
+  {
+    "disaster": "flood",
+    "section": "immediate",
+    "condition": "flood.indoors",
+    "text": "Turn off electricity at the main breaker and close the LPG tank only if you are standing on dry ground and it is safe to do so.",
+    "priority": 10
+  },
+  {
+    "disaster": "flood",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Move important documents, valuables, and emergency supplies to an upper floor or a higher place.",
+    "priority": 30
+  },
+  {
+    "disaster": "flood",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Monitor PAGASA rainfall/flood advisories and announcements from the CDRRMO and your barangay.",
+    "priority": 40
+  },
+  {
+    "disaster": "flood",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not walk, swim, or drive through floodwater. About 15 cm (6 in) of moving water can knock you down and 60 cm (2 ft) can sweep away a vehicle.",
+    "priority": 2
+  },
+  {
+    "disaster": "flood",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Stay away from electric posts, fallen wires, drainage canals, open manholes, and riverbanks.",
+    "priority": 3
+  },
+  {
+    "disaster": "flood",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Avoid contact with floodwater — it may be contaminated. If you waded in floodwater, especially with wounds, consult a health center about leptospirosis prevention.",
+    "priority": 4
+  },
+  {
+    "disaster": "flood",
+    "section": "bring",
+    "condition": "base",
+    "text": "Rubber boots, raincoat, and plastic bags to keep items dry.",
+    "priority": 20
+  },
+  {
+    "disaster": "flood",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Evacuate to a designated evacuation center when advised by authorities, or right away if you live in a low-lying or flood-prone area and the water is rising.",
+    "priority": 5
+  },
+  {
+    "disaster": "flood",
+    "section": "contact",
+    "condition": "flood.deep",
+    "text": "With water waist-deep or higher, call 911 or the CDRRMO for rescue rather than attempting to cross the water yourself.",
+    "priority": 1
+  },
+  {
+    "disaster": "typhoon",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Stay indoors in the strongest interior room, away from windows and glass doors.",
+    "priority": 5
+  },
+  {
+    "disaster": "typhoon",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Keep updated on PAGASA Tropical Cyclone Wind Signals through radio or your phone.",
+    "priority": 30
+  },
+  {
+    "disaster": "typhoon",
+    "section": "immediate",
+    "condition": "typhoon.house_major",
+    "text": "Your house is seriously damaged — move to the sturdiest part of the structure and request help to evacuate once it is safe to move.",
+    "priority": 2
+  },
+  {
+    "disaster": "typhoon",
+    "section": "immediate",
+    "condition": "typhoon.house_minor",
+    "text": "Secure or move away from loose roofing and broken windows. Stay in an undamaged interior room.",
+    "priority": 8
+  },
+  {
+    "disaster": "typhoon",
+    "section": "immediate",
+    "condition": "typhoon.flooding",
+    "text": "Flooding is reported — follow flood safety: move to higher ground and do not cross floodwater.",
+    "priority": 4
+  },
+  {
+    "disaster": "typhoon",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not go outside during the storm, including during a sudden calm (the eye) — strong winds return suddenly from the opposite direction.",
+    "priority": 2
+  },
+  {
+    "disaster": "typhoon",
+    "section": "avoid",
+    "condition": "typhoon.lines_down",
+    "text": "Stay far away from fallen trees and power lines and treat every wire as live. Report them to Meralco and the CDRRMO.",
+    "priority": 1
+  },
+  {
+    "disaster": "typhoon",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not use candles or open flames near curtains or light materials during power outages; use flashlights.",
+    "priority": 20
+  },
+  {
+    "disaster": "typhoon",
+    "section": "bring",
+    "condition": "base",
+    "text": "Battery-powered radio, extra batteries, and rain gear.",
+    "priority": 20
+  },
+  {
+    "disaster": "typhoon",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Evacuate before landfall if you live in a coastal, low-lying, or landslide-prone area or in a house made of light materials, especially when authorities order pre-emptive evacuation.",
+    "priority": 5
+  },
+  {
+    "disaster": "typhoon",
+    "section": "evacuate",
+    "condition": "typhoon.house_major",
+    "text": "A seriously damaged house is not safe shelter. Go to an evacuation center as soon as it is safe to travel.",
+    "priority": 2
+  },
+  {
+    "disaster": "typhoon",
+    "section": "contact",
+    "condition": "typhoon.lines_down",
+    "text": "Report fallen or sparking power lines to Meralco (16211) and the CDRRMO.",
+    "priority": 5
+  },
+  {
+    "disaster": "earthquake",
+    "section": "immediate",
+    "condition": "quake.shaking_inside",
+    "text": "DROP, COVER, and HOLD ON: get under a sturdy table, protect your head and neck, and hold on until the shaking stops.",
+    "priority": 1
+  },
+  {
+    "disaster": "earthquake",
+    "section": "immediate",
+    "condition": "quake.shaking_outside",
+    "text": "Move to an open area away from buildings, trees, electric posts, and power lines. Drop down and protect your head.",
+    "priority": 1
+  },
+  {
+    "disaster": "earthquake",
+    "section": "immediate",
+    "condition": "quake.vehicle",
+    "text": "Pull over in an open area away from bridges, overpasses, and posts. Stay inside with your seatbelt on until the shaking stops.",
+    "priority": 1
+  },
+  {
+    "disaster": "earthquake",
+    "section": "immediate",
+    "condition": "base",
+    "text": "When the shaking stops, check yourself and others for injuries, then leave the building calmly using the stairs.",
+    "priority": 5
+  },
+  {
+    "disaster": "earthquake",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Expect aftershocks. Drop, cover, and hold on every time the ground shakes.",
+    "priority": 10
+  },
+  {
+    "disaster": "earthquake",
+    "section": "immediate",
+    "condition": "quake.damaged",
+    "text": "The building may be unsafe. Get out once the shaking stops and do not re-enter until it has been inspected by authorities.",
+    "priority": 3
+  },
+  {
+    "disaster": "earthquake",
+    "section": "immediate",
+    "condition": "trapped",
+    "text": "If trapped under debris: cover your mouth with cloth, tap on a pipe or wall or use a whistle so rescuers can hear you. Shout only as a last resort to avoid inhaling dust.",
+    "priority": 2
+  },
+  {
+    "disaster": "earthquake",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not run outside while the ground is shaking.",
+    "priority": 1
+  },
+  {
+    "disaster": "earthquake",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not use elevators.",
+    "priority": 2
+  },
+  {
+    "disaster": "earthquake",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not light matches or lighters until you are sure there are no gas leaks.",
+    "priority": 3
+  },
+  {
+    "disaster": "earthquake",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Stay away from damaged buildings, walls, bridges, and steep slopes.",
+    "priority": 4
+  },
+  {
+    "disaster": "earthquake",
+    "section": "bring",
+    "condition": "base",
+    "text": "Sturdy shoes, hard hat or helmet if available, and dust masks.",
+    "priority": 20
+  },
+  {
+    "disaster": "earthquake",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "If you are near the coast and the shaking was strong or long, move to high ground immediately — a tsunami may follow. Do not wait for an official warning.",
+    "priority": 1
+  },
+  {
+    "disaster": "earthquake",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Proceed to an open evacuation area or designated evacuation center if your building is damaged or authorities advise it.",
+    "priority": 10
+  },
+  {
+    "disaster": "fire",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Alert everyone around you and get out. Call 911 / BFP Batangas City once you are outside.",
+    "priority": 1
+  },
+  {
+    "disaster": "fire",
+    "section": "immediate",
+    "condition": "fire.smoke",
+    "text": "Stay low under the smoke and cover your nose and mouth with a damp cloth.",
+    "priority": 2
+  },
+  {
+    "disaster": "fire",
+    "section": "immediate",
+    "condition": "fire.in_building",
+    "text": "Before opening a door, touch it with the back of your hand. If it is hot, use another exit. Close doors behind you to slow the fire.",
+    "priority": 3
+  },
+  {
+    "disaster": "fire",
+    "section": "immediate",
+    "condition": "trapped",
+    "text": "If you cannot get out: close the door, seal gaps with wet cloth, go to a window, signal for help, and call 911 with your exact location.",
+    "priority": 2
+  },
+  {
+    "disaster": "fire",
+    "section": "immediate",
+    "condition": "base",
+    "text": "If your clothes catch fire: STOP, DROP, and ROLL.",
+    "priority": 8
+  },
+  {
+    "disaster": "fire",
+    "section": "immediate",
+    "condition": "fire.nearby",
+    "text": "Prepare to leave: grab your go-bag, keep exits clear, and follow instructions from the BFP.",
+    "priority": 5
+  },
+  {
+    "disaster": "fire",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not use elevators.",
+    "priority": 1
+  },
+  {
+    "disaster": "fire",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not go back inside for belongings or pets.",
+    "priority": 2
+  },
+  {
+    "disaster": "fire",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not hide in closets or bathrooms.",
+    "priority": 3
+  },
+  {
+    "disaster": "fire",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Never use water on electrical, LPG, or cooking-oil fires.",
+    "priority": 4
+  },
+  {
+    "disaster": "fire",
+    "section": "avoid",
+    "condition": "fire.nearby",
+    "text": "Do not crowd the area or block roads — fire trucks need clear access.",
+    "priority": 5
+  },
+  {
+    "disaster": "fire",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Go to a safe assembly area upwind and away from the fire. Do not return until the BFP declares it safe.",
+    "priority": 5
+  },
+  {
+    "disaster": "fire",
+    "section": "contact",
+    "condition": "base",
+    "text": "Call BFP Batangas City or 911 immediately, even if you think someone else has already called.",
+    "priority": 1
+  },
+  {
+    "disaster": "volcanic",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Monitor PHIVOLCS volcano bulletins for the current Alert Level and follow LGU advisories.",
+    "priority": 10
+  },
+  {
+    "disaster": "volcanic",
+    "section": "immediate",
+    "condition": "volcano.ashfall",
+    "text": "Stay indoors, close windows and doors, and seal gaps with damp cloth.",
+    "priority": 2
+  },
+  {
+    "disaster": "volcanic",
+    "section": "immediate",
+    "condition": "volcano.ashfall",
+    "text": "Wear an N95 mask (or a damp cloth if none is available) and protect your eyes with goggles. Avoid wearing contact lenses.",
+    "priority": 3
+  },
+  {
+    "disaster": "volcanic",
+    "section": "immediate",
+    "condition": "volcano.heavy_ash",
+    "text": "Heavy ash can collapse roofs. Clear ash only if it is safe, never alone, and wearing protection.",
+    "priority": 5
+  },
+  {
+    "disaster": "volcanic",
+    "section": "immediate",
+    "condition": "volcano.breathing",
+    "text": "Anyone with breathing difficulty, asthma, or heart or lung conditions should stay indoors and get medical help immediately if symptoms worsen.",
+    "priority": 1
+  },
+  {
+    "disaster": "volcanic",
+    "section": "immediate",
+    "condition": "volcano.evac_order",
+    "text": "An evacuation order is in effect for your area — evacuate now as directed by authorities.",
+    "priority": 0
+  },
+  {
+    "disaster": "volcanic",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not enter restricted or permanent danger zones declared by PHIVOLCS.",
+    "priority": 2
+  },
+  {
+    "disaster": "volcanic",
+    "section": "avoid",
+    "condition": "volcano.ashfall",
+    "text": "Avoid driving in heavy ashfall — roads become slippery and visibility drops.",
+    "priority": 3
+  },
+  {
+    "disaster": "volcanic",
+    "section": "avoid",
+    "condition": "volcano.ashfall",
+    "text": "Cover water containers and food; do not use water that looks contaminated by ash.",
+    "priority": 4
+  },
+  {
+    "disaster": "volcanic",
+    "section": "bring",
+    "condition": "base",
+    "text": "N95 masks, goggles, and plastic covers for water and food.",
+    "priority": 20
+  },
+  {
+    "disaster": "volcanic",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Evacuate when PHIVOLCS raises the Alert Level and the LGU orders evacuation of your area.",
+    "priority": 5
+  },
+  {
+    "disaster": "volcanic",
+    "section": "contact",
+    "condition": "volcano.breathing",
+    "text": "For severe breathing difficulty call 911 or the Philippine Red Cross Emergency Medical Services.",
+    "priority": 1
+  },
+  {
+    "disaster": "landslide",
+    "section": "immediate",
+    "condition": "landslide.signs",
+    "text": "Warning signs mean the slope may fail. Leave the area immediately and move away from the path of the slope.",
+    "priority": 1
+  },
+  {
+    "disaster": "landslide",
+    "section": "immediate",
+    "condition": "landslide.occurred",
+    "text": "Move away from the landslide area — more slides may follow. Stay clear until authorities assess it.",
+    "priority": 2
+  },
+  {
+    "disaster": "landslide",
+    "section": "immediate",
+    "condition": "landslide.rain",
+    "text": "During continuous heavy rain, stay alert to rumbling sounds, cracking trees, tilting posts, and creek water that suddenly turns muddy or drops.",
+    "priority": 5
+  },
+  {
+    "disaster": "landslide",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Check for injured or trapped people near the slide without entering the slide area; guide rescuers to them.",
+    "priority": 10
+  },
+  {
+    "disaster": "landslide",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not cross areas with moving debris or mudflow.",
+    "priority": 1
+  },
+  {
+    "disaster": "landslide",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Avoid river valleys and low-lying areas below slopes during heavy rain.",
+    "priority": 2
+  },
+  {
+    "disaster": "landslide",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Stay away from damaged power lines and broken water or gas lines.",
+    "priority": 3
+  },
+  {
+    "disaster": "landslide",
+    "section": "evacuate",
+    "condition": "landslide.slope",
+    "text": "Your home is on or below a slope — evacuate pre-emptively when heavy rain warnings are issued.",
+    "priority": 2
+  },
+  {
+    "disaster": "landslide",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Proceed to a designated evacuation center away from slopes when advised by authorities.",
+    "priority": 5
+  },
+  {
+    "disaster": "other",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Move away from the immediate danger to a safe place if you can do so safely.",
+    "priority": 1
+  },
+  {
+    "disaster": "other",
+    "section": "immediate",
+    "condition": "base",
+    "text": "Call 911 and describe what is happening, where you are, and how many people are affected.",
+    "priority": 2
+  },
+  {
+    "disaster": "other",
+    "section": "avoid",
+    "condition": "base",
+    "text": "Do not approach hazardous materials, unknown substances, damaged structures, or violent situations.",
+    "priority": 2
+  },
+  {
+    "disaster": "other",
+    "section": "evacuate",
+    "condition": "base",
+    "text": "Leave the area if instructed by responders or if conditions are getting worse.",
+    "priority": 5
+  }
+]

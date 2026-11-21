@@ -1,0 +1,44 @@
+[
+  {
+    "code": "flood",
+    "name": "Flood",
+    "icon": "🌊",
+    "description": "Rising water from heavy rain, overflowing rivers or storm surge."
+  },
+  {
+    "code": "typhoon",
+    "name": "Typhoon",
+    "icon": "🌀",
+    "description": "Tropical cyclone with strong winds and heavy rain."
+  },
+  {
+    "code": "earthquake",
+    "name": "Earthquake",
+    "icon": "🏚️",
+    "description": "Ground shaking, possible aftershocks and tsunami along the coast."
+  },
+  {
+    "code": "fire",
+    "name": "Fire",
+    "icon": "🔥",
+    "description": "Structural, grass or electrical fire."
+  },
+  {
+    "code": "volcanic",
+    "name": "Volcanic Activity",
+    "icon": "🌋",
+    "description": "Ashfall, volcanic gas or eruption (e.g. Taal Volcano)."
+  },
+  {
+    "code": "landslide",
+    "name": "Landslide",
+    "icon": "⛰️",
+    "description": "Slope failure, rockfall or mudflow."
+  },
+  {
+    "code": "other",
+    "name": "Other Emergency",
+    "icon": "⚠️",
+    "description": "Any other emergency not listed above."
+  }
+]

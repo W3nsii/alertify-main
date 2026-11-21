@@ -1,0 +1,150 @@
+﻿disaster,section,order,text
+flood,before,1,Know if your home is in a flood-prone or low-lying area and identify the nearest designated evacuation center.
+flood,before,2,"Prepare a go-bag and keep it in an easy-to-reach, elevated place."
+flood,before,3,Clear drainage and canals around your home of garbage.
+flood,before,4,Store important documents in waterproof containers on a high shelf.
+flood,before,5,Plan with your household where to meet and how to communicate if separated.
+flood,during,1,Monitor PAGASA advisories and barangay announcements.
+flood,during,2,Move to higher ground if water is rising — do not wait.
+flood,during,3,Turn off electricity and LPG only if you are on dry ground and it is safe.
+flood,during,4,Evacuate when authorities advise; take your go-bag.
+flood,after,1,Return home only when authorities say it is safe.
+flood,after,2,Have a qualified electrician check wiring before turning power back on.
+flood,after,3,Clean and disinfect everything that got wet; throw away food touched by floodwater.
+flood,after,4,"Watch for signs of leptospirosis (fever, muscle pain) after wading in floodwater and consult a health center."
+flood,checklist,1,Go-bag packed and checked
+flood,checklist,2,Evacuation route known
+flood,checklist,3,Emergency numbers saved
+flood,checklist,4,Documents in waterproof bag
+flood,checklist,5,Phone and power bank charged
+flood,supplies,1,Rubber boots
+flood,supplies,2,Raincoat
+flood,supplies,3,Drinking water
+flood,supplies,4,Ready-to-eat food
+flood,supplies,5,Flashlight & batteries
+flood,supplies,6,First aid kit
+flood,reminders,1,Floodwater can rise very quickly at night.
+flood,reminders,2,Six inches of moving water can knock an adult down.
+flood,avoid,1,"Walking, swimming, or driving through floodwater"
+flood,avoid,2,Touching electrical equipment while wet
+flood,avoid,3,Letting children play in floodwater
+typhoon,before,1,Follow PAGASA Tropical Cyclone Wind Signals and LGU advisories.
+typhoon,before,2,Reinforce roofing and windows; trim branches near your house.
+typhoon,before,3,Bring in or tie down loose outdoor items.
+typhoon,before,4,Charge phones and power banks; prepare food and water for several days.
+typhoon,before,5,"Evacuate early if you live near the coast, on slopes, or in a light-material house."
+typhoon,during,1,"Stay indoors in the strongest room, away from windows."
+typhoon,during,2,Do not go out during the calm eye of the storm.
+typhoon,during,3,Keep a battery radio on for updates.
+typhoon,during,4,Be ready for flooding and power outages.
+typhoon,after,1,"Stay away from fallen trees, damaged structures, and power lines."
+typhoon,after,2,Report damaged lines to Meralco and the CDRRMO.
+typhoon,after,3,Check your house for structural damage before re-entering.
+typhoon,after,4,Boil or treat drinking water if supply may be contaminated.
+typhoon,checklist,1,Roof and windows secured
+typhoon,checklist,2,Go-bag ready
+typhoon,checklist,3,Radio and batteries
+typhoon,checklist,4,Water stored
+typhoon,checklist,5,Evacuation center identified
+typhoon,supplies,1,Battery-powered radio
+typhoon,supplies,2,Flashlight
+typhoon,supplies,3,Rope and tarpaulin
+typhoon,supplies,4,Drinking water
+typhoon,supplies,5,Canned food
+typhoon,reminders,1,"Wind Signal numbers indicate wind strength, not rainfall — heavy rain can come with any signal."
+typhoon,avoid,1,Going outside during the storm
+typhoon,avoid,2,Using candles near light materials
+typhoon,avoid,3,Touching fallen wires
+earthquake,before,1,"Secure heavy furniture, cabinets, and appliances to walls."
+earthquake,before,2,"Identify safe spots at home, school, and work (under sturdy tables, away from glass)."
+earthquake,before,3,"Practice Drop, Cover, and Hold On with your household."
+earthquake,before,4,Know the open evacuation areas near you.
+earthquake,during,1,"DROP, COVER, and HOLD ON until the shaking stops."
+earthquake,during,2,"If outdoors, move to an open area away from buildings, posts, and wires."
+earthquake,during,3,"If driving, pull over away from bridges and overpasses."
+earthquake,during,4,"If near the coast and the shaking is strong or long, move to high ground immediately after it stops."
+earthquake,after,1,Check for injuries and give first aid if trained.
+earthquake,after,2,Leave damaged buildings using the stairs and expect aftershocks.
+earthquake,after,3,"Check for gas leaks, fires, and electrical damage."
+earthquake,after,4,Listen to PHIVOLCS and LGU advisories.
+earthquake,checklist,1,Furniture anchored
+earthquake,checklist,2,Safe spots identified
+earthquake,checklist,3,Household drill done
+earthquake,checklist,4,Go-bag ready
+earthquake,checklist,5,Meeting place agreed
+earthquake,supplies,1,Whistle
+earthquake,supplies,2,Sturdy shoes
+earthquake,supplies,3,Dust masks
+earthquake,supplies,4,Flashlight
+earthquake,supplies,5,First aid kit
+earthquake,reminders,1,Most injuries come from falling objects — protect your head and neck.
+earthquake,avoid,1,Running outside while shaking
+earthquake,avoid,2,Using elevators
+earthquake,avoid,3,Lighting matches before checking for gas leaks
+fire,before,1,Install smoke alarms and keep a fire extinguisher where you can reach it.
+fire,before,2,Do not overload electrical outlets; replace damaged wiring.
+fire,before,3,Store LPG tanks properly and check hoses for leaks.
+fire,before,4,Plan two ways out of every room and agree on a meeting point outside.
+fire,during,1,Alert everyone and get out immediately; call 911 / BFP once outside.
+fire,during,2,Stay low under smoke and cover your nose and mouth.
+fire,during,3,Feel doors before opening; use another exit if hot.
+fire,during,4,"Stop, Drop, and Roll if your clothes catch fire."
+fire,after,1,Do not re-enter until the BFP says it is safe.
+fire,after,2,Seek medical care for burns or smoke inhalation.
+fire,after,3,Contact your barangay for assistance and documentation.
+fire,checklist,1,Smoke alarm working
+fire,checklist,2,Extinguisher available
+fire,checklist,3,Escape plan practiced
+fire,checklist,4,LPG checked
+fire,supplies,1,Fire extinguisher
+fire,supplies,2,Fire blanket
+fire,supplies,3,Flashlight
+fire,supplies,4,First aid kit (burn dressing)
+fire,reminders,1,"Smoke, not flames, causes most fire deaths."
+fire,avoid,1,Using water on electrical or oil fires
+fire,avoid,2,Going back inside for belongings
+fire,avoid,3,Using elevators
+volcanic,before,1,Know the current PHIVOLCS Alert Level for Taal Volcano and other nearby volcanoes.
+volcanic,before,2,"Stock N95 masks, goggles, and plastic covers for water and food."
+volcanic,before,3,Know your evacuation route and the nearest evacuation center.
+volcanic,during,1,Stay indoors during ashfall; close windows and doors.
+volcanic,during,2,Wear an N95 mask and goggles if you must go out.
+volcanic,during,3,Evacuate immediately if ordered by authorities.
+volcanic,during,4,Protect water sources and food from ash.
+volcanic,after,1,Clear ash from roofs carefully — heavy ash can collapse roofs.
+volcanic,after,2,Wet ash before sweeping to reduce dust.
+volcanic,after,3,Watch for lahars (volcanic mudflows) during heavy rain.
+volcanic,checklist,1,N95 masks available
+volcanic,checklist,2,Goggles available
+volcanic,checklist,3,Water covered
+volcanic,checklist,4,Evacuation route known
+volcanic,supplies,1,N95 masks
+volcanic,supplies,2,Goggles
+volcanic,supplies,3,Plastic sheets
+volcanic,supplies,4,Drinking water
+volcanic,supplies,5,Medicines for respiratory conditions
+volcanic,reminders,1,Volcanic ash is abrasive and harmful to lungs and eyes.
+volcanic,avoid,1,Entering danger zones
+volcanic,avoid,2,Driving in heavy ashfall
+volcanic,avoid,3,Wearing contact lenses in ashfall
+landslide,before,1,Know whether your area is landslide-prone (MGB geohazard maps).
+landslide,before,2,"Watch for cracks in the ground, tilting trees or posts, and new springs."
+landslide,before,3,Plan an evacuation route away from slopes and river channels.
+landslide,during,1,Leave immediately if you notice warning signs or hear rumbling.
+landslide,during,2,"Move away from the path of the slide, toward stable ground."
+landslide,during,3,"Stay alert during continuous heavy rain, especially at night."
+landslide,after,1,Stay away from the slide area — more slides may follow.
+landslide,after,2,Check for injured or trapped people and guide rescuers to them.
+landslide,after,3,Report broken utility lines and damaged roads.
+landslide,checklist,1,Hazard area known
+landslide,checklist,2,Warning signs learned
+landslide,checklist,3,Go-bag ready
+landslide,checklist,4,Evacuation route away from slopes
+landslide,supplies,1,Flashlight
+landslide,supplies,2,Whistle
+landslide,supplies,3,Rain gear
+landslide,supplies,4,First aid kit
+landslide,reminders,1,Muddy or suddenly decreasing creek water can signal a landslide upstream.
+landslide,avoid,1,Staying below steep slopes during heavy rain
+landslide,avoid,2,Crossing debris flows
+landslide,avoid,3,Re-entering slide areas

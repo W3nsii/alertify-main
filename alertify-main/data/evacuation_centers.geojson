@@ -1,0 +1,1525 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06937,
+          13.78775
+        ]
+      },
+      "properties": {
+        "name": "Alangilan Central Elementary School",
+        "location": "Alangilan, Batangas City",
+        "barangay": "Alangilan",
+        "capacity_families": 18,
+        "capacity_persons": 90,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06836,
+          13.78767
+        ]
+      },
+      "properties": {
+        "name": "Alangilan Senior High School",
+        "location": "Alangilan, Batangas City",
+        "barangay": "Alangilan",
+        "capacity_families": 28,
+        "capacity_persons": 140,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07066,
+          13.80149
+        ]
+      },
+      "properties": {
+        "name": "Balagtas Elementary School",
+        "location": "Balagtas, Batangas City",
+        "barangay": "Balagtas",
+        "capacity_families": 26,
+        "capacity_persons": 130,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06663,
+          13.83101
+        ]
+      },
+      "properties": {
+        "name": "Balete Elementary School",
+        "location": "Balete, Batangas City",
+        "barangay": "Balete",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06561,
+          13.83573
+        ]
+      },
+      "properties": {
+        "name": "Balete National High School",
+        "location": "Balete, Batangas City",
+        "barangay": "Balete",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06071,
+          13.82077
+        ]
+      },
+      "properties": {
+        "name": "Balete Relocation Elementary School",
+        "location": "Balete Relocation, Batangas City",
+        "barangay": "Balete",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05931,
+          13.81413
+        ]
+      },
+      "properties": {
+        "name": "Banaba East Elementary School",
+        "location": "Banaba East, Batangas City",
+        "barangay": "Banaba East",
+        "capacity_families": 14,
+        "capacity_persons": 70,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05401,
+          13.80518
+        ]
+      },
+      "properties": {
+        "name": "Banaba West Elementary School",
+        "location": "Banaba West, Batangas City",
+        "barangay": "Banaba West",
+        "capacity_families": 12,
+        "capacity_persons": 60,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0623,
+          13.80804
+        ]
+      },
+      "properties": {
+        "name": "Banaba Center Elementary School",
+        "location": "Banaba Center, Batangas City",
+        "barangay": "Banaba Center",
+        "capacity_families": 16,
+        "capacity_persons": 80,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05394,
+          13.78725
+        ]
+      },
+      "properties": {
+        "name": "Banaba South Elementary School",
+        "location": "Banaba South, Batangas City",
+        "barangay": "Banaba South",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06424,
+          13.76008
+        ]
+      },
+      "properties": {
+        "name": "Batangas City East Elementary School",
+        "location": "Brgy. 06, P. Herrera St., Batangas City",
+        "barangay": "Barangay 6 (Poblacion)",
+        "capacity_families": 70,
+        "capacity_persons": 350,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06097,
+          13.76101
+        ]
+      },
+      "properties": {
+        "name": "Batangas City South Central ES",
+        "location": "Brgy. 11, Batangas City",
+        "barangay": "Barangay 11 (Poblacion)",
+        "capacity_families": 30,
+        "capacity_persons": 150,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06097,
+          13.76101
+        ]
+      },
+      "properties": {
+        "name": "South SHS-included in BCSCES list",
+        "location": "Brgy. 11, Batangas City",
+        "barangay": "Barangay 11 (Poblacion)",
+        "capacity_families": 30,
+        "capacity_persons": 150,
+        "note": "Source lists this SHS as included in the Batangas City South Central ES record (same site/coordinates).",
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05489,
+          13.75485
+        ]
+      },
+      "properties": {
+        "name": "Batangas National High School",
+        "location": "Brgy. 20, Batangas City",
+        "barangay": "Barangay 20 (Poblacion)",
+        "capacity_families": 30,
+        "capacity_persons": 150,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04554,
+          13.77619
+        ]
+      },
+      "properties": {
+        "name": "Batangas Province High School for Culture and Arts",
+        "location": "Brgy. 20, Batangas City",
+        "barangay": "Barangay 20 (Poblacion)",
+        "capacity_families": 30,
+        "capacity_persons": 150,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.16159,
+          13.7437
+        ]
+      },
+      "properties": {
+        "name": "Bilogo Elementary School",
+        "location": "Bilogo, Batangas City",
+        "barangay": "Bilogo",
+        "capacity_families": 4,
+        "capacity_persons": 20,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04595,
+          13.77397
+        ]
+      },
+      "properties": {
+        "name": "Bolbok Elementary School",
+        "location": "Bolbok, Batangas City",
+        "barangay": "Bolbok",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09575,
+          13.83995
+        ]
+      },
+      "properties": {
+        "name": "Bucal Elementary School",
+        "location": "Bucal, Batangas City",
+        "barangay": "Bucal",
+        "capacity_families": 8,
+        "capacity_persons": 40,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05327,
+          13.76695
+        ]
+      },
+      "properties": {
+        "name": "Calicanto Elementary School",
+        "location": "Caliicanto, Batangas City",
+        "barangay": "Calicanto",
+        "capacity_families": 23,
+        "capacity_persons": 115,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.13854,
+          13.77358
+        ]
+      },
+      "properties": {
+        "name": "Katandala Elementary School",
+        "location": "Katandala, Batangas City",
+        "barangay": "Katandala",
+        "capacity_families": 14,
+        "capacity_persons": 70,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0807,
+          13.8291
+        ]
+      },
+      "properties": {
+        "name": "Concepcion Elementary School",
+        "location": "Concepcion, Batangas City",
+        "barangay": "Concepcion",
+        "capacity_families": 36,
+        "capacity_persons": 180,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0837,
+          13.83133
+        ]
+      },
+      "properties": {
+        "name": "Ramos Memorial National High School",
+        "location": "Concepcion, Batangas City",
+        "barangay": "Concepcion",
+        "capacity_families": 22,
+        "capacity_persons": 110,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.12543,
+          13.7239
+        ]
+      },
+      "properties": {
+        "name": "Conde Itaas Elementary School",
+        "location": "Conde Itaas, Batangas City",
+        "barangay": "Conde Itaas",
+        "capacity_families": 8,
+        "capacity_persons": 40,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.11073,
+          13.73437
+        ]
+      },
+      "properties": {
+        "name": "Conde Labac Elementary School",
+        "location": "Conde Labac, Batangas City",
+        "barangay": "Conde Labac",
+        "capacity_families": 8,
+        "capacity_persons": 40,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05495,
+          13.75113
+        ]
+      },
+      "properties": {
+        "name": "Julian A. Pastor Memorial Elementary School",
+        "location": "Cuta, Batangas City",
+        "barangay": "Cuta",
+        "capacity_families": 42,
+        "capacity_persons": 210,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.13827,
+          13.68218
+        ]
+      },
+      "properties": {
+        "name": "Cumba Elementary School",
+        "location": "Curnba, Batangas City",
+        "barangay": "Cumba",
+        "capacity_families": 12,
+        "capacity_persons": 60,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08514,
+          13.77296
+        ]
+      },
+      "properties": {
+        "name": "Melecio Arceo Memorial Elementary School",
+        "location": "Dalig, Batangas City",
+        "barangay": "Dalig",
+        "capacity_families": 12,
+        "capacity_persons": 60,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.10344,
+          13.76566
+        ]
+      },
+      "properties": {
+        "name": "Dumantay Elementary School",
+        "location": "Dumantay, Batangas City",
+        "barangay": "Dumantay",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08928,
+          13.74598
+        ]
+      },
+      "properties": {
+        "name": "Dumuclay Elementary School",
+        "location": "Dumuclay, Batangas City",
+        "barangay": "Dumuclay",
+        "capacity_families": 14,
+        "capacity_persons": 72,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08252,
+          13.76193
+        ]
+      },
+      "properties": {
+        "name": "Gulod Elementary School",
+        "location": "Gulod Itaas, Batangas City",
+        "barangay": "Gulod Itaas",
+        "capacity_families": 4,
+        "capacity_persons": 20,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08224,
+          13.76203
+        ]
+      },
+      "properties": {
+        "name": "Gulod Senior High School",
+        "location": "Gulod Itaas, Batangas City",
+        "barangay": "Gulod Itaas",
+        "capacity_families": 4,
+        "capacity_persons": 20,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09913,
+          13.68316
+        ]
+      },
+      "properties": {
+        "name": "Haligue Kanluran Elementary School",
+        "location": "Haligue Kanluran, Batangas City",
+        "barangay": "Haligue Kanluran",
+        "capacity_families": 6,
+        "capacity_persons": 30,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.10542,
+          13.66362
+        ]
+      },
+      "properties": {
+        "name": "Haligue Silangan Elementary School",
+        "location": "Haligue Silangan, Batangas City",
+        "barangay": "Haligue Silangan",
+        "capacity_families": 4,
+        "capacity_persons": 20,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.10542,
+          13.66362
+        ]
+      },
+      "properties": {
+        "name": "Haligue SHS- included in HSES list",
+        "location": "Haligue Silangan, Batangas City",
+        "barangay": "Haligue Silangan",
+        "capacity_families": 4,
+        "capacity_persons": 20,
+        "note": "Source lists this SHS as included in the Haligue Silangan ES record (same site/coordinates).",
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06527,
+          13.77431
+        ]
+      },
+      "properties": {
+        "name": "Kumintang Elementary School",
+        "location": "Kumintang Ilaya, Batangas City",
+        "barangay": "Kumintang Ilaya",
+        "capacity_families": 34,
+        "capacity_persons": 170,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07163,
+          13.74409
+        ]
+      },
+      "properties": {
+        "name": "Libjo Elementary School",
+        "location": "Libjo, Batangas City",
+        "barangay": "Libjo",
+        "capacity_families": 24,
+        "capacity_persons": 120,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07199,
+          13.74008
+        ]
+      },
+      "properties": {
+        "name": "Libjo National High School",
+        "location": "Libjo, Batangas City",
+        "barangay": "Libjo",
+        "capacity_families": 24,
+        "capacity_persons": 120,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0929,
+          13.71026
+        ]
+      },
+      "properties": {
+        "name": "Mahabang Dahilig Elementary School",
+        "location": "Mahabang Dahilig, Batangas City",
+        "barangay": "Mahabang Dahilig",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0929,
+          13.71026
+        ]
+      },
+      "properties": {
+        "name": "Mahabang Dahilig Senior High School",
+        "location": "Mahabang Dahilig, Batangas City",
+        "barangay": "Mahabang Dahilig",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": "Same coordinates as Mahabang Dahilig ES in source.",
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.1221,
+          13.77281
+        ]
+      },
+      "properties": {
+        "name": "Mahacot Elementary School",
+        "location": "Mahacot West, Batangas City",
+        "barangay": "Mahacot West",
+        "capacity_families": 14,
+        "capacity_persons": 70,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09043,
+          13.72445
+        ]
+      },
+      "properties": {
+        "name": "Eulalia Talban Ebora Memorial Elementary School",
+        "location": "Malalim, Batangas City",
+        "barangay": "Malalim",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08431,
+          13.67192
+        ]
+      },
+      "properties": {
+        "name": "Malibayo Elementary School",
+        "location": "Malibayo, Batangas City",
+        "barangay": "Malibayo",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05859,
+          13.74432
+        ]
+      },
+      "properties": {
+        "name": "Malitam Elementary School",
+        "location": "Malitam, Batangas City",
+        "barangay": "Malitam",
+        "capacity_families": 14,
+        "capacity_persons": 70,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05475,
+          13.75527
+        ]
+      },
+      "properties": {
+        "name": "Malitam National High School",
+        "location": "Malitam, Batangas City",
+        "barangay": "Malitam",
+        "capacity_families": 14,
+        "capacity_persons": 70,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.11026,
+          13.68366
+        ]
+      },
+      "properties": {
+        "name": "Maruclap Elementary School",
+        "location": "Maruclap, Batangas City",
+        "barangay": "Maruclap",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.13934,
+          13.75243
+        ]
+      },
+      "properties": {
+        "name": "Paharang Elementary School",
+        "location": "Paharang West, Batangas City",
+        "barangay": "Paharang West",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.13963,
+          13.75387
+        ]
+      },
+      "properties": {
+        "name": "Paharang National High School",
+        "location": "Paharang West, Batangas City",
+        "barangay": "Paharang West",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08055,
+          13.75367
+        ]
+      },
+      "properties": {
+        "name": "Pallocan East Elementary School",
+        "location": "Pallocan East, Batangas City",
+        "barangay": "Pallocan East",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06626,
+          13.75442
+        ]
+      },
+      "properties": {
+        "name": "Jose C. Pastor Elementary School",
+        "location": "Pallocan West, Batangas City",
+        "barangay": "Pallocan West",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08225,
+          13.6916
+        ]
+      },
+      "properties": {
+        "name": "Piit Elementary School",
+        "location": "Piit, Pinamucan East, Batangas City",
+        "barangay": "Pinamucan East",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05414,
+          13.69777
+        ]
+      },
+      "properties": {
+        "name": "Pinamukan Elementary School",
+        "location": "Pinamukan Proper, Batangas City",
+        "barangay": "Pinamucan Proper",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0551,
+          13.69736
+        ]
+      },
+      "properties": {
+        "name": "Pinamucan National High School",
+        "location": "Pinamukan Proper, Batangas City",
+        "barangay": "Pinamucan Proper",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06227,
+          13.68733
+        ]
+      },
+      "properties": {
+        "name": "Pinamucan Ibaba Elementary School",
+        "location": "Pinamucan Ibaba, Batangas City",
+        "barangay": "Pinamucan Ibaba",
+        "capacity_families": 14,
+        "capacity_persons": 70,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.1038,
+          13.75472
+        ]
+      },
+      "properties": {
+        "name": "Sampaga Elementary School",
+        "location": "Sampaga, Batangas City",
+        "barangay": "Sampaga",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07798,
+          13.73296
+        ]
+      },
+      "properties": {
+        "name": "San Isidro Elementary School",
+        "location": "San Isidro, Batangas City",
+        "barangay": "San Isidro",
+        "capacity_families": 18,
+        "capacity_persons": 90,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.17676,
+          13.73612
+        ]
+      },
+      "properties": {
+        "name": "Bagong Silang Elementary School",
+        "location": "Bagong Silang, San Jose Sico, Batangas City",
+        "barangay": "San Jose Sico",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.17173,
+          13.73908
+        ]
+      },
+      "properties": {
+        "name": "San Jose Sico Elementary School",
+        "location": "San Jose Sico, Batangas City",
+        "barangay": "San Jose Sico",
+        "capacity_families": 16,
+        "capacity_persons": 80,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.11242,
+          13.71794
+        ]
+      },
+      "properties": {
+        "name": "San Miguel Elementary School",
+        "location": "San Miguel, Batangas City",
+        "barangay": "San Miguel",
+        "capacity_families": 22,
+        "capacity_persons": 110,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.10206,
+          13.77785
+        ]
+      },
+      "properties": {
+        "name": "San Pedro Elementary School",
+        "location": "San Pedro, Batangas City",
+        "barangay": "San Pedro",
+        "capacity_families": 14,
+        "capacity_persons": 70,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04472,
+          13.75316
+        ]
+      },
+      "properties": {
+        "name": "Sta. Clara Elementary School",
+        "location": "Sta Clara, Batangas City",
+        "barangay": "Sta. Clara",
+        "capacity_families": 50,
+        "capacity_persons": 250,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04129,
+          13.77894
+        ]
+      },
+      "properties": {
+        "name": "Sta. Rita Elementary School",
+        "location": "Sta Rita Karsada, Batangas City",
+        "barangay": "Sta. Rita Karsada",
+        "capacity_families": 40,
+        "capacity_persons": 200,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.1385,
+          13.71089
+        ]
+      },
+      "properties": {
+        "name": "Sto. Domingo Elementary School",
+        "location": "Sto. Domingo, Batangas City",
+        "barangay": "Sto. Domingo",
+        "capacity_families": 16,
+        "capacity_persons": 80,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09643,
+          13.69833
+        ]
+      },
+      "properties": {
+        "name": "Sto. Nino Elementary School",
+        "location": "Sto Nino, Batangas City",
+        "barangay": "Sto. Niño",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09589,
+          13.69781
+        ]
+      },
+      "properties": {
+        "name": "Sto. Nino National High School",
+        "location": "Sto Nino, Batangas City",
+        "barangay": "Sto. Niño",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09246,
+          13.7356
+        ]
+      },
+      "properties": {
+        "name": "Sirang Lupa Elementary School",
+        "location": "Sirang Lupa, Batangas City",
+        "barangay": "Sirang Lupa",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08903,
+          13.81552
+        ]
+      },
+      "properties": {
+        "name": "Sorosoro Elementary School",
+        "location": "Sorosoro, Batangas City",
+        "barangay": "Sorosoro",
+        "capacity_families": 12,
+        "capacity_persons": 60,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09033,
+          13.80784
+        ]
+      },
+      "properties": {
+        "name": "Tinga Sorosoro Integrated School",
+        "location": "Sorosoro, Batangas City",
+        "barangay": "Sorosoro",
+        "capacity_families": 28,
+        "capacity_persons": 140,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07446,
+          13.71845
+        ]
+      },
+      "properties": {
+        "name": "Ambulong Elementary School",
+        "location": "Ambulong, Tabangao, Batangas City",
+        "barangay": "Tabangao Ambulong",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06226,
+          13.71487
+        ]
+      },
+      "properties": {
+        "name": "Tabangao Elementary School",
+        "location": "Tabangao Aplaya, Batangas City",
+        "barangay": "Tabangao Aplaya",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06226,
+          13.71487
+        ]
+      },
+      "properties": {
+        "name": "Tabangao Integrated School",
+        "location": "Tabangao Aplaya, Batangas City",
+        "barangay": "Tabangao Aplaya",
+        "capacity_families": 16,
+        "capacity_persons": 80,
+        "note": "Same coordinates as Tabangao ES in source.",
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08332,
+          13.69832
+        ]
+      },
+      "properties": {
+        "name": "Dao Elementary School",
+        "location": "Tabangao Dao, Batangas City",
+        "barangay": "Tabangao Dao",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.12282,
+          13.66471
+        ]
+      },
+      "properties": {
+        "name": "Talahib Payapa Elementary School",
+        "location": "Talahib Payapa, Batangas City",
+        "barangay": "Talahib Payapa",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.15389,
+          13.73267
+        ]
+      },
+      "properties": {
+        "name": "Talumpok Proper Elementary School",
+        "location": "Talumpok West, Batangas City",
+        "barangay": "Talumpok West",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.1548,
+          13.7328
+        ]
+      },
+      "properties": {
+        "name": "Talumpok Integrated School",
+        "location": "Talumpok West, Batangas City",
+        "barangay": "Talumpok West",
+        "capacity_families": 10,
+        "capacity_persons": 50,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.16295,
+          13.72536
+        ]
+      },
+      "properties": {
+        "name": "Talumpok Silangan Elementary School",
+        "location": "Talumpok Silangan, Batangas City",
+        "barangay": "Talumpok Silangan",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.13635,
+          13.73362
+        ]
+      },
+      "properties": {
+        "name": "Guinto Elementary School",
+        "location": "Talumpok West, Batangas City",
+        "barangay": "Talumpok West",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08831,
+          13.79787
+        ]
+      },
+      "properties": {
+        "name": "Tinga Itaas Elementary School",
+        "location": "Tinga Itaas, Batangas City",
+        "barangay": "Tinga Itaas",
+        "capacity_families": 12,
+        "capacity_persons": 60,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07827,
+          13.78555
+        ]
+      },
+      "properties": {
+        "name": "Tinga Labac Elementary School",
+        "location": "Tinga Labac, Batangas City",
+        "barangay": "Tinga Labac",
+        "capacity_families": 12,
+        "capacity_persons": 60,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.12298,
+          13.7541
+        ]
+      },
+      "properties": {
+        "name": "Tulo II Elementary School",
+        "location": "Tulo, Batangas City",
+        "barangay": "Tulo",
+        "capacity_families": 20,
+        "capacity_persons": 100,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.12312,
+          13.74509
+        ]
+      },
+      "properties": {
+        "name": "Tulo I Elementary School",
+        "location": "Tulo, Batangas City",
+        "barangay": "Tulo",
+        "capacity_families": 12,
+        "capacity_persons": 60,
+        "note": null,
+        "source": "EVACUATION-CENTER-2-1.pdf (Batangas Province evacuation center list)"
+      }
+    }
+  ]
+}

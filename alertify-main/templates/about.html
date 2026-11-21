@@ -1,0 +1,49 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}About Alertify{% endblock %}
+{% block page_title %}About ALERTIFY{% endblock %}
+{% block page_sub %}<p>A Multi-Hazard Web-Based Disaster Preparedness Assistant</p>{% endblock %}
+{% block content %}
+<section class="about-hero card">
+  <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="72" height="72">
+  <div>
+    <h2>Be Aware. Be Prepared. Stay Safe.</h2>
+    <p>ALERTIFY helps residents of <b>Batangas City</b> respond appropriately during disasters. You can report your current situation, get personalized emergency instructions, find nearby evacuation centers, call emergency hotlines, and review your previous disaster reports.</p>
+  </div>
+</section>
+
+<div class="about-grid">
+  <section class="card">
+    <h3>{{ icon('radio') }} What you can do</h3>
+    <ul class="dot-list">
+      <li>Report floods, typhoons, earthquakes, fires, volcanic activity, landslides, and other emergencies.</li>
+      <li>Receive step-by-step guidance based on your answers.</li>
+      <li>Locate evacuation centers on an interactive map of Batangas City.</li>
+      <li>Call emergency hotlines with one tap.</li>
+      <li>Keep a personal history of your reports.</li>
+    </ul>
+  </section>
+  <section class="card">
+    <h3>{{ icon('file') }} Data sources</h3>
+    <ul class="dot-list">
+      <li><b>Evacuation centers:</b> Batangas Province evacuation center list (EVACUATION-CENTER-2-1.pdf), limited to LGU: Batangas City. Records remain pending verification until an administrator confirms them.</li>
+      <li><b>Emergency contacts:</b> initial Batangas City reference list, verified and updated by administrators.</li>
+      <li><b>Safety guidance:</b> based on public guidance from NDRRMC/OCD, PAGASA, PHIVOLCS, BFP, and the Philippine Red Cross.</li>
+      <li><b>Maps:</b> © OpenStreetMap contributors.</li>
+    </ul>
+  </section>
+  <section class="card">
+    <h3>{{ icon('lock') }} Your privacy</h3>
+    <ul class="dot-list">
+      <li>Your location is collected only when you tap “Use my current location” and allow it in your browser.</li>
+      <li>Reports are visible only to you and authorized administrators.</li>
+      <li>Passwords are stored as salted hashes, never in plain text.</li>
+    </ul>
+  </section>
+  <section class="card card-avoid">
+    <h3>{{ icon('alert') }} Important notice</h3>
+    <p>ALERTIFY <b>supplements, but does not replace,</b> official government emergency instructions and professional responders. Automated assessments are estimates based on your answers. Always follow evacuation orders from the Batangas City government, CDRRMO, and barangay officials, and advisories from PAGASA and PHIVOLCS.</p>
+    <p>Coverage is limited to <b>Batangas City</b>.</p>
+  </section>
+</div>
+{% endblock %}

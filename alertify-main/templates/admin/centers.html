@@ -1,0 +1,48 @@
+{% extends "admin/layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Evacuation Centers{% endblock %}
+{% block page_title %}Evacuation Center Management{% endblock %}
+{% block page_sub %}<p>{{ centers|length }} record{{ 's' if centers|length != 1 }} · Batangas City only</p>{% endblock %}
+{% block actions %}<a class="btn btn-red" href="{{ url_for('admin_center_form') }}">{{ icon('plus') }} Add center</a>{% endblock %}
+{% block content %}
+<div class="note note-warn">{{ icon('info') }} <span>Imported records are <b>pending verification</b>. Verify each center's name, location, coordinates and capacity against current CDRRMO/DepEd data. Set <b>hazard suitability</b> only when it is confirmed by the authorized disaster-management office — residents see it on the map and in their recommendations.</span></div>
+<form class="card filter-bar" method="get">
+  <label class="search-field grow">{{ icon('search') }}<input type="search" name="q" value="{{ q }}" placeholder="Search name or barangay"></label>
+  <div class="chips">
+    {% for k, l in [('', 'All'), ('pending', 'Pending'), ('verified', 'Verified'), ('inactive', 'Inactive')] %}
+      <a class="chip-btn {{ 'active' if f == k }}" href="{{ url_for('admin_centers', filter=k, q=q) }}">{{ l }}</a>
+    {% endfor %}
+  </div>
+</form>
+<section class="card">
+<div class="table-wrap">
+<table class="table">
+  <thead><tr><th>Name</th><th>Barangay</th><th>Capacity (fam / pers)</th><th>Coordinates</th><th>Hazards</th><th>Status</th><th>Verification</th><th></th></tr></thead>
+  <tbody>
+  {% for c in centers %}
+    <tr class="{{ 'row-muted' if not c.active }}">
+      <td><b>{{ c.name }}</b><br><small class="muted">{{ c.location }}</small></td>
+      <td>{{ c.barangay or '—' }}</td>
+      <td>{{ c.capacity_families if c.capacity_families is not none else '—' }} / {{ c.capacity_persons if c.capacity_persons is not none else '—' }}</td>
+      <td>{% if c.latitude is not none %}<small>{{ '%.5f'|format(c.latitude) }},<br>{{ '%.5f'|format(c.longitude) }}</small>{% else %}<span class="tag tag-amber">Missing</span>{% endif %}</td>
+      <td>{% for h in c.hazard_list %}<span class="tag">{{ h }}</span>{% else %}<small class="muted">Not set</small>{% endfor %}</td>
+      <td><span class="tag tag-op-{{ c.operational_status }}">{{ c.operational_status }}</span>{% if not c.active %}<br><span class="tag">inactive</span>{% endif %}</td>
+      <td>{{ m.verify_badge(c.verified, c.verified_at.strftime('%b %d, %Y') if c.verified_at) }}</td>
+      <td class="nowrap">
+        <a class="btn btn-sm btn-outline" href="{{ url_for('admin_center_form', cid=c.id) }}">{{ icon('edit') }} Edit</a>
+        <form method="post" action="{{ url_for('admin_center_action', cid=c.id, action='unverify' if c.verified else 'verify') }}" class="inline">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="btn btn-sm {{ 'btn-ghost' if c.verified else 'btn-green' }}">{{ 'Unverify' if c.verified else 'Verify' }}</button>
+        </form>
+        <form method="post" action="{{ url_for('admin_center_action', cid=c.id, action='toggle') }}" class="inline" data-confirm="{{ 'Deactivate' if c.active else 'Activate' }} {{ c.name }}?">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="btn btn-sm btn-ghost">{{ 'Deactivate' if c.active else 'Activate' }}</button>
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</section>
+{% endblock %}

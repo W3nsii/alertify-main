@@ -1,0 +1,87 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Disaster Guide{% endblock %}
+{% block page_title %}Disaster Preparedness Guide{% endblock %}
+{% block page_sub %}<p>What to do before, during, and after each hazard</p>{% endblock %}
+{% block content %}
+<nav class="guide-tabs" aria-label="Hazards">
+  {% for c in categories if c.code != 'other' %}
+    <a href="{{ url_for('guide_detail', code=c.code) }}" class="gtab {{ 'active' if active_code == c.code }}">
+      <span class="hz-ic sm hz-{{ c.code }}">{{ icon(c.code) }}</span>{{ c.name }}
+    </a>
+  {% endfor %}
+</nav>
+
+{% if not active_code %}
+  <div class="guide-overview">
+    {% for c in categories if c.code != 'other' %}
+      {% set g = guide.get(c.code, {}) %}
+      <a class="guide-card" href="{{ url_for('guide_detail', code=c.code) }}">
+        <span class="hz-ic lg hz-{{ c.code }}">{{ icon(c.code) }}</span>
+        <h2>{{ c.name }}</h2>
+        <p>{{ c.description }}</p>
+        {% if g.get('during') %}<p class="gc-tip"><b>Key action:</b> {{ g['during'][0].text }}</p>{% endif %}
+        <span class="feature-go">Read the guide {{ icon('arrow') }}</span>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  {% set g = guide.get(active_code, {}) %}
+  <section class="guide-head card">
+    <span class="hz-ic xl hz-{{ active_code }}">{{ icon(active_code) }}</span>
+    <div>
+      <h2>{{ active_cat.name }}</h2>
+      <p>{{ active_cat.description }}</p>
+      {% set any_row = (g.values()|list)[0][0] if g else None %}
+      {% if any_row %}<small class="muted">Source: {{ any_row.source or 'ALERTIFY administrator' }} · Last updated {{ any_row.updated_at|ph('%b %d, %Y') }}</small>{% endif %}
+    </div>
+    <a class="btn btn-red" href="{{ url_for('dashboard') }}">{{ icon('radio') }} Report {{ active_cat.name|lower }}</a>
+  </section>
+
+  <div class="phase-grid">
+    {% for key, label in sections[:3] %}
+      <section class="phase card phase-{{ key }}">
+        <h3><span class="phase-n">{{ loop.index }}</span> {{ label }} {{ active_cat.name|lower }}</h3>
+        <ul>{% for row in g.get(key, []) %}<li>{{ row.text }}</li>{% endfor %}</ul>
+      </section>
+    {% endfor %}
+  </div>
+
+  <div class="guide-lower">
+    <section class="card">
+      <h3>{{ icon('check') }} Emergency preparedness checklist</h3>
+      <p class="tiny muted">Tick items as you prepare — saved on this device.</p>
+      <ul class="checklist" data-key="alertify_check_{{ active_code }}">
+        {% for row in g.get('checklist', []) %}
+          <li><label><input type="checkbox" value="{{ row.id }}"><span>{{ row.text }}</span></label></li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="card">
+      <h3>{{ icon('bookmark') }} Essential emergency supplies</h3>
+      <div class="supply-chips">{% for row in g.get('supplies', []) %}<span class="supply">{{ row.text }}</span>{% endfor %}</div>
+      <h3 class="mt">{{ icon('info') }} Safety reminders</h3>
+      <ul class="dot-list">{% for row in g.get('reminders', []) %}<li>{{ row.text }}</li>{% endfor %}</ul>
+    </section>
+    <section class="card card-avoid">
+      <h3>{{ icon('x') }} Important things to avoid</h3>
+      <ul class="avoid-list">{% for row in g.get('avoid', []) %}<li>{{ icon('x') }}<span>{{ row.text }}</span></li>{% endfor %}</ul>
+    </section>
+  </div>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script>
+document.querySelectorAll('.checklist').forEach(function (ul) {
+  var key = ul.dataset.key, saved = [];
+  try { saved = JSON.parse(localStorage.getItem(key) || '[]'); } catch (e) {}
+  ul.querySelectorAll('input').forEach(function (cb) {
+    cb.checked = saved.indexOf(cb.value) > -1;
+    cb.addEventListener('change', function () {
+      var vals = Array.from(ul.querySelectorAll('input:checked')).map(function (x) { return x.value; });
+      try { localStorage.setItem(key, JSON.stringify(vals)); } catch (e) {}
+    });
+  });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,8 @@
+﻿code,name,icon,description
+flood,Flood,🌊,"Rising water from heavy rain, overflowing rivers or storm surge."
+typhoon,Typhoon,🌀,Tropical cyclone with strong winds and heavy rain.
+earthquake,Earthquake,🏚️,"Ground shaking, possible aftershocks and tsunami along the coast."
+fire,Fire,🔥,"Structural, grass or electrical fire."
+volcanic,Volcanic Activity,🌋,"Ashfall, volcanic gas or eruption (e.g. Taal Volcano)."
+landslide,Landslide,⛰️,"Slope failure, rockfall or mudflow."
+other,Other Emergency,⚠️,Any other emergency not listed above.

@@ -1,0 +1,60 @@
+{% macro flashes() %}
+  {% with msgs = get_flashed_messages(with_categories=true) %}
+    {% if msgs %}
+      <div class="flashes">
+        {% for cat, m in msgs %}
+          <div class="flash flash-{{ cat }}" role="{{ 'alert' if cat == 'error' else 'status' }}">
+            {{ icon('alert' if cat == 'error' else ('check' if cat == 'success' else 'info')) }}
+            <span>{{ m }}</span>
+            <button class="flash-x" type="button" aria-label="Dismiss" onclick="this.parentElement.remove()">{{ icon('x') }}</button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+{% endmacro %}
+
+{% macro severity_badge(sev) %}
+  <span class="sev sev-{{ sev }}"><i></i>{{ severity_labels.get(sev, sev)|default(sev) }}</span>
+{% endmacro %}
+
+{% macro status_badge(st) %}
+  <span class="status status-{{ st }}">{{ st|capitalize }}</span>
+{% endmacro %}
+
+{% macro verify_badge(v, when=None) %}
+  {% if v %}
+    <span class="vbadge ok" title="Verified by an ALERTIFY administrator{% if when %} on {{ when }}{% endif %}">{{ icon('check') }} Verified{% if when %} · {{ when }}{% endif %}</span>
+  {% else %}
+    <span class="vbadge pending" title="Imported reference data that an administrator has not yet verified">{{ icon('clock') }} Pending verification</span>
+  {% endif %}
+{% endmacro %}
+
+{% macro dial(number, cls='') %}
+  <a class="dial {{ cls }}" href="tel:{{ number|replace(' ', '')|replace('(', '')|replace(')', '')|replace('-', '')|replace('–','') }}">{{ icon('phone') }}<span>{{ number }}</span></a>
+{% endmacro %}
+
+{% macro instruction_sections(data, sections, danger_first=false) %}
+  {% set order = sections %}
+  {% if danger_first %}
+    {% set order = [sections[4]] + sections[:4] %}
+  {% endif %}
+  <div class="instr-grid">
+  {% for key, label in order %}
+    {% set items = data.sections[key] if data.sections else [] %}
+    {% if items %}
+      <section class="instr instr-{{ key }}">
+        <h3>
+          <span class="instr-ic">{{ icon({'immediate':'alert','avoid':'x','bring':'bookmark','evacuate':'navigation','contact':'phone'}[key]) }}</span>
+          {{ label }}
+        </h3>
+        <ol>
+          {% for it in items %}
+            <li class="{{ 'urgent' if it.urgent }}">{{ it.text }}</li>
+          {% endfor %}
+        </ol>
+      </section>
+    {% endif %}
+  {% endfor %}
+  </div>
+{% endmacro %}

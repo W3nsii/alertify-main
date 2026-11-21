@@ -1,0 +1,19 @@
+{% extends "admin/layout.html" %}
+{% block title %}{{ 'Edit' if c.id else 'Add' }} Contact{% endblock %}
+{% block page_title %}{{ 'Edit contact' if c.id else 'Add contact' }}{% endblock %}
+{% block page_sub %}<p><a class="link" href="{{ url_for('admin_contacts') }}">← All contacts</a></p>{% endblock %}
+{% block content %}
+<form method="post" class="card form narrow" novalidate>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label class="field"><span>Organization *</span><input name="organization" value="{{ c.organization or '' }}" required maxlength="160"></label>
+  <label class="field"><span>Category *</span><input name="category" value="{{ c.category or '' }}" list="cat-list" required maxlength="60">
+    <datalist id="cat-list">{% for x in cats %}<option>{{ x }}</option>{% endfor %}</datalist></label>
+  <label class="field"><span>Contact number(s) * <small class="muted">— separate multiple numbers with “/”</small></span><input name="numbers" value="{{ c.numbers or '' }}" required maxlength="255" placeholder="(043) 123-4567 / 0917-123-4567"></label>
+  <label class="field"><span>Description</span><input name="description" value="{{ c.description or '' }}" maxlength="255"></label>
+  <label class="field"><span>Sort order</span><input type="number" name="sort_order" value="{{ c.sort_order or 0 }}"></label>
+  <label class="check"><input type="checkbox" name="is_primary" {{ 'checked' if c.is_primary }}> Show in quick-dial (dashboard &amp; emergency banners)</label>
+  <label class="check"><input type="checkbox" name="verified" {{ 'checked' if c.verified }}> Number verified by administrator</label>
+  <label class="check"><input type="checkbox" name="active" {{ 'checked' if c.active }}> Visible to residents</label>
+  <div class="row-actions"><button class="btn btn-red">Save contact</button><a class="btn btn-ghost" href="{{ url_for('admin_contacts') }}">Cancel</a></div>
+</form>
+{% endblock %}

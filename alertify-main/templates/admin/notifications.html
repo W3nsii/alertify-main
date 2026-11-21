@@ -1,0 +1,42 @@
+{% extends "admin/layout.html" %}
+{% block title %}Announcements{% endblock %}
+{% block page_title %}Announcements &amp; Alerts{% endblock %}
+{% block content %}
+<div class="note note-warn">{{ icon('alert') }} <span>Post only information from authorized, verified sources (PAGASA, PHIVOLCS, NDRRMC, Batangas City CDRRMO). Always fill in the <b>source</b> — residents see it on every announcement.</span></div>
+<div class="two-col wide-right">
+  <form method="post" class="card form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <h3>{{ icon('megaphone') }} New announcement</h3>
+    <label class="field"><span>Title *</span><input name="title" required maxlength="160"></label>
+    <label class="field"><span>Message *</span><textarea name="body" rows="5" required maxlength="4000"></textarea></label>
+    <div class="two-col tight">
+      <label class="field"><span>Type</span><select name="kind">{% for k in kinds %}<option value="{{ k }}">{{ k|replace('_',' ')|capitalize }}</option>{% endfor %}</select></label>
+      <label class="field"><span>Alert level</span><select name="level">{% for l in levels %}<option value="{{ l }}">{{ l|capitalize }}</option>{% endfor %}</select></label>
+    </div>
+    <label class="field"><span>Source *</span><input name="source" maxlength="160" placeholder="e.g. PAGASA Tropical Cyclone Bulletin #5, 11:00 AM" required></label>
+    <div class="two-col tight">
+      <label class="field"><span>Target barangay</span><select name="barangay"><option value="">City-wide</option>{% for b in barangays %}<option>{{ b }}</option>{% endfor %}</select></label>
+      <label class="field"><span>Expires after (hours)</span><input type="number" name="expires_hours" min="0" placeholder="No expiry"></label>
+    </div>
+    <button class="btn btn-red">Publish</button>
+  </form>
+  <section class="card">
+    <h3>Published</h3>
+    <div class="notif-list">
+      {% for n in rows %}
+        <article class="notif-card lvl-{{ n.level }} {{ 'row-muted' if not n.active or (n.expires_at and n.expires_at < now) }}">
+          <div class="nc-head">
+            <span class="nc-level">{{ n.level|capitalize }}</span><span class="tag">{{ n.kind|replace('_',' ') }}</span>
+            {% if n.barangay %}<span class="tag">{{ n.barangay }}</span>{% endif %}
+            {% if not n.active %}<span class="tag">hidden</span>{% elif n.expires_at and n.expires_at < now %}<span class="tag">expired</span>{% endif %}
+            <form method="post" action="{{ url_for('admin_notification_toggle', nid=n.id) }}" class="push-right"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-ghost">{{ 'Hide' if n.active else 'Show' }}</button></form>
+          </div>
+          <h4>{{ n.title }}</h4>
+          <p>{{ n.body }}</p>
+          <footer><span>Source: {{ n.source or '—' }}</span><span>{{ n.created_at|ph }}{% if n.author %} · {{ n.author.full_name }}{% endif %}</span></footer>
+        </article>
+      {% else %}<p class="muted">Nothing published yet.</p>{% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m with context %}
+{% block body_class %}auth{% endblock %}
+{% block body %}
+<div class="auth-wrap">
+  <aside class="auth-side" aria-hidden="true">
+    <div class="auth-side-text">
+      <h2>ALERTIFY</h2>
+      <p>Be Aware. Be Prepared. Stay Safe.</p>
+    </div>
+  </aside>
+  <main id="main" class="auth-main">
+    <a class="brand" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="34" height="34"><span><b>ALERTIFY</b><small>Batangas City</small></span></a>
+    <div class="auth-card">
+      {{ m.flashes() }}
+      {% block auth %}{% endblock %}
+    </div>
+    <div class="auth-sos">
+      {{ icon('alert') }} Emergency? You can <a href="{{ url_for('dashboard') }}">report without an account</a> or <a href="tel:911">call 911</a>.
+    </div>
+  </main>
+</div>
+{% endblock %}

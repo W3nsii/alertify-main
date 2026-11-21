@@ -1,0 +1,52 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}My Disaster History{% endblock %}
+{% block page_title %}MY DISASTER HISTORY{% endblock %}
+{% block page_sub %}<p>Your saved reports and the actions ALERTIFY recommended</p>{% endblock %}
+{% block content %}
+<form class="card filter-bar" method="get">
+  <label class="search-field grow">{{ icon('search') }}<input type="search" name="q" value="{{ q }}" placeholder="Search reference, barangay, description"></label>
+  <label class="field inline"><span>Disaster</span>
+    <select name="category">
+      <option value="">All types</option>
+      {% for c in categories %}<option value="{{ c.code }}" {{ 'selected' if cat == c.code }}>{{ c.name }}</option>{% endfor %}
+    </select>
+  </label>
+  <label class="field inline"><span>From</span><input type="date" name="from" value="{{ dfrom }}"></label>
+  <label class="field inline"><span>To</span><input type="date" name="to" value="{{ dto }}"></label>
+  <button class="btn btn-dark" type="submit">{{ icon('sliders') }} Filter</button>
+  {% if q or cat or dfrom or dto %}<a class="link" href="{{ url_for('history') }}">Clear</a>{% endif %}
+</form>
+
+{% if reports %}
+  <p class="muted">{{ reports|length }} report{{ 's' if reports|length != 1 }}</p>
+  <div class="history-list">
+    {% for r in reports %}
+      <a class="history-item" href="{{ url_for('history_detail', ref=r.reference) }}">
+        <span class="hz-ic hz-{{ r.category.code }}">{{ icon(r.category.code) }}</span>
+        <div class="hi-main">
+          <div class="hi-top"><b>{{ r.category.name }}</b> <span class="muted">{{ r.reference }}</span></div>
+          <div class="hi-meta">
+            <span>{{ icon('clock') }} {{ r.created_at|ph }}</span>
+            <span>{{ icon('pin') }} {{ r.barangay or ('%.4f, %.4f'|format(r.latitude, r.longitude) if r.latitude is not none else 'No location') }}</span>
+            {% if r.recommended_center %}<span>{{ icon('building') }} {{ r.recommended_center.name }}</span>{% endif %}
+          </div>
+          {% set ans = r.instructions.answers or [] %}
+          {% if ans %}<p class="hi-sit">{% for a in ans[:2] %}{{ a.q }} <b>{{ a.a }}</b>{{ ' · ' if not loop.last }}{% endfor %}</p>{% endif %}
+        </div>
+        <div class="hi-side">
+          {{ m.severity_badge(r.severity) }}
+          {{ m.status_badge(r.status) }}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="empty card">
+    {{ icon('clock', 'empty-ic') }}
+    <h2>No reports {{ 'match your filters' if q or cat or dfrom or dto else 'yet' }}</h2>
+    <p class="muted">When you submit your situation from the dashboard, it is saved here with the guidance ALERTIFY gave you.</p>
+    <a class="btn btn-red" href="{{ url_for('dashboard') }}">{{ icon('radio') }} Report my situation</a>
+  </div>
+{% endif %}
+{% endblock %}

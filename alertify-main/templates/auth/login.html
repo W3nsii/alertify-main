@@ -1,0 +1,17 @@
+{% extends "auth/layout.html" %}
+{% block title %}Log in{% endblock %}
+{% block auth %}
+<h1>Welcome back</h1>
+<p class="muted">Log in to access your disaster history and saved reports.</p>
+<form method="post" class="form" novalidate data-validate>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email" value="{{ request.form.email or '' }}"></label>
+  <label class="field"><span>Password</span><input type="password" name="password" required autocomplete="current-password"></label>
+  <div class="form-row">
+    <label class="check"><input type="checkbox" name="remember"> Remember me</label>
+    <a class="link" href="{{ url_for('forgot_password') }}">Forgot password?</a>
+  </div>
+  <button class="btn btn-red btn-block btn-lg">Log in</button>
+</form>
+<p class="center muted">New to ALERTIFY? <a class="link" href="{{ url_for('register', next=request.args.get('next')) }}">Create an account</a></p>
+{% endblock %}

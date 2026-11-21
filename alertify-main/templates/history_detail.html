@@ -1,0 +1,53 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Report {{ r.reference }}{% endblock %}
+{% block page_title %}Report {{ r.reference }}{% endblock %}
+{% block page_sub %}<p><a class="link" href="{{ url_for('history') }}">← Back to My History</a></p>{% endblock %}
+{% block content %}
+<div class="result-grid">
+  <section class="card assess">
+    <div class="card-head"><h2>{{ icon('file') }} Report summary</h2>{{ m.severity_badge(r.severity) }}</div>
+    <div class="assess-top">
+      <span class="hz-ic lg hz-{{ r.category.code }}">{{ icon(r.category.code) }}</span>
+      <div><div class="assess-dis">{{ r.category.name }}</div><small class="muted">Severity score {{ r.severity_score }}/100</small></div>
+    </div>
+    <dl class="kv">
+      <div><dt>Submitted</dt><dd>{{ r.created_at|ph }}</dd></div>
+      <div><dt>Barangay / location</dt><dd>{{ r.barangay or '—' }}{% if r.latitude is not none %}<br><small class="muted">{{ '%.5f'|format(r.latitude) }}, {{ '%.5f'|format(r.longitude) }}</small>{% endif %}</dd></div>
+      <div><dt>People</dt><dd>{{ r.people_count }}</dd></div>
+      {% if r.special_assistance %}<div><dt>Special assistance</dt><dd>{% for s in r.special_assistance.split(',') %}<span class="tag">{{ special_labels.get(s, s) }}</span>{% endfor %}</dd></div>{% endif %}
+      <div><dt>Status</dt><dd>{{ m.status_badge(r.status) }}</dd></div>
+      <div><dt>Recommended center</dt><dd>{% if r.recommended_center %}{{ r.recommended_center.name }}{% if r.recommended_distance_km %} <small class="muted">({{ r.recommended_distance_km }} km straight-line)</small>{% endif %}{% else %}—{% endif %}</dd></div>
+    </dl>
+    <h3 class="mt">Reported situation</h3>
+    <ul class="answer-list">{% for a in data.answers %}<li><span>{{ a.q }}</span><b>{{ a.a }}</b></li>{% endfor %}</ul>
+    {% if r.description %}<p class="desc">“{{ r.description }}”</p>{% endif %}
+  </section>
+
+  <section class="card">
+    <h2>{{ icon('clock') }} Report timeline</h2>
+    <ol class="timeline">
+      {% for h in r.history %}
+        <li>
+          <span class="tl-dot"></span>
+          <div>
+            <b>{{ {'created':'Report submitted','status_change':'Status updated','saved':'Saved to history','claimed':'Linked to your account','note':'Note from responders'}[h.event] }}</b>
+            {% if h.event == 'status_change' %} — {{ h.old_status|capitalize }} → {{ h.new_status|capitalize }}{% endif %}
+            {% if h.note %}<p>{{ h.note }}</p>{% endif %}
+            <small class="muted">{{ h.created_at|ph }}</small>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+    <div class="row-actions">
+      <a class="btn btn-outline" href="{{ url_for('evacuation_centers', hazard=r.category.code, lat=r.latitude or '', lng=r.longitude or '', center=r.recommended_center_id or '') }}">{{ icon('pin') }} Evacuation map</a>
+      <a class="btn btn-outline" href="{{ url_for('contacts') }}">{{ icon('phone') }} Contacts</a>
+    </div>
+  </section>
+</div>
+
+<section class="card">
+  <div class="card-head"><h2>Recommended emergency instructions</h2><span class="chip chip-auto">As given on {{ r.created_at|ph('%b %d, %Y') }}</span></div>
+  {{ m.instruction_sections(data, sections, danger_first=data.immediate_danger) }}
+</section>
+{% endblock %}

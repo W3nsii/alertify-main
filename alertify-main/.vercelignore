@@ -1,0 +1,6 @@
+# Local-only files that should not be uploaded to Vercel
+instance/
+__pycache__/
+*.pyc
+.venv/
+start_alertify.bat

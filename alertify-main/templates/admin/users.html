@@ -1,0 +1,38 @@
+{% extends "admin/layout.html" %}
+{% block title %}Users{% endblock %}
+{% block page_title %}User Management{% endblock %}
+{% block page_sub %}<p>{{ users|length }} account{{ 's' if users|length != 1 }}</p>{% endblock %}
+{% block content %}
+<div class="note note-info">{{ icon('lock') }} <span>User information is confidential. Use it only for disaster response coordination.</span></div>
+<form class="card filter-bar" method="get">
+  <label class="search-field grow">{{ icon('search') }}<input type="search" name="q" value="{{ q }}" placeholder="Search name or email"></label>
+  <button class="btn btn-dark">Search</button>
+</form>
+<section class="card">
+<div class="table-wrap">
+<table class="table">
+  <thead><tr><th>Name</th><th>Email</th><th>Barangay</th><th>Reports</th><th>Joined</th><th>Last login</th><th>Role</th><th>Status</th><th></th></tr></thead>
+  <tbody>
+  {% for u in users %}
+    <tr class="{{ 'row-muted' if not u.is_active_account }}">
+      <td><a class="link" href="{{ url_for('admin_user_detail', uid=u.id) }}"><b>{{ u.full_name }}</b></a></td>
+      <td>{{ u.email }}</td>
+      <td>{{ u.barangay or '—' }}</td>
+      <td>{{ counts.get(u.id, 0) }}</td>
+      <td>{{ u.created_at|ph('%b %d, %Y') }}</td>
+      <td>{{ u.last_login|ph('%b %d, %I:%M %p') }}</td>
+      <td>{% if u.is_admin %}<span class="tag tag-red">Admin</span>{% else %}User{% endif %}</td>
+      <td>{{ 'Active' if u.is_active_account else 'Deactivated' }}</td>
+      <td class="nowrap">
+        {% if u.id != current_user.id %}
+          <form method="post" action="{{ url_for('admin_user_action', uid=u.id, action='toggle') }}" class="inline" data-confirm="{{ 'Deactivate' if u.is_active_account else 'Reactivate' }} {{ u.full_name }}?"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-ghost">{{ 'Deactivate' if u.is_active_account else 'Reactivate' }}</button></form>
+          <form method="post" action="{{ url_for('admin_user_action', uid=u.id, action='revoke_admin' if u.is_admin else 'make_admin') }}" class="inline" data-confirm="{{ 'Revoke admin access from' if u.is_admin else 'Grant admin access to' }} {{ u.full_name }}?"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-outline">{{ 'Revoke admin' if u.is_admin else 'Make admin' }}</button></form>
+        {% else %}<small class="muted">You</small>{% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</section>
+{% endblock %}

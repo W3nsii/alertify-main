@@ -1,0 +1,44 @@
+{% extends "admin/layout.html" %}
+{% block title %}Disaster Instructions{% endblock %}
+{% block page_title %}Disaster Instructions Management{% endblock %}
+{% block page_sub %}<p>{{ rows|length }} {{ 'response instructions' if ctx == 'response' else 'guide entries' }}</p>{% endblock %}
+{% block actions %}<a class="btn btn-red" href="{{ url_for('admin_instruction_form', context=ctx) }}">{{ icon('plus') }} Add {{ 'instruction' if ctx == 'response' else 'guide entry' }}</a>{% endblock %}
+{% block content %}
+<div class="tabs">
+  <a class="tab {{ 'active' if ctx == 'response' }}" href="{{ url_for('admin_instructions', context='response') }}">Emergency response instructions</a>
+  <a class="tab {{ 'active' if ctx == 'guide' }}" href="{{ url_for('admin_instructions', context='guide') }}">Disaster Guide content</a>
+</div>
+<div class="note note-info">{{ icon('info') }} <span>
+  {% if ctx == 'response' %}Response instructions are chosen by the assessment engine. <b>Condition</b> decides when a line appears: <code>base</code> = always for that disaster; other values (e.g. <code>flood.rising</code>, <code>trapped</code>) appear only when the resident's answers trigger them. Disaster <code>general</code> applies to every report.
+  {% else %}Guide entries appear on the public Disaster Guide pages, grouped by section.{% endif %}
+  Only publish guidance consistent with verified official sources.</span></div>
+<div class="chips mb">
+  <a class="chip-btn {{ 'active' if not dis }}" href="{{ url_for('admin_instructions', context=ctx) }}">All</a>
+  {% for d in (['general'] if ctx == 'response' else []) + categories|map(attribute='code')|list %}
+    {% if not (ctx == 'guide' and d == 'other') %}<a class="chip-btn {{ 'active' if dis == d }}" href="{{ url_for('admin_instructions', context=ctx, disaster=d) }}">{{ d }}</a>{% endif %}
+  {% endfor %}
+</div>
+<section class="card">
+<div class="table-wrap">
+<table class="table">
+  <thead><tr><th>Disaster</th><th>Section</th>{% if ctx == 'response' %}<th>Condition</th>{% endif %}<th>Text</th><th>Order</th><th></th></tr></thead>
+  <tbody>
+  {% for r in rows %}
+    <tr class="{{ 'row-muted' if not r.active }}">
+      <td><span class="tag">{{ r.disaster }}</span></td>
+      <td>{{ r.section }}</td>
+      {% if ctx == 'response' %}<td><code>{{ r.condition }}</code></td>{% endif %}
+      <td class="wide">{{ r.text }}{% if not r.active %} <span class="tag">hidden</span>{% endif %}</td>
+      <td>{{ r.priority }}</td>
+      <td class="nowrap">
+        <a class="btn btn-sm btn-outline" href="{{ url_for('admin_instruction_form', iid=r.id) }}">{{ icon('edit') }}</a>
+        <form method="post" action="{{ url_for('admin_instruction_action', iid=r.id, action='toggle') }}" class="inline"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-ghost">{{ 'Hide' if r.active else 'Show' }}</button></form>
+        <form method="post" action="{{ url_for('admin_instruction_action', iid=r.id, action='delete') }}" class="inline" data-confirm="Delete this instruction?"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-ghost danger">Delete</button></form>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</section>
+{% endblock %}

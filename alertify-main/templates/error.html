@@ -1,0 +1,14 @@
+{% extends "app_layout.html" %}
+{% block title %}Error {{ code }}{% endblock %}
+{% block page_title %}Error {{ code }}{% endblock %}
+{% block content %}
+<div class="empty card">
+  {{ icon('alert', 'empty-ic') }}
+  <h2>{{ msg }}</h2>
+  <p class="muted">If you are in an emergency, call 911 now.</p>
+  <div class="row-actions center">
+    <a class="btn btn-red" href="tel:911">{{ icon('phone') }} Call 911</a>
+    <a class="btn btn-outline" href="{{ url_for('dashboard') }}">Go to dashboard</a>
+  </div>
+</div>
+{% endblock %}

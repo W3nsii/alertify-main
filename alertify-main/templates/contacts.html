@@ -1,0 +1,55 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Emergency Contacts{% endblock %}
+{% block page_title %}Emergency Contacts{% endblock %}
+{% block page_sub %}<p>Batangas City emergency hotline directory</p>{% endblock %}
+{% block content %}
+<div class="contact-hero">
+  <div>
+    <h2>{{ icon('phone') }} Life-threatening emergency?</h2>
+    <p>Call the national emergency hotline. It works from any mobile network.</p>
+  </div>
+  <a class="btn btn-white btn-xl" href="tel:911">{{ icon('phone') }} Call 911</a>
+</div>
+
+<div class="note note-info">{{ icon('info') }} <span>Numbers marked <b>pending verification</b> are initial reference data and have not yet been confirmed by an ALERTIFY administrator. This directory is saved on your device for offline use after your first visit.</span></div>
+
+<div class="toolbar">
+  <label class="search-field grow">
+    <span class="sr-only">Search contacts</span>
+    {{ icon('search') }}<input type="search" id="c-search" placeholder="Search hospital, fire, police…">
+  </label>
+  <div class="chips" id="c-chips" role="group" aria-label="Filter by category">
+    <button class="chip-btn active" data-cat="">All</button>
+    {% for cat in grouped %}<button class="chip-btn" data-cat="{{ cat }}">{{ cat }}</button>{% endfor %}
+  </div>
+</div>
+
+{% for cat, items in grouped.items() %}
+  <section class="contact-group" data-group="{{ cat }}">
+    <h2 class="group-title">{{ cat }}</h2>
+    <div class="contact-grid">
+      {% for c in items %}
+        <article class="contact-card {{ 'primary' if c.is_primary }}" data-search="{{ (c.organization ~ ' ' ~ c.category ~ ' ' ~ (c.description or '') ~ ' ' ~ c.numbers)|lower }}">
+          <header>
+            <h3>{{ c.organization }}</h3>
+            {{ m.verify_badge(c.verified, c.verified_at.strftime('%b %d, %Y') if c.verified_at) }}
+          </header>
+          <span class="tag">{{ c.category }}</span>
+          {% if c.description %}<p>{{ c.description }}</p>{% endif %}
+          <div class="dials">
+            {% for n in c.number_list %}
+              <div class="dial-row">
+                {{ m.dial(n) }}
+                <button class="icon-btn sm copy-btn" type="button" data-copy="{{ n }}" aria-label="Copy {{ n }}">{{ icon('copy') }}</button>
+              </div>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+<p class="muted center" id="c-empty" hidden>No contacts match your search.</p>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/contacts.js') }}"></script>{% endblock %}

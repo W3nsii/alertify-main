@@ -1,0 +1,802 @@
+[
+  {
+    "name": "Alangilan Central Elementary School",
+    "location": "Alangilan, Batangas City",
+    "barangay": "Alangilan",
+    "capacity_families": 18,
+    "capacity_persons": 90,
+    "longitude": 121.06937,
+    "latitude": 13.78775,
+    "note": null
+  },
+  {
+    "name": "Alangilan Senior High School",
+    "location": "Alangilan, Batangas City",
+    "barangay": "Alangilan",
+    "capacity_families": 28,
+    "capacity_persons": 140,
+    "longitude": 121.06836,
+    "latitude": 13.78767,
+    "note": null
+  },
+  {
+    "name": "Balagtas Elementary School",
+    "location": "Balagtas, Batangas City",
+    "barangay": "Balagtas",
+    "capacity_families": 26,
+    "capacity_persons": 130,
+    "longitude": 121.07066,
+    "latitude": 13.80149,
+    "note": null
+  },
+  {
+    "name": "Balete Elementary School",
+    "location": "Balete, Batangas City",
+    "barangay": "Balete",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.06663,
+    "latitude": 13.83101,
+    "note": null
+  },
+  {
+    "name": "Balete National High School",
+    "location": "Balete, Batangas City",
+    "barangay": "Balete",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.06561,
+    "latitude": 13.83573,
+    "note": null
+  },
+  {
+    "name": "Balete Relocation Elementary School",
+    "location": "Balete Relocation, Batangas City",
+    "barangay": "Balete",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.06071,
+    "latitude": 13.82077,
+    "note": null
+  },
+  {
+    "name": "Banaba East Elementary School",
+    "location": "Banaba East, Batangas City",
+    "barangay": "Banaba East",
+    "capacity_families": 14,
+    "capacity_persons": 70,
+    "longitude": 121.05931,
+    "latitude": 13.81413,
+    "note": null
+  },
+  {
+    "name": "Banaba West Elementary School",
+    "location": "Banaba West, Batangas City",
+    "barangay": "Banaba West",
+    "capacity_families": 12,
+    "capacity_persons": 60,
+    "longitude": 121.05401,
+    "latitude": 13.80518,
+    "note": null
+  },
+  {
+    "name": "Banaba Center Elementary School",
+    "location": "Banaba Center, Batangas City",
+    "barangay": "Banaba Center",
+    "capacity_families": 16,
+    "capacity_persons": 80,
+    "longitude": 121.0623,
+    "latitude": 13.80804,
+    "note": null
+  },
+  {
+    "name": "Banaba South Elementary School",
+    "location": "Banaba South, Batangas City",
+    "barangay": "Banaba South",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.05394,
+    "latitude": 13.78725,
+    "note": null
+  },
+  {
+    "name": "Batangas City East Elementary School",
+    "location": "Brgy. 06, P. Herrera St., Batangas City",
+    "barangay": "Barangay 6 (Poblacion)",
+    "capacity_families": 70,
+    "capacity_persons": 350,
+    "longitude": 121.06424,
+    "latitude": 13.76008,
+    "note": null
+  },
+  {
+    "name": "Batangas City South Central ES",
+    "location": "Brgy. 11, Batangas City",
+    "barangay": "Barangay 11 (Poblacion)",
+    "capacity_families": 30,
+    "capacity_persons": 150,
+    "longitude": 121.06097,
+    "latitude": 13.76101,
+    "note": null
+  },
+  {
+    "name": "South SHS-included in BCSCES list",
+    "location": "Brgy. 11, Batangas City",
+    "barangay": "Barangay 11 (Poblacion)",
+    "capacity_families": 30,
+    "capacity_persons": 150,
+    "longitude": 121.06097,
+    "latitude": 13.76101,
+    "note": "Source lists this SHS as included in the Batangas City South Central ES record (same site/coordinates)."
+  },
+  {
+    "name": "Batangas National High School",
+    "location": "Brgy. 20, Batangas City",
+    "barangay": "Barangay 20 (Poblacion)",
+    "capacity_families": 30,
+    "capacity_persons": 150,
+    "longitude": 121.05489,
+    "latitude": 13.75485,
+    "note": null
+  },
+  {
+    "name": "Batangas Province High School for Culture and Arts",
+    "location": "Brgy. 20, Batangas City",
+    "barangay": "Barangay 20 (Poblacion)",
+    "capacity_families": 30,
+    "capacity_persons": 150,
+    "longitude": 121.04554,
+    "latitude": 13.77619,
+    "note": null
+  },
+  {
+    "name": "Bilogo Elementary School",
+    "location": "Bilogo, Batangas City",
+    "barangay": "Bilogo",
+    "capacity_families": 4,
+    "capacity_persons": 20,
+    "longitude": 121.16159,
+    "latitude": 13.7437,
+    "note": null
+  },
+  {
+    "name": "Bolbok Elementary School",
+    "location": "Bolbok, Batangas City",
+    "barangay": "Bolbok",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.04595,
+    "latitude": 13.77397,
+    "note": null
+  },
+  {
+    "name": "Bucal Elementary School",
+    "location": "Bucal, Batangas City",
+    "barangay": "Bucal",
+    "capacity_families": 8,
+    "capacity_persons": 40,
+    "longitude": 121.09575,
+    "latitude": 13.83995,
+    "note": null
+  },
+  {
+    "name": "Calicanto Elementary School",
+    "location": "Caliicanto, Batangas City",
+    "barangay": "Calicanto",
+    "capacity_families": 23,
+    "capacity_persons": 115,
+    "longitude": 121.05327,
+    "latitude": 13.76695,
+    "note": null
+  },
+  {
+    "name": "Katandala Elementary School",
+    "location": "Katandala, Batangas City",
+    "barangay": "Katandala",
+    "capacity_families": 14,
+    "capacity_persons": 70,
+    "longitude": 121.13854,
+    "latitude": 13.77358,
+    "note": null
+  },
+  {
+    "name": "Concepcion Elementary School",
+    "location": "Concepcion, Batangas City",
+    "barangay": "Concepcion",
+    "capacity_families": 36,
+    "capacity_persons": 180,
+    "longitude": 121.0807,
+    "latitude": 13.8291,
+    "note": null
+  },
+  {
+    "name": "Ramos Memorial National High School",
+    "location": "Concepcion, Batangas City",
+    "barangay": "Concepcion",
+    "capacity_families": 22,
+    "capacity_persons": 110,
+    "longitude": 121.0837,
+    "latitude": 13.83133,
+    "note": null
+  },
+  {
+    "name": "Conde Itaas Elementary School",
+    "location": "Conde Itaas, Batangas City",
+    "barangay": "Conde Itaas",
+    "capacity_families": 8,
+    "capacity_persons": 40,
+    "longitude": 121.12543,
+    "latitude": 13.7239,
+    "note": null
+  },
+  {
+    "name": "Conde Labac Elementary School",
+    "location": "Conde Labac, Batangas City",
+    "barangay": "Conde Labac",
+    "capacity_families": 8,
+    "capacity_persons": 40,
+    "longitude": 121.11073,
+    "latitude": 13.73437,
+    "note": null
+  },
+  {
+    "name": "Julian A. Pastor Memorial Elementary School",
+    "location": "Cuta, Batangas City",
+    "barangay": "Cuta",
+    "capacity_families": 42,
+    "capacity_persons": 210,
+    "longitude": 121.05495,
+    "latitude": 13.75113,
+    "note": null
+  },
+  {
+    "name": "Cumba Elementary School",
+    "location": "Curnba, Batangas City",
+    "barangay": "Cumba",
+    "capacity_families": 12,
+    "capacity_persons": 60,
+    "longitude": 121.13827,
+    "latitude": 13.68218,
+    "note": null
+  },
+  {
+    "name": "Melecio Arceo Memorial Elementary School",
+    "location": "Dalig, Batangas City",
+    "barangay": "Dalig",
+    "capacity_families": 12,
+    "capacity_persons": 60,
+    "longitude": 121.08514,
+    "latitude": 13.77296,
+    "note": null
+  },
+  {
+    "name": "Dumantay Elementary School",
+    "location": "Dumantay, Batangas City",
+    "barangay": "Dumantay",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.10344,
+    "latitude": 13.76566,
+    "note": null
+  },
+  {
+    "name": "Dumuclay Elementary School",
+    "location": "Dumuclay, Batangas City",
+    "barangay": "Dumuclay",
+    "capacity_families": 14,
+    "capacity_persons": 72,
+    "longitude": 121.08928,
+    "latitude": 13.74598,
+    "note": null
+  },
+  {
+    "name": "Gulod Elementary School",
+    "location": "Gulod Itaas, Batangas City",
+    "barangay": "Gulod Itaas",
+    "capacity_families": 4,
+    "capacity_persons": 20,
+    "longitude": 121.08252,
+    "latitude": 13.76193,
+    "note": null
+  },
+  {
+    "name": "Gulod Senior High School",
+    "location": "Gulod Itaas, Batangas City",
+    "barangay": "Gulod Itaas",
+    "capacity_families": 4,
+    "capacity_persons": 20,
+    "longitude": 121.08224,
+    "latitude": 13.76203,
+    "note": null
+  },
+  {
+    "name": "Haligue Kanluran Elementary School",
+    "location": "Haligue Kanluran, Batangas City",
+    "barangay": "Haligue Kanluran",
+    "capacity_families": 6,
+    "capacity_persons": 30,
+    "longitude": 121.09913,
+    "latitude": 13.68316,
+    "note": null
+  },
+  {
+    "name": "Haligue Silangan Elementary School",
+    "location": "Haligue Silangan, Batangas City",
+    "barangay": "Haligue Silangan",
+    "capacity_families": 4,
+    "capacity_persons": 20,
+    "longitude": 121.10542,
+    "latitude": 13.66362,
+    "note": null
+  },
+  {
+    "name": "Haligue SHS- included in HSES list",
+    "location": "Haligue Silangan, Batangas City",
+    "barangay": "Haligue Silangan",
+    "capacity_families": 4,
+    "capacity_persons": 20,
+    "longitude": 121.10542,
+    "latitude": 13.66362,
+    "note": "Source lists this SHS as included in the Haligue Silangan ES record (same site/coordinates)."
+  },
+  {
+    "name": "Kumintang Elementary School",
+    "location": "Kumintang Ilaya, Batangas City",
+    "barangay": "Kumintang Ilaya",
+    "capacity_families": 34,
+    "capacity_persons": 170,
+    "longitude": 121.06527,
+    "latitude": 13.77431,
+    "note": null
+  },
+  {
+    "name": "Libjo Elementary School",
+    "location": "Libjo, Batangas City",
+    "barangay": "Libjo",
+    "capacity_families": 24,
+    "capacity_persons": 120,
+    "longitude": 121.07163,
+    "latitude": 13.74409,
+    "note": null
+  },
+  {
+    "name": "Libjo National High School",
+    "location": "Libjo, Batangas City",
+    "barangay": "Libjo",
+    "capacity_families": 24,
+    "capacity_persons": 120,
+    "longitude": 121.07199,
+    "latitude": 13.74008,
+    "note": null
+  },
+  {
+    "name": "Mahabang Dahilig Elementary School",
+    "location": "Mahabang Dahilig, Batangas City",
+    "barangay": "Mahabang Dahilig",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.0929,
+    "latitude": 13.71026,
+    "note": null
+  },
+  {
+    "name": "Mahabang Dahilig Senior High School",
+    "location": "Mahabang Dahilig, Batangas City",
+    "barangay": "Mahabang Dahilig",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.0929,
+    "latitude": 13.71026,
+    "note": "Same coordinates as Mahabang Dahilig ES in source."
+  },
+  {
+    "name": "Mahacot Elementary School",
+    "location": "Mahacot West, Batangas City",
+    "barangay": "Mahacot West",
+    "capacity_families": 14,
+    "capacity_persons": 70,
+    "longitude": 121.1221,
+    "latitude": 13.77281,
+    "note": null
+  },
+  {
+    "name": "Eulalia Talban Ebora Memorial Elementary School",
+    "location": "Malalim, Batangas City",
+    "barangay": "Malalim",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.09043,
+    "latitude": 13.72445,
+    "note": null
+  },
+  {
+    "name": "Malibayo Elementary School",
+    "location": "Malibayo, Batangas City",
+    "barangay": "Malibayo",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.08431,
+    "latitude": 13.67192,
+    "note": null
+  },
+  {
+    "name": "Malitam Elementary School",
+    "location": "Malitam, Batangas City",
+    "barangay": "Malitam",
+    "capacity_families": 14,
+    "capacity_persons": 70,
+    "longitude": 121.05859,
+    "latitude": 13.74432,
+    "note": null
+  },
+  {
+    "name": "Malitam National High School",
+    "location": "Malitam, Batangas City",
+    "barangay": "Malitam",
+    "capacity_families": 14,
+    "capacity_persons": 70,
+    "longitude": 121.05475,
+    "latitude": 13.75527,
+    "note": null
+  },
+  {
+    "name": "Maruclap Elementary School",
+    "location": "Maruclap, Batangas City",
+    "barangay": "Maruclap",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.11026,
+    "latitude": 13.68366,
+    "note": null
+  },
+  {
+    "name": "Paharang Elementary School",
+    "location": "Paharang West, Batangas City",
+    "barangay": "Paharang West",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.13934,
+    "latitude": 13.75243,
+    "note": null
+  },
+  {
+    "name": "Paharang National High School",
+    "location": "Paharang West, Batangas City",
+    "barangay": "Paharang West",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.13963,
+    "latitude": 13.75387,
+    "note": null
+  },
+  {
+    "name": "Pallocan East Elementary School",
+    "location": "Pallocan East, Batangas City",
+    "barangay": "Pallocan East",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.08055,
+    "latitude": 13.75367,
+    "note": null
+  },
+  {
+    "name": "Jose C. Pastor Elementary School",
+    "location": "Pallocan West, Batangas City",
+    "barangay": "Pallocan West",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.06626,
+    "latitude": 13.75442,
+    "note": null
+  },
+  {
+    "name": "Piit Elementary School",
+    "location": "Piit, Pinamucan East, Batangas City",
+    "barangay": "Pinamucan East",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.08225,
+    "latitude": 13.6916,
+    "note": null
+  },
+  {
+    "name": "Pinamukan Elementary School",
+    "location": "Pinamukan Proper, Batangas City",
+    "barangay": "Pinamucan Proper",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.05414,
+    "latitude": 13.69777,
+    "note": null
+  },
+  {
+    "name": "Pinamucan National High School",
+    "location": "Pinamukan Proper, Batangas City",
+    "barangay": "Pinamucan Proper",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.0551,
+    "latitude": 13.69736,
+    "note": null
+  },
+  {
+    "name": "Pinamucan Ibaba Elementary School",
+    "location": "Pinamucan Ibaba, Batangas City",
+    "barangay": "Pinamucan Ibaba",
+    "capacity_families": 14,
+    "capacity_persons": 70,
+    "longitude": 121.06227,
+    "latitude": 13.68733,
+    "note": null
+  },
+  {
+    "name": "Sampaga Elementary School",
+    "location": "Sampaga, Batangas City",
+    "barangay": "Sampaga",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.1038,
+    "latitude": 13.75472,
+    "note": null
+  },
+  {
+    "name": "San Isidro Elementary School",
+    "location": "San Isidro, Batangas City",
+    "barangay": "San Isidro",
+    "capacity_families": 18,
+    "capacity_persons": 90,
+    "longitude": 121.07798,
+    "latitude": 13.73296,
+    "note": null
+  },
+  {
+    "name": "Bagong Silang Elementary School",
+    "location": "Bagong Silang, San Jose Sico, Batangas City",
+    "barangay": "San Jose Sico",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.17676,
+    "latitude": 13.73612,
+    "note": null
+  },
+  {
+    "name": "San Jose Sico Elementary School",
+    "location": "San Jose Sico, Batangas City",
+    "barangay": "San Jose Sico",
+    "capacity_families": 16,
+    "capacity_persons": 80,
+    "longitude": 121.17173,
+    "latitude": 13.73908,
+    "note": null
+  },
+  {
+    "name": "San Miguel Elementary School",
+    "location": "San Miguel, Batangas City",
+    "barangay": "San Miguel",
+    "capacity_families": 22,
+    "capacity_persons": 110,
+    "longitude": 121.11242,
+    "latitude": 13.71794,
+    "note": null
+  },
+  {
+    "name": "San Pedro Elementary School",
+    "location": "San Pedro, Batangas City",
+    "barangay": "San Pedro",
+    "capacity_families": 14,
+    "capacity_persons": 70,
+    "longitude": 121.10206,
+    "latitude": 13.77785,
+    "note": null
+  },
+  {
+    "name": "Sta. Clara Elementary School",
+    "location": "Sta Clara, Batangas City",
+    "barangay": "Sta. Clara",
+    "capacity_families": 50,
+    "capacity_persons": 250,
+    "longitude": 121.04472,
+    "latitude": 13.75316,
+    "note": null
+  },
+  {
+    "name": "Sta. Rita Elementary School",
+    "location": "Sta Rita Karsada, Batangas City",
+    "barangay": "Sta. Rita Karsada",
+    "capacity_families": 40,
+    "capacity_persons": 200,
+    "longitude": 121.04129,
+    "latitude": 13.77894,
+    "note": null
+  },
+  {
+    "name": "Sto. Domingo Elementary School",
+    "location": "Sto. Domingo, Batangas City",
+    "barangay": "Sto. Domingo",
+    "capacity_families": 16,
+    "capacity_persons": 80,
+    "longitude": 121.1385,
+    "latitude": 13.71089,
+    "note": null
+  },
+  {
+    "name": "Sto. Nino Elementary School",
+    "location": "Sto Nino, Batangas City",
+    "barangay": "Sto. Niño",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.09643,
+    "latitude": 13.69833,
+    "note": null
+  },
+  {
+    "name": "Sto. Nino National High School",
+    "location": "Sto Nino, Batangas City",
+    "barangay": "Sto. Niño",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.09589,
+    "latitude": 13.69781,
+    "note": null
+  },
+  {
+    "name": "Sirang Lupa Elementary School",
+    "location": "Sirang Lupa, Batangas City",
+    "barangay": "Sirang Lupa",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.09246,
+    "latitude": 13.7356,
+    "note": null
+  },
+  {
+    "name": "Sorosoro Elementary School",
+    "location": "Sorosoro, Batangas City",
+    "barangay": "Sorosoro",
+    "capacity_families": 12,
+    "capacity_persons": 60,
+    "longitude": 121.08903,
+    "latitude": 13.81552,
+    "note": null
+  },
+  {
+    "name": "Tinga Sorosoro Integrated School",
+    "location": "Sorosoro, Batangas City",
+    "barangay": "Sorosoro",
+    "capacity_families": 28,
+    "capacity_persons": 140,
+    "longitude": 121.09033,
+    "latitude": 13.80784,
+    "note": null
+  },
+  {
+    "name": "Ambulong Elementary School",
+    "location": "Ambulong, Tabangao, Batangas City",
+    "barangay": "Tabangao Ambulong",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.07446,
+    "latitude": 13.71845,
+    "note": null
+  },
+  {
+    "name": "Tabangao Elementary School",
+    "location": "Tabangao Aplaya, Batangas City",
+    "barangay": "Tabangao Aplaya",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.06226,
+    "latitude": 13.71487,
+    "note": null
+  },
+  {
+    "name": "Tabangao Integrated School",
+    "location": "Tabangao Aplaya, Batangas City",
+    "barangay": "Tabangao Aplaya",
+    "capacity_families": 16,
+    "capacity_persons": 80,
+    "longitude": 121.06226,
+    "latitude": 13.71487,
+    "note": "Same coordinates as Tabangao ES in source."
+  },
+  {
+    "name": "Dao Elementary School",
+    "location": "Tabangao Dao, Batangas City",
+    "barangay": "Tabangao Dao",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.08332,
+    "latitude": 13.69832,
+    "note": null
+  },
+  {
+    "name": "Talahib Payapa Elementary School",
+    "location": "Talahib Payapa, Batangas City",
+    "barangay": "Talahib Payapa",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.12282,
+    "latitude": 13.66471,
+    "note": null
+  },
+  {
+    "name": "Talumpok Proper Elementary School",
+    "location": "Talumpok West, Batangas City",
+    "barangay": "Talumpok West",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.15389,
+    "latitude": 13.73267,
+    "note": null
+  },
+  {
+    "name": "Talumpok Integrated School",
+    "location": "Talumpok West, Batangas City",
+    "barangay": "Talumpok West",
+    "capacity_families": 10,
+    "capacity_persons": 50,
+    "longitude": 121.1548,
+    "latitude": 13.7328,
+    "note": null
+  },
+  {
+    "name": "Talumpok Silangan Elementary School",
+    "location": "Talumpok Silangan, Batangas City",
+    "barangay": "Talumpok Silangan",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.16295,
+    "latitude": 13.72536,
+    "note": null
+  },
+  {
+    "name": "Guinto Elementary School",
+    "location": "Talumpok West, Batangas City",
+    "barangay": "Talumpok West",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.13635,
+    "latitude": 13.73362,
+    "note": null
+  },
+  {
+    "name": "Tinga Itaas Elementary School",
+    "location": "Tinga Itaas, Batangas City",
+    "barangay": "Tinga Itaas",
+    "capacity_families": 12,
+    "capacity_persons": 60,
+    "longitude": 121.08831,
+    "latitude": 13.79787,
+    "note": null
+  },
+  {
+    "name": "Tinga Labac Elementary School",
+    "location": "Tinga Labac, Batangas City",
+    "barangay": "Tinga Labac",
+    "capacity_families": 12,
+    "capacity_persons": 60,
+    "longitude": 121.07827,
+    "latitude": 13.78555,
+    "note": null
+  },
+  {
+    "name": "Tulo II Elementary School",
+    "location": "Tulo, Batangas City",
+    "barangay": "Tulo",
+    "capacity_families": 20,
+    "capacity_persons": 100,
+    "longitude": 121.12298,
+    "latitude": 13.7541,
+    "note": null
+  },
+  {
+    "name": "Tulo I Elementary School",
+    "location": "Tulo, Batangas City",
+    "barangay": "Tulo",
+    "capacity_families": 12,
+    "capacity_persons": 60,
+    "longitude": 121.12312,
+    "latitude": 13.74509,
+    "note": null
+  }
+]

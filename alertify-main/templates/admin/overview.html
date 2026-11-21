@@ -1,0 +1,51 @@
+{% extends "admin/layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Admin Overview{% endblock %}
+{% block page_title %}Admin Dashboard{% endblock %}
+{% block page_sub %}<p>Batangas City disaster reports and data management</p>{% endblock %}
+{% block content %}
+<div class="stat-grid">
+  <a class="stat" href="{{ url_for('admin_users') }}"><span class="stat-ic">{{ icon('users') }}</span><div><b>{{ stats.users }}</b><span>Registered users</span></div></a>
+  <a class="stat" href="{{ url_for('admin_reports') }}"><span class="stat-ic">{{ icon('file') }}</span><div><b>{{ stats.reports }}</b><span>Total disaster reports</span></div></a>
+  <a class="stat stat-red" href="{{ url_for('admin_reports', status='open') }}"><span class="stat-ic">{{ icon('radio') }}</span><div><b>{{ stats.active }}</b><span>Active emergency reports</span></div></a>
+  <a class="stat stat-dark" href="{{ url_for('admin_reports', status='open', severity='critical') }}"><span class="stat-ic">{{ icon('alert') }}</span><div><b>{{ stats.critical }}</b><span>Open critical reports</span></div></a>
+  <a class="stat" href="{{ url_for('admin_centers') }}"><span class="stat-ic">{{ icon('pin') }}</span><div><b>{{ stats.centers_verified }}/{{ stats.centers }}</b><span>Evacuation centers verified</span></div></a>
+  <a class="stat stat-amber" href="{{ url_for('admin_contacts') }}"><span class="stat-ic">{{ icon('phone') }}</span><div><b>{{ stats.contacts_unverified }}</b><span>Contacts pending verification</span></div></a>
+</div>
+
+<div class="chart-grid">
+  <section class="card"><h3>Reports — last 14 days</h3><div class="chart-box"><canvas id="ch-trend" role="img" aria-label="Reports per day for the last 14 days"></canvas></div></section>
+  <section class="card"><h3>Reports by disaster category</h3><div class="chart-box"><canvas id="ch-cat" role="img" aria-label="Reports by disaster category"></canvas></div></section>
+  <section class="card"><h3>Reports by barangay (top 10)</h3><div class="chart-box"><canvas id="ch-brgy" role="img" aria-label="Reports by barangay"></canvas></div>{% if not chart.brgy_labels %}<p class="muted center">No reports with a barangay yet.</p>{% endif %}</section>
+  <section class="card"><h3>Reports by severity</h3><div class="chart-box"><canvas id="ch-sev" role="img" aria-label="Reports by severity"></canvas></div></section>
+</div>
+
+<section class="card">
+  <div class="card-head"><h3>Recent user submissions</h3><a class="link" href="{{ url_for('admin_reports') }}">View all</a></div>
+  {% include "admin/_report_table.html" with context %}
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+(function () {
+  var d = {{ chart|tojson }};
+  if (!window.Chart) return;
+  Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+  Chart.defaults.color = '#475569';
+  var grid = { color: 'rgba(23,33,43,.06)' };
+  new Chart(document.getElementById('ch-trend'), { type: 'line',
+    data: { labels: d.trend_labels, datasets: [{ label: 'Reports', data: d.trend_values, borderColor: '#C62828', backgroundColor: 'rgba(198,40,40,.12)', fill: true, tension: .35, pointRadius: 3 }] },
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { precision: 0 }, grid: grid }, x: { grid: { display: false } } } } });
+  new Chart(document.getElementById('ch-cat'), { type: 'bar',
+    data: { labels: d.cat_labels, datasets: [{ label: 'Reports', data: d.cat_values, backgroundColor: '#C62828', borderRadius: 6 }] },
+    options: { maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, ticks: { precision: 0 }, grid: grid }, y: { grid: { display: false } } } } });
+  new Chart(document.getElementById('ch-brgy'), { type: 'bar',
+    data: { labels: d.brgy_labels, datasets: [{ label: 'Reports', data: d.brgy_values, backgroundColor: '#FF8C42', borderRadius: 6 }] },
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { precision: 0 }, grid: grid }, x: { grid: { display: false } } } } });
+  new Chart(document.getElementById('ch-sev'), { type: 'doughnut',
+    data: { labels: ['Low', 'Moderate', 'High', 'Critical'], datasets: [{ data: d.sev, backgroundColor: ['#16A34A', '#F59E0B', '#EA580C', '#B71C1C'], borderWidth: 2, borderColor: '#fff' }] },
+    options: { maintainAspectRatio: false, cutout: '62%', plugins: { legend: { position: 'right' } } } });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m with context %}
+{% set nav = [
+  ('index', 'home', 'Home'),
+  ('dashboard', 'grid', 'Dashboard'),
+  ('guide', 'book', 'Disaster Guide'),
+  ('evacuation_centers', 'pin', 'Evacuation Centers'),
+  ('contacts', 'phone', 'Emergency Contacts'),
+  ('history', 'clock', 'My History'),
+  ('about', 'info', 'About Alertify'),
+] %}
+{% block body_class %}app{% endblock %}
+{% block body %}
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <a class="brand" href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="34" height="34">
+      <span><b>ALERTIFY</b><small>Batangas City</small></span>
+    </a>
+    <nav class="side-nav">
+      {% for ep, ic, label in nav %}
+        <a href="{{ url_for(ep) }}" class="{{ 'active' if request.endpoint and (request.endpoint == ep or request.endpoint.startswith(ep + '_') or (ep == 'history' and request.endpoint == 'history_detail') or (ep == 'guide' and request.endpoint == 'guide_detail')) }}">
+          {{ icon(ic) }}<span>{{ label }}</span>
+        </a>
+      {% endfor %}
+      {% if current_user.is_authenticated and current_user.is_admin %}
+        <div class="side-sep">Administration</div>
+        <a href="{{ url_for('admin_overview') }}">{{ icon('shield') }}<span>Admin Dashboard</span></a>
+      {% endif %}
+    </nav>
+    <div class="side-sos">
+      <div class="side-sos-title">{{ icon('alert') }} In immediate danger?</div>
+      <a class="btn btn-red btn-block" href="tel:911">{{ icon('phone') }} Call 911</a>
+      <a class="side-sos-link" href="{{ url_for('contacts') }}">All emergency hotlines {{ icon('chevron') }}</a>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <div class="main-col">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menu-btn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">{{ icon('menu') }}</button>
+      <div class="topbar-title">
+        <h1>{% block page_title %}{% endblock %}</h1>
+        {% block page_sub %}{% endblock %}
+      </div>
+      <div class="topbar-actions">
+        <span class="net-pill" id="net-pill" hidden>{{ icon('alert') }} Offline</span>
+        <a class="btn btn-sos hide-sm" href="tel:911">{{ icon('phone') }} 911</a>
+        <div class="dropdown">
+          <button class="icon-btn" data-dropdown="notif-menu" aria-label="Notifications" aria-haspopup="true">
+            {{ icon('bell') }}
+            {% if nav_unread %}<span class="dot-count">{{ nav_unread|length }}</span>{% endif %}
+          </button>
+          <div class="menu menu-wide" id="notif-menu" role="menu">
+            <div class="menu-head">
+              <b>Notifications</b>
+              {% if nav_unread %}<button class="link-btn" id="mark-read">Mark all read</button>{% endif %}
+            </div>
+            {% for n in nav_notifications %}
+              <a class="notif-item lvl-{{ n.level }} {{ 'unread' if n.id in nav_unread }}" href="{{ url_for('notifications') }}#n{{ n.id }}">
+                <span class="notif-lvl"></span>
+                <span><b>{{ n.title }}</b><small>{{ n.source or 'Administrator announcement' }} · {{ n.created_at|ph('%b %d, %I:%M %p') }}</small></span>
+              </a>
+            {% else %}
+              <p class="muted pad">No announcements right now.</p>
+            {% endfor %}
+            <a class="menu-foot" href="{{ url_for('notifications') }}">View all notifications</a>
+          </div>
+        </div>
+        {% if current_user.is_authenticated %}
+          <div class="dropdown">
+            <button class="avatar" data-dropdown="user-menu" aria-label="Account menu" aria-haspopup="true">{{ current_user.initials }}</button>
+            <div class="menu" id="user-menu" role="menu">
+              <div class="menu-head"><b>{{ current_user.full_name }}</b><small>{{ current_user.email }}</small></div>
+              <a href="{{ url_for('profile') }}">{{ icon('user') }} Profile &amp; settings</a>
+              <a href="{{ url_for('history') }}">{{ icon('clock') }} My history</a>
+              {% if current_user.is_admin %}<a href="{{ url_for('admin_overview') }}">{{ icon('shield') }} Admin dashboard</a>{% endif %}
+              <form method="post" action="{{ url_for('logout') }}" data-logout>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit">{{ icon('logout') }} Log out</button>
+              </form>
+            </div>
+          </div>
+        {% else %}
+          <a class="btn btn-ghost hide-sm" href="{{ url_for('login', next=request.path) }}">Log in</a>
+          <a class="btn btn-dark" href="{{ url_for('register') }}">Sign up</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <main id="main" class="content">
+      {{ m.flashes() }}
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="app-foot">
+      <p>{{ icon('info') }} ALERTIFY supplements, but does not replace, official government emergency instructions and professional responders. Always follow orders from the Batangas City government, CDRRMO, PAGASA, and PHIVOLCS.</p>
+      <p class="muted">Coverage: Batangas City only · Map data © OpenStreetMap contributors</p>
+    </footer>
+  </div>
+</div>
+<a class="fab-sos only-mobile" href="tel:911" aria-label="Call 911">{{ icon('phone') }}<span>SOS 911</span></a>
+{% endblock %}

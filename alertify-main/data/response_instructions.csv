@@ -1,0 +1,94 @@
+﻿disaster,section,condition,text,priority
+general,immediate,trapped,"Call 911 now. Give your exact location (barangay, street, landmark), how many people are with you, and any injuries.",1
+general,immediate,trapped,"Stay where rescuers can find you. Signal with a flashlight, whistle, bright cloth, or by tapping on pipes or walls.",2
+general,immediate,trapped,Save phone battery: lower screen brightness and send text messages if calls do not go through.,3
+general,immediate,injured,"Give first aid only if you are trained: apply firm, direct pressure on bleeding wounds. Do not move a person with a suspected head, neck, or back injury unless they are in immediate danger.",5
+general,immediate,vulnerable,"Prioritize children, older adults, pregnant individuals, persons with disabilities, and anyone with medical conditions. Keep their medicines and assistive devices with them.",20
+general,avoid,trapped,"Do not attempt risky self-rescue through floodwater, fire, smoke, or collapsed structures.",1
+general,avoid,base,"Do not spread or act on unverified information. Rely on official advisories from the Batangas City government, CDRRMO, PAGASA, and PHIVOLCS.",90
+general,bring,base,Drinking water and ready-to-eat food for at least 3 days.,10
+general,bring,base,"Maintenance medicines, prescriptions, and a first aid kit.",11
+general,bring,base,"Flashlight, whistle, charged phone and power bank, battery-powered radio.",12
+general,bring,base,"Important documents (IDs, certificates, insurance) in a waterproof bag, and some cash.",13
+general,bring,base,"Extra clothing, blanket, face masks, and hygiene items.",14
+general,bring,vulnerable,"Baby supplies, mobility aids, hearing aids, eyeglasses, and any special medical equipment.",15
+general,evacuate,base,"Follow evacuation orders from the Batangas City government, CDRRMO, and your barangay officials. ALERTIFY's automated assessment does not replace official orders.",90
+general,evacuate,vulnerable,Evacuate early. People who need assistance should leave before conditions worsen — tell responders about special needs when you call.,20
+general,contact,base,"If anyone is in immediate danger, call 911 (national emergency hotline).",10
+general,contact,base,Batangas City CDRRMO coordinates local rescue and evacuation — see the Emergency Contacts page.,20
+general,contact,injured,For medical emergencies call 911 or the Philippine Red Cross (143 / Emergency Medical Services).,5
+flood,immediate,flood.rising,Water is rising — move to higher ground now if it is safe to do so. Do not wait for the water to reach your knees.,3
+flood,immediate,flood.deep,Water at waist level or higher is very dangerous. Move to the highest safe floor of a sturdy building and call for rescue instead of wading out. Avoid enclosed attics where rising water could trap you.,2
+flood,immediate,flood.indoors,Turn off electricity at the main breaker and close the LPG tank only if you are standing on dry ground and it is safe to do so.,10
+flood,immediate,base,"Move important documents, valuables, and emergency supplies to an upper floor or a higher place.",30
+flood,immediate,base,Monitor PAGASA rainfall/flood advisories and announcements from the CDRRMO and your barangay.,40
+flood,avoid,base,"Do not walk, swim, or drive through floodwater. About 15 cm (6 in) of moving water can knock you down and 60 cm (2 ft) can sweep away a vehicle.",2
+flood,avoid,base,"Stay away from electric posts, fallen wires, drainage canals, open manholes, and riverbanks.",3
+flood,avoid,base,"Avoid contact with floodwater — it may be contaminated. If you waded in floodwater, especially with wounds, consult a health center about leptospirosis prevention.",4
+flood,bring,base,"Rubber boots, raincoat, and plastic bags to keep items dry.",20
+flood,evacuate,base,"Evacuate to a designated evacuation center when advised by authorities, or right away if you live in a low-lying or flood-prone area and the water is rising.",5
+flood,contact,flood.deep,"With water waist-deep or higher, call 911 or the CDRRMO for rescue rather than attempting to cross the water yourself.",1
+typhoon,immediate,base,"Stay indoors in the strongest interior room, away from windows and glass doors.",5
+typhoon,immediate,base,Keep updated on PAGASA Tropical Cyclone Wind Signals through radio or your phone.,30
+typhoon,immediate,typhoon.house_major,Your house is seriously damaged — move to the sturdiest part of the structure and request help to evacuate once it is safe to move.,2
+typhoon,immediate,typhoon.house_minor,Secure or move away from loose roofing and broken windows. Stay in an undamaged interior room.,8
+typhoon,immediate,typhoon.flooding,Flooding is reported — follow flood safety: move to higher ground and do not cross floodwater.,4
+typhoon,avoid,base,"Do not go outside during the storm, including during a sudden calm (the eye) — strong winds return suddenly from the opposite direction.",2
+typhoon,avoid,typhoon.lines_down,Stay far away from fallen trees and power lines and treat every wire as live. Report them to Meralco and the CDRRMO.,1
+typhoon,avoid,base,Do not use candles or open flames near curtains or light materials during power outages; use flashlights.,20
+typhoon,bring,base,"Battery-powered radio, extra batteries, and rain gear.",20
+typhoon,evacuate,base,"Evacuate before landfall if you live in a coastal, low-lying, or landslide-prone area or in a house made of light materials, especially when authorities order pre-emptive evacuation.",5
+typhoon,evacuate,typhoon.house_major,A seriously damaged house is not safe shelter. Go to an evacuation center as soon as it is safe to travel.,2
+typhoon,contact,typhoon.lines_down,Report fallen or sparking power lines to Meralco (16211) and the CDRRMO.,5
+earthquake,immediate,quake.shaking_inside,"DROP, COVER, and HOLD ON: get under a sturdy table, protect your head and neck, and hold on until the shaking stops.",1
+earthquake,immediate,quake.shaking_outside,"Move to an open area away from buildings, trees, electric posts, and power lines. Drop down and protect your head.",1
+earthquake,immediate,quake.vehicle,"Pull over in an open area away from bridges, overpasses, and posts. Stay inside with your seatbelt on until the shaking stops.",1
+earthquake,immediate,base,"When the shaking stops, check yourself and others for injuries, then leave the building calmly using the stairs.",5
+earthquake,immediate,base,"Expect aftershocks. Drop, cover, and hold on every time the ground shakes.",10
+earthquake,immediate,quake.damaged,The building may be unsafe. Get out once the shaking stops and do not re-enter until it has been inspected by authorities.,3
+earthquake,immediate,trapped,"If trapped under debris: cover your mouth with cloth, tap on a pipe or wall or use a whistle so rescuers can hear you. Shout only as a last resort to avoid inhaling dust.",2
+earthquake,avoid,base,Do not run outside while the ground is shaking.,1
+earthquake,avoid,base,Do not use elevators.,2
+earthquake,avoid,base,Do not light matches or lighters until you are sure there are no gas leaks.,3
+earthquake,avoid,base,"Stay away from damaged buildings, walls, bridges, and steep slopes.",4
+earthquake,bring,base,"Sturdy shoes, hard hat or helmet if available, and dust masks.",20
+earthquake,evacuate,base,"If you are near the coast and the shaking was strong or long, move to high ground immediately — a tsunami may follow. Do not wait for an official warning.",1
+earthquake,evacuate,base,Proceed to an open evacuation area or designated evacuation center if your building is damaged or authorities advise it.,10
+fire,immediate,base,Alert everyone around you and get out. Call 911 / BFP Batangas City once you are outside.,1
+fire,immediate,fire.smoke,Stay low under the smoke and cover your nose and mouth with a damp cloth.,2
+fire,immediate,fire.in_building,"Before opening a door, touch it with the back of your hand. If it is hot, use another exit. Close doors behind you to slow the fire.",3
+fire,immediate,trapped,"If you cannot get out: close the door, seal gaps with wet cloth, go to a window, signal for help, and call 911 with your exact location.",2
+fire,immediate,base,"If your clothes catch fire: STOP, DROP, and ROLL.",8
+fire,immediate,fire.nearby,"Prepare to leave: grab your go-bag, keep exits clear, and follow instructions from the BFP.",5
+fire,avoid,base,Do not use elevators.,1
+fire,avoid,base,Do not go back inside for belongings or pets.,2
+fire,avoid,base,Do not hide in closets or bathrooms.,3
+fire,avoid,base,"Never use water on electrical, LPG, or cooking-oil fires.",4
+fire,avoid,fire.nearby,Do not crowd the area or block roads — fire trucks need clear access.,5
+fire,evacuate,base,Go to a safe assembly area upwind and away from the fire. Do not return until the BFP declares it safe.,5
+fire,contact,base,"Call BFP Batangas City or 911 immediately, even if you think someone else has already called.",1
+volcanic,immediate,base,Monitor PHIVOLCS volcano bulletins for the current Alert Level and follow LGU advisories.,10
+volcanic,immediate,volcano.ashfall,"Stay indoors, close windows and doors, and seal gaps with damp cloth.",2
+volcanic,immediate,volcano.ashfall,Wear an N95 mask (or a damp cloth if none is available) and protect your eyes with goggles. Avoid wearing contact lenses.,3
+volcanic,immediate,volcano.heavy_ash,"Heavy ash can collapse roofs. Clear ash only if it is safe, never alone, and wearing protection.",5
+volcanic,immediate,volcano.breathing,"Anyone with breathing difficulty, asthma, or heart or lung conditions should stay indoors and get medical help immediately if symptoms worsen.",1
+volcanic,immediate,volcano.evac_order,An evacuation order is in effect for your area — evacuate now as directed by authorities.,0
+volcanic,avoid,base,Do not enter restricted or permanent danger zones declared by PHIVOLCS.,2
+volcanic,avoid,volcano.ashfall,Avoid driving in heavy ashfall — roads become slippery and visibility drops.,3
+volcanic,avoid,volcano.ashfall,Cover water containers and food; do not use water that looks contaminated by ash.,4
+volcanic,bring,base,"N95 masks, goggles, and plastic covers for water and food.",20
+volcanic,evacuate,base,Evacuate when PHIVOLCS raises the Alert Level and the LGU orders evacuation of your area.,5
+volcanic,contact,volcano.breathing,For severe breathing difficulty call 911 or the Philippine Red Cross Emergency Medical Services.,1
+landslide,immediate,landslide.signs,Warning signs mean the slope may fail. Leave the area immediately and move away from the path of the slope.,1
+landslide,immediate,landslide.occurred,Move away from the landslide area — more slides may follow. Stay clear until authorities assess it.,2
+landslide,immediate,landslide.rain,"During continuous heavy rain, stay alert to rumbling sounds, cracking trees, tilting posts, and creek water that suddenly turns muddy or drops.",5
+landslide,immediate,base,Check for injured or trapped people near the slide without entering the slide area; guide rescuers to them.,10
+landslide,avoid,base,Do not cross areas with moving debris or mudflow.,1
+landslide,avoid,base,Avoid river valleys and low-lying areas below slopes during heavy rain.,2
+landslide,avoid,base,Stay away from damaged power lines and broken water or gas lines.,3
+landslide,evacuate,landslide.slope,Your home is on or below a slope — evacuate pre-emptively when heavy rain warnings are issued.,2
+landslide,evacuate,base,Proceed to a designated evacuation center away from slopes when advised by authorities.,5
+other,immediate,base,Move away from the immediate danger to a safe place if you can do so safely.,1
+other,immediate,base,"Call 911 and describe what is happening, where you are, and how many people are affected.",2
+other,avoid,base,"Do not approach hazardous materials, unknown substances, damaged structures, or violent situations.",2
+other,evacuate,base,Leave the area if instructed by responders or if conditions are getting worse.,5

@@ -1,0 +1,11 @@
+{% extends "auth/layout.html" %}
+{% block title %}Reset password{% endblock %}
+{% block auth %}
+<h1>Set a new password</h1>
+<form method="post" class="form" novalidate data-validate>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label class="field"><span>New password</span><input type="password" name="password" required minlength="8" autocomplete="new-password"></label>
+  <label class="field"><span>Confirm password</span><input type="password" name="password2" required minlength="8" autocomplete="new-password"></label>
+  <button class="btn btn-red btn-block btn-lg">Reset password</button>
+</form>
+{% endblock %}

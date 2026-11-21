@@ -1,0 +1,39 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Notifications{% endblock %}
+{% block page_title %}Notifications &amp; Alerts{% endblock %}
+{% block page_sub %}<p>Advisories, announcements, and safety reminders</p>{% endblock %}
+{% block content %}
+<div class="note note-info">{{ icon('info') }} <span>These are announcements posted by ALERTIFY administrators. Each one shows its source. ALERTIFY does not generate automatic real-time disaster alerts. Always check official PAGASA, PHIVOLCS, and Batangas City government channels.</span></div>
+<div class="legend-row">
+  <span class="lvl-key lvl-emergency">Emergency</span><span class="lvl-key lvl-warning">Warning</span>
+  <span class="lvl-key lvl-advisory">Advisory</span><span class="lvl-key lvl-info">Information</span>
+  {% if unread %}
+    <form method="post" action="{{ url_for('notifications_read_all') }}" class="push-right">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="btn btn-sm btn-outline">{{ icon('check') }} Mark all as read</button>
+    </form>
+  {% endif %}
+</div>
+<div class="notif-list">
+  {% for n in notes %}
+    <article class="notif-card lvl-{{ n.level }} {{ 'unread' if n.id in unread }}" id="n{{ n.id }}">
+      <div class="nc-head">
+        <span class="nc-level">{{ n.level|capitalize }}</span>
+        <span class="tag">{{ n.kind|replace('_', ' ')|capitalize }}</span>
+        {% if n.barangay %}<span class="tag">{{ icon('pin') }} {{ n.barangay }}</span>{% endif %}
+        {% if n.id in unread %}<span class="new-pill">New</span>{% endif %}
+      </div>
+      <h2>{{ n.title }}</h2>
+      <p>{{ n.body }}</p>
+      <footer>
+        <span>{{ icon('megaphone') }} Source: <b>{{ n.source or 'ALERTIFY administrator announcement' }}</b></span>
+        <span>{{ icon('clock') }} {{ n.created_at|ph }}</span>
+        {% if n.expires_at %}<span>Valid until {{ n.expires_at|ph }}</span>{% endif %}
+      </footer>
+    </article>
+  {% else %}
+    <div class="empty card">{{ icon('bell', 'empty-ic') }}<h2>No announcements</h2><p class="muted">Official advisories posted by administrators will appear here.</p></div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m with context %}
+{% set anav = [
+  ('admin_overview', 'grid', 'Overview'),
+  ('admin_reports', 'file', 'Disaster Reports'),
+  ('admin_centers', 'pin', 'Evacuation Centers'),
+  ('admin_contacts', 'phone', 'Emergency Contacts'),
+  ('admin_instructions', 'book', 'Disaster Instructions'),
+  ('admin_users', 'users', 'User Management'),
+  ('admin_notifications', 'megaphone', 'Announcements'),
+] %}
+{% block body_class %}app admin{% endblock %}
+{% block body %}
+<div class="shell">
+  <aside class="sidebar sidebar-admin" id="sidebar" aria-label="Admin navigation">
+    <a class="brand light" href="{{ url_for('admin_overview') }}">
+      <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="34" height="34">
+      <span><b>ALERTIFY</b><small>Administrator</small></span>
+    </a>
+    <nav class="side-nav">
+      {% for ep, ic, label in anav %}
+        <a href="{{ url_for(ep) }}" class="{{ 'active' if request.endpoint == ep or (request.endpoint and request.endpoint.startswith(ep[:-1])) }}">{{ icon(ic) }}<span>{{ label }}</span></a>
+      {% endfor %}
+      <div class="side-sep">Public site</div>
+      <a href="{{ url_for('dashboard') }}">{{ icon('home') }}<span>Back to ALERTIFY</span></a>
+    </nav>
+    <form method="post" action="{{ url_for('logout') }}" class="side-logout" data-logout>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button type="submit">{{ icon('logout') }} Log out ({{ current_user.full_name.split()[0] }})</button>
+    </form>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="main-col">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menu-btn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">{{ icon('menu') }}</button>
+      <div class="topbar-title"><h1>{% block page_title %}{% endblock %}</h1>{% block page_sub %}{% endblock %}</div>
+      <div class="topbar-actions">{% block actions %}{% endblock %}<span class="admin-pill">{{ icon('shield') }} Admin</span></div>
+    </header>
+    <main id="main" class="content">
+      {{ m.flashes() }}
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</div>
+{% endblock %}

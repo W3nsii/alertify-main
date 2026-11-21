@@ -1,0 +1,23 @@
+{% import "_macros.html" as m with context %}
+<div class="table-wrap">
+<table class="table">
+  <thead><tr><th>Reference</th><th>Submitted</th><th>Disaster</th><th>Barangay / location</th><th>Reporter</th><th>People</th><th>Severity</th><th>Status</th><th></th></tr></thead>
+  <tbody>
+  {% for r in (reports if reports is defined else recent) %}
+    <tr class="{{ 'row-critical' if r.severity == 'critical' and r.status in ['active','acknowledged','responding'] }}">
+      <td><b>{{ r.reference }}</b></td>
+      <td>{{ r.created_at|ph('%b %d, %I:%M %p') }}</td>
+      <td><span class="cat-cell"><span class="hz-ic xs hz-{{ r.category.code }}">{{ icon(r.category.code) }}</span>{{ r.category.name }}</span></td>
+      <td>{{ r.barangay or '—' }}{% if r.latitude is not none %}<br><small class="muted">{{ '%.4f'|format(r.latitude) }}, {{ '%.4f'|format(r.longitude) }}</small>{% endif %}</td>
+      <td>{{ r.user.full_name if r.user else 'Guest' }}</td>
+      <td>{{ r.people_count }}{% if r.special_assistance %} <span class="tag tag-red" title="Needs special assistance">!</span>{% endif %}</td>
+      <td>{{ m.severity_badge(r.severity) }}</td>
+      <td>{{ m.status_badge(r.status) }}</td>
+      <td><a class="btn btn-sm btn-outline" href="{{ url_for('admin_report_detail', rid=r.id) }}">Review</a></td>
+    </tr>
+  {% else %}
+    <tr><td colspan="9" class="muted center">No reports found.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>

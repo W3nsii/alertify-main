@@ -1,0 +1,25 @@
+{% extends "admin/layout.html" %}
+{% block title %}Instruction{% endblock %}
+{% block page_title %}{{ 'Edit' if row.id else 'Add' }} {{ 'response instruction' if row.context == 'response' else 'guide entry' }}{% endblock %}
+{% block page_sub %}<p><a class="link" href="{{ url_for('admin_instructions', context=row.context) }}">← Back</a></p>{% endblock %}
+{% block content %}
+<form method="post" class="card form narrow" novalidate>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <input type="hidden" name="context" value="{{ row.context }}">
+  <div class="two-col tight">
+    <label class="field"><span>Disaster</span><select name="disaster">{% for d in ch.disasters %}{% if not (row.context == 'guide' and d in ['general', 'other']) %}<option {{ 'selected' if row.disaster == d }}>{{ d }}</option>{% endif %}{% endfor %}</select></label>
+    <label class="field"><span>Section</span><select name="section">{% for s in (ch.response_sections if row.context == 'response' else ch.guide_sections) %}<option {{ 'selected' if row.section == s }}>{{ s }}</option>{% endfor %}</select></label>
+  </div>
+  {% if row.context == 'response' %}
+    <label class="field"><span>Condition (when to show)</span><select name="condition">{% for c in ch.conditions %}<option {{ 'selected' if row.condition == c }}>{{ c }}</option>{% endfor %}</select></label>
+  {% endif %}
+  <label class="field"><span>Instruction text</span><textarea name="text" rows="4" required minlength="5">{{ row.text or '' }}</textarea></label>
+  <div class="two-col tight">
+    <label class="field"><span>Display order (lower first)</span><input type="number" name="priority" value="{{ row.priority if row.priority is not none else 50 }}"></label>
+    <label class="field"><span>Source / reference</span><input name="source" value="{{ row.source or '' }}" maxlength="160" placeholder="e.g. NDRRMC advisory, 2026"></label>
+  </div>
+  <label class="check"><input type="checkbox" name="active" {{ 'checked' if row.active }}> Active</label>
+  <label class="check"><input type="checkbox" name="announce"> Notify residents that this guidance changed</label>
+  <div class="row-actions"><button class="btn btn-red">Save</button><a class="btn btn-ghost" href="{{ url_for('admin_instructions', context=row.context) }}">Cancel</a></div>
+</form>
+{% endblock %}

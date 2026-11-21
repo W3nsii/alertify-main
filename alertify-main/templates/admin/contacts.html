@@ -1,0 +1,35 @@
+{% extends "admin/layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Emergency Contacts{% endblock %}
+{% block page_title %}Emergency Contacts Management{% endblock %}
+{% block actions %}<a class="btn btn-red" href="{{ url_for('admin_contact_form') }}">{{ icon('plus') }} Add contact</a>{% endblock %}
+{% block content %}
+<div class="note note-warn">{{ icon('info') }} <span>Initial numbers are reference data. Call or confirm each number with the agency before marking it <b>verified</b>. Contacts marked <b>quick-dial</b> appear on the dashboard and in emergency banners.</span></div>
+<section class="card">
+<div class="table-wrap">
+<table class="table">
+  <thead><tr><th>Organization</th><th>Category</th><th>Numbers</th><th>Quick-dial</th><th>Verification</th><th>Visible</th><th></th></tr></thead>
+  <tbody>
+  {% for c in contacts %}
+    <tr class="{{ 'row-muted' if not c.active }}">
+      <td><b>{{ c.organization }}</b><br><small class="muted">{{ c.description or '' }}</small></td>
+      <td>{{ c.category }}</td>
+      <td>{% for n in c.number_list %}<div class="nowrap">{{ n }}</div>{% endfor %}</td>
+      <td>{{ '★' if c.is_primary else '' }}</td>
+      <td>{{ m.verify_badge(c.verified, c.verified_at.strftime('%b %d, %Y') if c.verified_at) }}</td>
+      <td>{{ 'Yes' if c.active else 'No' }}</td>
+      <td class="nowrap">
+        <a class="btn btn-sm btn-outline" href="{{ url_for('admin_contact_form', cid=c.id) }}">{{ icon('edit') }} Edit</a>
+        {% if not c.verified %}
+        <form method="post" action="{{ url_for('admin_contact_action', cid=c.id, action='verify') }}" class="inline"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-green">Verify</button></form>
+        {% endif %}
+        <form method="post" action="{{ url_for('admin_contact_action', cid=c.id, action='toggle') }}" class="inline"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-ghost">{{ 'Hide' if c.active else 'Show' }}</button></form>
+        <form method="post" action="{{ url_for('admin_contact_action', cid=c.id, action='delete') }}" class="inline" data-confirm="Delete {{ c.organization }} permanently?"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="btn btn-sm btn-ghost danger">Delete</button></form>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</section>
+{% endblock %}

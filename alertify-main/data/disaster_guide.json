@@ -1,0 +1,247 @@
+{
+  "flood": {
+    "before": [
+      "Know if your home is in a flood-prone or low-lying area and identify the nearest designated evacuation center.",
+      "Prepare a go-bag and keep it in an easy-to-reach, elevated place.",
+      "Clear drainage and canals around your home of garbage.",
+      "Store important documents in waterproof containers on a high shelf.",
+      "Plan with your household where to meet and how to communicate if separated."
+    ],
+    "during": [
+      "Monitor PAGASA advisories and barangay announcements.",
+      "Move to higher ground if water is rising — do not wait.",
+      "Turn off electricity and LPG only if you are on dry ground and it is safe.",
+      "Evacuate when authorities advise; take your go-bag."
+    ],
+    "after": [
+      "Return home only when authorities say it is safe.",
+      "Have a qualified electrician check wiring before turning power back on.",
+      "Clean and disinfect everything that got wet; throw away food touched by floodwater.",
+      "Watch for signs of leptospirosis (fever, muscle pain) after wading in floodwater and consult a health center."
+    ],
+    "checklist": [
+      "Go-bag packed and checked",
+      "Evacuation route known",
+      "Emergency numbers saved",
+      "Documents in waterproof bag",
+      "Phone and power bank charged"
+    ],
+    "supplies": [
+      "Rubber boots",
+      "Raincoat",
+      "Drinking water",
+      "Ready-to-eat food",
+      "Flashlight & batteries",
+      "First aid kit"
+    ],
+    "reminders": [
+      "Floodwater can rise very quickly at night.",
+      "Six inches of moving water can knock an adult down."
+    ],
+    "avoid": [
+      "Walking, swimming, or driving through floodwater",
+      "Touching electrical equipment while wet",
+      "Letting children play in floodwater"
+    ]
+  },
+  "typhoon": {
+    "before": [
+      "Follow PAGASA Tropical Cyclone Wind Signals and LGU advisories.",
+      "Reinforce roofing and windows; trim branches near your house.",
+      "Bring in or tie down loose outdoor items.",
+      "Charge phones and power banks; prepare food and water for several days.",
+      "Evacuate early if you live near the coast, on slopes, or in a light-material house."
+    ],
+    "during": [
+      "Stay indoors in the strongest room, away from windows.",
+      "Do not go out during the calm eye of the storm.",
+      "Keep a battery radio on for updates.",
+      "Be ready for flooding and power outages."
+    ],
+    "after": [
+      "Stay away from fallen trees, damaged structures, and power lines.",
+      "Report damaged lines to Meralco and the CDRRMO.",
+      "Check your house for structural damage before re-entering.",
+      "Boil or treat drinking water if supply may be contaminated."
+    ],
+    "checklist": [
+      "Roof and windows secured",
+      "Go-bag ready",
+      "Radio and batteries",
+      "Water stored",
+      "Evacuation center identified"
+    ],
+    "supplies": [
+      "Battery-powered radio",
+      "Flashlight",
+      "Rope and tarpaulin",
+      "Drinking water",
+      "Canned food"
+    ],
+    "reminders": [
+      "Wind Signal numbers indicate wind strength, not rainfall — heavy rain can come with any signal."
+    ],
+    "avoid": [
+      "Going outside during the storm",
+      "Using candles near light materials",
+      "Touching fallen wires"
+    ]
+  },
+  "earthquake": {
+    "before": [
+      "Secure heavy furniture, cabinets, and appliances to walls.",
+      "Identify safe spots at home, school, and work (under sturdy tables, away from glass).",
+      "Practice Drop, Cover, and Hold On with your household.",
+      "Know the open evacuation areas near you."
+    ],
+    "during": [
+      "DROP, COVER, and HOLD ON until the shaking stops.",
+      "If outdoors, move to an open area away from buildings, posts, and wires.",
+      "If driving, pull over away from bridges and overpasses.",
+      "If near the coast and the shaking is strong or long, move to high ground immediately after it stops."
+    ],
+    "after": [
+      "Check for injuries and give first aid if trained.",
+      "Leave damaged buildings using the stairs and expect aftershocks.",
+      "Check for gas leaks, fires, and electrical damage.",
+      "Listen to PHIVOLCS and LGU advisories."
+    ],
+    "checklist": [
+      "Furniture anchored",
+      "Safe spots identified",
+      "Household drill done",
+      "Go-bag ready",
+      "Meeting place agreed"
+    ],
+    "supplies": [
+      "Whistle",
+      "Sturdy shoes",
+      "Dust masks",
+      "Flashlight",
+      "First aid kit"
+    ],
+    "reminders": [
+      "Most injuries come from falling objects — protect your head and neck."
+    ],
+    "avoid": [
+      "Running outside while shaking",
+      "Using elevators",
+      "Lighting matches before checking for gas leaks"
+    ]
+  },
+  "fire": {
+    "before": [
+      "Install smoke alarms and keep a fire extinguisher where you can reach it.",
+      "Do not overload electrical outlets; replace damaged wiring.",
+      "Store LPG tanks properly and check hoses for leaks.",
+      "Plan two ways out of every room and agree on a meeting point outside."
+    ],
+    "during": [
+      "Alert everyone and get out immediately; call 911 / BFP once outside.",
+      "Stay low under smoke and cover your nose and mouth.",
+      "Feel doors before opening; use another exit if hot.",
+      "Stop, Drop, and Roll if your clothes catch fire."
+    ],
+    "after": [
+      "Do not re-enter until the BFP says it is safe.",
+      "Seek medical care for burns or smoke inhalation.",
+      "Contact your barangay for assistance and documentation."
+    ],
+    "checklist": [
+      "Smoke alarm working",
+      "Extinguisher available",
+      "Escape plan practiced",
+      "LPG checked"
+    ],
+    "supplies": [
+      "Fire extinguisher",
+      "Fire blanket",
+      "Flashlight",
+      "First aid kit (burn dressing)"
+    ],
+    "reminders": [
+      "Smoke, not flames, causes most fire deaths."
+    ],
+    "avoid": [
+      "Using water on electrical or oil fires",
+      "Going back inside for belongings",
+      "Using elevators"
+    ]
+  },
+  "volcanic": {
+    "before": [
+      "Know the current PHIVOLCS Alert Level for Taal Volcano and other nearby volcanoes.",
+      "Stock N95 masks, goggles, and plastic covers for water and food.",
+      "Know your evacuation route and the nearest evacuation center."
+    ],
+    "during": [
+      "Stay indoors during ashfall; close windows and doors.",
+      "Wear an N95 mask and goggles if you must go out.",
+      "Evacuate immediately if ordered by authorities.",
+      "Protect water sources and food from ash."
+    ],
+    "after": [
+      "Clear ash from roofs carefully — heavy ash can collapse roofs.",
+      "Wet ash before sweeping to reduce dust.",
+      "Watch for lahars (volcanic mudflows) during heavy rain."
+    ],
+    "checklist": [
+      "N95 masks available",
+      "Goggles available",
+      "Water covered",
+      "Evacuation route known"
+    ],
+    "supplies": [
+      "N95 masks",
+      "Goggles",
+      "Plastic sheets",
+      "Drinking water",
+      "Medicines for respiratory conditions"
+    ],
+    "reminders": [
+      "Volcanic ash is abrasive and harmful to lungs and eyes."
+    ],
+    "avoid": [
+      "Entering danger zones",
+      "Driving in heavy ashfall",
+      "Wearing contact lenses in ashfall"
+    ]
+  },
+  "landslide": {
+    "before": [
+      "Know whether your area is landslide-prone (MGB geohazard maps).",
+      "Watch for cracks in the ground, tilting trees or posts, and new springs.",
+      "Plan an evacuation route away from slopes and river channels."
+    ],
+    "during": [
+      "Leave immediately if you notice warning signs or hear rumbling.",
+      "Move away from the path of the slide, toward stable ground.",
+      "Stay alert during continuous heavy rain, especially at night."
+    ],
+    "after": [
+      "Stay away from the slide area — more slides may follow.",
+      "Check for injured or trapped people and guide rescuers to them.",
+      "Report broken utility lines and damaged roads."
+    ],
+    "checklist": [
+      "Hazard area known",
+      "Warning signs learned",
+      "Go-bag ready",
+      "Evacuation route away from slopes"
+    ],
+    "supplies": [
+      "Flashlight",
+      "Whistle",
+      "Rain gear",
+      "First aid kit"
+    ],
+    "reminders": [
+      "Muddy or suddenly decreasing creek water can signal a landslide upstream."
+    ],
+    "avoid": [
+      "Staying below steep slopes during heavy rain",
+      "Crossing debris flows",
+      "Re-entering slide areas"
+    ]
+  }
+}

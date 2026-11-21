@@ -1,0 +1,42 @@
+{% extends "admin/layout.html" %}
+{% block title %}Disaster Reports{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.css') }}">{% endblock %}
+{% block page_title %}Disaster Reports{% endblock %}
+{% block page_sub %}<p>{{ reports|length }} report{{ 's' if reports|length != 1 }} shown{% if reports|length == 300 %} (latest 300 — refine filters){% endif %}</p>{% endblock %}
+{% block actions %}<a class="btn btn-dark" href="{{ url_for('admin_reports_export', **args) }}">{{ icon('download') }} Export CSV</a>{% endblock %}
+{% block content %}
+<form class="card filter-bar" method="get">
+  <label class="search-field grow">{{ icon('search') }}<input type="search" name="q" value="{{ args.get('q','') }}" placeholder="Reference, reporter, description"></label>
+  <label class="field inline"><span>Disaster</span><select name="category"><option value="">All</option>{% for c in categories %}<option value="{{ c.code }}" {{ 'selected' if args.get('category') == c.code }}>{{ c.name }}</option>{% endfor %}</select></label>
+  <label class="field inline"><span>Barangay</span><select name="barangay"><option value="">All</option>{% for b in barangays %}<option {{ 'selected' if args.get('barangay') == b }}>{{ b }}</option>{% endfor %}</select></label>
+  <label class="field inline"><span>Status</span><select name="status"><option value="">All</option><option value="open" {{ 'selected' if args.get('status') == 'open' }}>Open (active / ack / responding)</option>{% for s in statuses %}<option value="{{ s }}" {{ 'selected' if args.get('status') == s }}>{{ s|capitalize }}</option>{% endfor %}</select></label>
+  <label class="field inline"><span>Severity</span><select name="severity"><option value="">All</option>{% for s in ['low','moderate','high','critical'] %}<option value="{{ s }}" {{ 'selected' if args.get('severity') == s }}>{{ s|capitalize }}</option>{% endfor %}</select></label>
+  <button class="btn btn-red">{{ icon('sliders') }} Apply</button>
+  <a class="link" href="{{ url_for('admin_reports') }}">Reset</a>
+</form>
+
+<section class="card">
+  <div class="card-head"><h3>{{ icon('pin') }} Reported user locations</h3><span class="muted tiny">{{ pins|length }} with coordinates · confidential</span></div>
+  <div id="rep-map" class="admin-map"></div>
+</section>
+
+<section class="card">{% include "admin/_report_table.html" with context %}</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.js') }}"></script>
+<script>
+(function () {
+  var pins = {{ pins|tojson }}, c = {{ city_center|tojson }};
+  var map = L.map('rep-map').setView(c, 12);
+  ALERTIFY.addBaseMap(map);
+  var colors = { low: '#16A34A', moderate: '#F59E0B', high: '#EA580C', critical: '#B71C1C' };
+  var pts = [];
+  pins.forEach(function (p) {
+    var mk = L.circleMarker([p.lat, p.lng], { radius: 9, color: '#fff', weight: 2, fillColor: colors[p.sev] || '#C62828', fillOpacity: .9 }).addTo(map);
+    mk.bindPopup('<b>' + p.ref + '</b><br>' + p.cat + ' · ' + p.sev + '<br>Status: ' + p.status);
+    pts.push([p.lat, p.lng]);
+  });
+  if (pts.length) map.fitBounds(pts, { padding: [30, 30], maxZoom: 14 });
+})();
+</script>
+{% endblock %}

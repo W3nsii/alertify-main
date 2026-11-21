@@ -1,0 +1,16 @@
+{% extends "admin/layout.html" %}
+{% block title %}{{ u.full_name }}{% endblock %}
+{% block page_title %}{{ u.full_name }}{% endblock %}
+{% block page_sub %}<p><a class="link" href="{{ url_for('admin_users') }}">← All users</a></p>{% endblock %}
+{% block content %}
+<section class="card">
+  <dl class="kv kv-row">
+    <div><dt>Email</dt><dd>{{ u.email }}</dd></div>
+    <div><dt>Phone</dt><dd>{{ u.phone or '—' }}</dd></div>
+    <div><dt>Barangay</dt><dd>{{ u.barangay or '—' }}</dd></div>
+    <div><dt>Joined</dt><dd>{{ u.created_at|ph }}</dd></div>
+    <div><dt>Status</dt><dd>{{ 'Active' if u.is_active_account else 'Deactivated' }}{{ ' · Admin' if u.is_admin }}</dd></div>
+  </dl>
+</section>
+<section class="card"><h3>Reports by this user</h3>{% include "admin/_report_table.html" with context %}</section>
+{% endblock %}

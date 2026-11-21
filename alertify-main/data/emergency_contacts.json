@@ -1,0 +1,149 @@
+[
+  {
+    "organization": "Philippine National Emergency Hotline",
+    "category": "General Emergency Services",
+    "numbers": "911",
+    "description": "Nationwide 24/7 emergency hotline for police, fire, and medical emergencies.",
+    "is_primary": true
+  },
+  {
+    "organization": "Mayor's Action Center",
+    "category": "General Emergency Services",
+    "numbers": "(043) 723-1511",
+    "description": "Batangas City government action center for public assistance.",
+    "is_primary": false
+  },
+  {
+    "organization": "EBD Emergency Health Hotline (24/7)",
+    "category": "General Emergency Services",
+    "numbers": "0999-222-6626",
+    "description": "24/7 emergency health hotline.",
+    "is_primary": false
+  },
+  {
+    "organization": "BFP Batangas City",
+    "category": "Fire and Police",
+    "numbers": "(043) 425-7163 / 301-7996 / 0915-602-1984",
+    "description": "Bureau of Fire Protection — fire suppression, rescue and fire emergencies.",
+    "is_primary": true
+  },
+  {
+    "organization": "BFP Alangilan Substation",
+    "category": "Fire and Police",
+    "numbers": "(043) 702-1973",
+    "description": "Bureau of Fire Protection substation serving the Alangilan area.",
+    "is_primary": false
+  },
+  {
+    "organization": "PNP Batangas City",
+    "category": "Fire and Police",
+    "numbers": "(043) 408-8023 / 0917-847-5757 / 0916-429-1515",
+    "description": "Philippine National Police — crime, public safety and security.",
+    "is_primary": true
+  },
+  {
+    "organization": "Batangas Medical Center",
+    "category": "Hospitals",
+    "numbers": "(043) 723-0911 / 740-8307",
+    "description": "Government tertiary hospital in Batangas City.",
+    "is_primary": false
+  },
+  {
+    "organization": "St. Patrick's Hospital & Medical Center",
+    "category": "Hospitals",
+    "numbers": "(043) 723-1605 / 723-7089 / 723-7090 / 723-7091 / 723-7092",
+    "description": "Private hospital and medical center (trunk lines 723-7089 to 723-7092).",
+    "is_primary": false
+  },
+  {
+    "organization": "Jesus of Nazareth Hospital",
+    "category": "Hospitals",
+    "numbers": "(043) 723-4144",
+    "description": "Private hospital.",
+    "is_primary": false
+  },
+  {
+    "organization": "Golden Gate General Hospital",
+    "category": "Hospitals",
+    "numbers": "(043) 723-2508 / 341-3112",
+    "description": "Private general hospital.",
+    "is_primary": false
+  },
+  {
+    "organization": "Batangas Healthcare Specialists Medical Center",
+    "category": "Hospitals",
+    "numbers": "(043) 403-8642 / 741-2088",
+    "description": "Private medical center.",
+    "is_primary": false
+  },
+  {
+    "organization": "United Doctors of St. Camillus de Lellis Hospital and Medical Center",
+    "category": "Hospitals",
+    "numbers": "0918-994-2074",
+    "description": "Private hospital and medical center.",
+    "is_primary": false
+  },
+  {
+    "organization": "City Disaster Risk Reduction and Management Office (CDRRMO)",
+    "category": "Utilities and Disaster Management",
+    "numbers": "(043) 702-3902",
+    "description": "Coordinates local disaster response, rescue and evacuation in Batangas City.",
+    "is_primary": true
+  },
+  {
+    "organization": "Meralco",
+    "category": "Utilities and Disaster Management",
+    "numbers": "16211 / 1622-2847",
+    "description": "Power outages, fallen or sparking electric lines.",
+    "is_primary": false
+  },
+  {
+    "organization": "National Power Corporation – National Highway",
+    "category": "Utilities and Disaster Management",
+    "numbers": "300-3592",
+    "description": "National Power Corporation office.",
+    "is_primary": false
+  },
+  {
+    "organization": "PrimeWater Batangas City",
+    "category": "Utilities and Disaster Management",
+    "numbers": "0949-414-2633 / 980-6928",
+    "description": "Water supply concerns and pipe leaks.",
+    "is_primary": false
+  },
+  {
+    "organization": "VAWC Batangas City",
+    "category": "VAWC",
+    "numbers": "0956-826-7017",
+    "description": "Violence Against Women and their Children desk — protection and assistance.",
+    "is_primary": false
+  },
+  {
+    "organization": "Philippine Red Cross – General Hotline",
+    "category": "Philippine Red Cross – Batangas Chapter",
+    "numbers": "143",
+    "description": "Philippine Red Cross nationwide hotline.",
+    "is_primary": true
+  },
+  {
+    "organization": "Philippine Red Cross – Batangas City Branch Office",
+    "category": "Philippine Red Cross – Batangas Chapter",
+    "numbers": "0917-135-6219",
+    "description": "Batangas City branch office.",
+    "is_primary": false
+  },
+  {
+    "organization": "Philippine Red Cross – Emergency Medical Services / ERU",
+    "category": "Philippine Red Cross – Batangas Chapter",
+    "numbers": "0951-282-0000",
+    "description": "Ambulance, emergency medical and emergency response unit.",
+    "is_primary": false
+  },
+  {
+    "organization": "Philippine Red Cross – Blood Center",
+    "category": "Philippine Red Cross – Batangas Chapter",
+    "numbers": "0917-773-4912 / 0998-851-1107",
+    "description": "Blood requests and blood donation.",
+    "is_primary": false
+  }
+]

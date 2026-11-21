@@ -1,0 +1,67 @@
+{% extends "admin/layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Report {{ r.reference }}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.css') }}">{% endblock %}
+{% block page_title %}Report {{ r.reference }}{% endblock %}
+{% block page_sub %}<p><a class="link" href="{{ url_for('admin_reports') }}">← All reports</a></p>{% endblock %}
+{% block content %}
+<div class="result-grid">
+  <section class="card assess">
+    <div class="card-head"><h3>{{ icon('file') }} Submitted situation</h3>{{ m.severity_badge(r.severity) }}</div>
+    <div class="assess-top">
+      <span class="hz-ic lg hz-{{ r.category.code }}">{{ icon(r.category.code) }}</span>
+      <div><div class="assess-dis">{{ r.category.name }}</div><small class="muted">Severity score {{ r.severity_score }}/100 · flags: {{ r.flags or 'none' }}</small></div>
+    </div>
+    <dl class="kv">
+      <div><dt>Reporter</dt><dd>{% if r.user %}<a class="link" href="{{ url_for('admin_user_detail', uid=r.user.id) }}">{{ r.user.full_name }}</a><br><small class="muted">{{ r.user.email }}{% if r.user.phone %} · {{ r.user.phone }}{% endif %}</small>{% else %}Guest (not logged in){% endif %}</dd></div>
+      <div><dt>Submitted</dt><dd>{{ r.created_at|ph }}</dd></div>
+      <div><dt>Barangay</dt><dd>{{ r.barangay or '—' }}</dd></div>
+      <div><dt>Coordinates</dt><dd>{% if r.latitude is not none %}{{ '%.6f'|format(r.latitude) }}, {{ '%.6f'|format(r.longitude) }} <small class="muted">({{ r.location_source }}{% if r.location_accuracy %}, ±{{ r.location_accuracy|round|int }} m{% endif %})</small>{% else %}—{% endif %}</dd></div>
+      <div><dt>People</dt><dd>{{ r.people_count }}</dd></div>
+      <div><dt>Special assistance</dt><dd>{% if r.special_assistance %}{% for s in r.special_assistance.split(',') %}<span class="tag tag-red">{{ special_labels.get(s, s) }}</span>{% endfor %}{% else %}None reported{% endif %}</dd></div>
+      <div><dt>Recommended center</dt><dd>{{ r.recommended_center.name if r.recommended_center else '—' }}{% if r.recommended_distance_km %} ({{ r.recommended_distance_km }} km){% endif %}</dd></div>
+    </dl>
+    <h4 class="mt">Answers</h4>
+    <ul class="answer-list">{% for a in data.answers %}<li><span>{{ a.q }}</span><b>{{ a.a }}</b></li>{% endfor %}</ul>
+    {% if r.description %}<p class="desc">“{{ r.description }}”</p>{% endif %}
+  </section>
+
+  <div class="stack">
+    <form class="card form" method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <h3>{{ icon('sliders') }} Update report status</h3>
+      <p>Current: {{ m.status_badge(r.status) }}</p>
+      <label class="field"><span>New status</span><select name="status">{% for s in statuses %}<option value="{{ s }}" {{ 'selected' if s == r.status }}>{{ s|capitalize }}</option>{% endfor %}</select></label>
+      <label class="field"><span>Note (visible to the user in their report timeline)</span><textarea name="note" rows="3" maxlength="500" placeholder="e.g. Barangay rescue team dispatched."></textarea></label>
+      <button class="btn btn-red">Save update</button>
+    </form>
+    {% if r.latitude is not none %}<section class="card"><div id="rd-map" class="admin-map sm"></div></section>{% endif %}
+    <section class="card">
+      <h3>{{ icon('clock') }} Report history</h3>
+      <ol class="timeline">
+        {% for h in r.history %}
+          <li><span class="tl-dot"></span><div><b>{{ h.event|replace('_',' ')|capitalize }}</b>{% if h.old_status and h.new_status %} — {{ h.old_status }} → {{ h.new_status }}{% endif %}{% if h.note %}<p>{{ h.note }}</p>{% endif %}<small class="muted">{{ h.created_at|ph }}{% if h.actor %} · {{ h.actor.full_name }}{% endif %}</small></div></li>
+        {% endfor %}
+      </ol>
+    </section>
+  </div>
+</div>
+<section class="card">
+  <h3>Guidance shown to the user</h3>
+  {{ m.instruction_sections(data, sections, danger_first=data.immediate_danger) }}
+</section>
+{% endblock %}
+{% block scripts %}
+{% if r.latitude is not none %}
+<script src="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.js') }}"></script>
+<script>
+  var map = L.map('rd-map').setView([{{ r.latitude }}, {{ r.longitude }}], 15);
+  ALERTIFY.addBaseMap(map);
+  L.circleMarker([{{ r.latitude }}, {{ r.longitude }}], { radius: 10, color: '#fff', weight: 3, fillColor: '#C62828', fillOpacity: 1 }).addTo(map);
+  {% if r.location_accuracy %}L.circle([{{ r.latitude }}, {{ r.longitude }}], { radius: {{ r.location_accuracy }}, color: '#C62828', weight: 1, fillOpacity: .08 }).addTo(map);{% endif %}
+  {% if r.recommended_center and r.recommended_center.latitude %}
+  L.marker([{{ r.recommended_center.latitude }}, {{ r.recommended_center.longitude }}]).addTo(map).bindPopup({{ r.recommended_center.name|tojson }});
+  {% endif %}
+</script>
+{% endif %}
+{% endblock %}

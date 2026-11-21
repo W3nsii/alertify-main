@@ -1,0 +1,145 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Your emergency guidance{% endblock %}
+{% block page_title %}Your emergency guidance{% endblock %}
+{% block page_sub %}<p>Report {{ r.reference }} · {{ r.created_at|ph }}</p>{% endblock %}
+{% block content %}
+{% set danger = data.immediate_danger %}
+
+{% if danger %}
+<section class="sos-banner" role="alert">
+  <div class="sos-pulse" aria-hidden="true">{{ icon('alert') }}</div>
+  <div class="sos-text">
+    <h2>You may be in immediate danger</h2>
+    <p>
+      {% if 'trapped' in r.flag_list %}You reported being trapped. {% endif %}
+      {% if 'injured' in r.flag_list %}Someone is injured. {% endif %}
+      Call emergency services <b>now</b> and give your exact location, number of people, and injuries.
+    </p>
+  </div>
+  <div class="sos-actions">
+    <a class="btn btn-white btn-xl" href="tel:911">{{ icon('phone') }} Call 911</a>
+    {% for c in primary_contacts if c.organization != 'Philippine National Emergency Hotline' %}
+      {% if (r.category.code == 'fire' and 'BFP' in c.organization) or 'CDRRMO' in c.organization or ('injured' in r.flag_list and 'Red Cross' in c.organization) %}
+        <a class="btn btn-glass" href="tel:{{ c.number_list[0]|replace(' ','')|replace('(','')|replace(')','')|replace('-','') }}">{{ icon('phone') }} {{ c.organization.split('(')[0]|trim }} · {{ c.number_list[0] }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<div class="result-grid">
+  <section class="card assess">
+    <div class="card-head">
+      <h2>{{ icon('file') }} Current emergency assessment</h2>
+      {{ m.severity_badge(r.severity) }}
+    </div>
+    <div class="assess-top">
+      <span class="hz-ic lg hz-{{ r.category.code }}">{{ icon(r.category.code) }}</span>
+      <div>
+        <div class="assess-dis">{{ r.category.name }}</div>
+        <div class="sev-meter" aria-label="Severity score {{ r.severity_score }} of 100">
+          <span style="width: {{ r.severity_score }}%" class="sev-fill sev-bg-{{ r.severity }}"></span>
+        </div>
+        <small class="muted">Automated severity estimate: {{ r.severity_score }}/100</small>
+      </div>
+    </div>
+    <dl class="kv">
+      <div><dt>Location</dt><dd>
+        {{ r.barangay or 'Barangay not selected' }}
+        {% if r.latitude is not none %}<br><small class="muted">{{ '%.5f'|format(r.latitude) }}, {{ '%.5f'|format(r.longitude) }} · {{ {'gps':'Device location','map_pin':'Pinned on map','manual':'Entered manually'}[r.location_source] }}{% if r.location_accuracy %} (±{{ r.location_accuracy|round|int }} m){% endif %}</small>{% endif %}
+      </dd></div>
+      <div><dt>Date &amp; time</dt><dd>{{ r.created_at|ph }}</dd></div>
+      <div><dt>People with you</dt><dd>{{ r.people_count }}</dd></div>
+      {% if r.special_assistance %}<div><dt>Special assistance</dt><dd>{% for s in r.special_assistance.split(',') %}<span class="tag">{{ special_labels.get(s, s) }}</span>{% endfor %}</dd></div>{% endif %}
+      <div><dt>Report status</dt><dd>{{ m.status_badge(r.status) }}</dd></div>
+    </dl>
+    {% if data.outside_city %}
+      <div class="note note-warn">{{ icon('alert') }} Your coordinates appear to be outside Batangas City. ALERTIFY's evacuation data covers Batangas City only — contact your local LGU.</div>
+    {% endif %}
+    <details class="answers">
+      <summary>Reported condition ({{ data.answers|length }} answers)</summary>
+      <ul>{% for a in data.answers %}<li><span>{{ a.q }}</span><b>{{ a.a }}</b></li>{% endfor %}</ul>
+      {% if r.description %}<p class="desc">“{{ r.description }}”</p>{% endif %}
+    </details>
+  </section>
+
+  <section class="card next-steps">
+    <h2>{{ icon('navigation') }} Recommended next steps</h2>
+    <div class="action-cards">
+      {% if danger %}
+        <a class="action-card urgent" href="{{ url_for('contacts') }}">{{ icon('phone') }}<b>VIEW EMERGENCY CONTACTS</b><small>Call for help first</small></a>
+      {% endif %}
+      <a class="action-card" href="{{ url_for('evacuation_centers', hazard=r.category.code, lat=r.latitude or '', lng=r.longitude or '', center=r.recommended_center_id or '') }}">{{ icon('pin') }}<b>VIEW NEAREST EVACUATION CENTERS</b><small>Map, distance &amp; directions</small></a>
+      {% if not danger %}
+        <a class="action-card" href="{{ url_for('contacts') }}">{{ icon('phone') }}<b>VIEW EMERGENCY CONTACTS</b><small>Hotlines by category</small></a>
+      {% endif %}
+      {% if r.saved and current_user.is_authenticated %}
+        <a class="action-card done" href="{{ url_for('history_detail', ref=r.reference) }}">{{ icon('check') }}<b>REPORT SAVED</b><small>View in My History</small></a>
+      {% else %}
+        <form method="post" action="{{ url_for('report_save', ref=r.reference) }}" class="action-form">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="action-card" type="submit">{{ icon('bookmark') }}<b>SAVE MY DISASTER REPORT</b><small>{{ 'Add to My History' if current_user.is_authenticated else 'Log in to keep it in your history' }}</small></button>
+        </form>
+      {% endif %}
+    </div>
+  </section>
+</div>
+
+<section class="card">
+  <div class="card-head">
+    <h2 class="caps">What should you do?</h2>
+    <span class="chip chip-auto">{{ icon('info') }} Automated guidance</span>
+  </div>
+  <p class="muted">Steps highlighted in red apply specifically to what you reported. Follow official instructions from the Batangas City government, CDRRMO, and responders if they differ.</p>
+  {{ m.instruction_sections(data, sections, danger_first=danger) }}
+</section>
+
+<section class="card">
+  <div class="card-head">
+    <h2>{{ icon('pin') }} Nearest evacuation centers</h2>
+    <a class="link" href="{{ url_for('evacuation_centers', hazard=r.category.code, lat=r.latitude or '', lng=r.longitude or '') }}">Open map</a>
+  </div>
+  {% if nearby %}
+    <p class="tiny muted">Distances are straight-line estimates, not road distances. Check that your route is safe and passable. Opening status and available space are not confirmed unless shown.</p>
+    <ul class="center-list">
+      {% for c, d, suitable in nearby %}
+        <li class="{{ 'recommended' if c.id == r.recommended_center_id }}">
+          <div class="cl-main">
+            <b>{{ c.name }}</b>
+            <small>{{ c.location }}</small>
+            <div class="cl-tags">
+              {% if c.id == r.recommended_center_id %}<span class="tag tag-red">Nearest match</span>{% endif %}
+              {{ m.verify_badge(c.verified, c.verified_at.strftime('%b %d, %Y') if c.verified_at) }}
+              {% if suitable %}<span class="tag tag-green">Verified for {{ r.category.name|lower }}</span>{% else %}<span class="tag">Hazard suitability not verified</span>{% endif %}
+              {% if c.capacity_persons %}<span class="tag">Capacity {{ c.capacity_persons }} persons / {{ c.capacity_families }} families</span>{% endif %}
+              {% if c.operational_status != 'unknown' %}<span class="tag tag-op-{{ c.operational_status }}">{{ c.operational_status|capitalize }} · as of {{ c.status_updated_at|ph('%b %d %I:%M %p') }}</span>{% endif %}
+            </div>
+          </div>
+          <div class="cl-side">
+            <span class="dist">{{ '%.1f'|format(d) }} km</span>
+            <a class="btn btn-sm btn-outline" target="_blank" rel="noopener" href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_foot&route={{ r.latitude }}%2C{{ r.longitude }}%3B{{ c.latitude }}%2C{{ c.longitude }}">{{ icon('navigation') }} Directions</a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% elif r.recommended_center %}
+    <p>A center listed in your barangay: <b>{{ r.recommended_center.name }}</b> — {{ r.recommended_center.location }}.</p>
+    <p class="muted">Share your location on the dashboard or the map to see distances.</p>
+  {% else %}
+    <p class="muted">Share your location to see the nearest centers, or browse all centers on the map.</p>
+  {% endif %}
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+  // Keep the latest guidance available offline on this device.
+  try {
+    localStorage.setItem('alertify_last_report', JSON.stringify({
+      ref: {{ r.reference|tojson }}, disaster: {{ r.category.name|tojson }},
+      severity: {{ r.severity|tojson }}, at: {{ (r.created_at|ph)|tojson }},
+      sections: {{ data.sections|tojson }}
+    }));
+  } catch (e) {}
+</script>
+{% endblock %}

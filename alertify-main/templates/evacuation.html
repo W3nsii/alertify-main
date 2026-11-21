@@ -1,0 +1,100 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Evacuation Centers{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.css') }}">{% endblock %}
+{% block page_title %}Evacuation Centers{% endblock %}
+{% block page_sub %}<p>Designated evacuation center records within Batangas City</p>{% endblock %}
+{% block content %}
+<div class="note note-warn">
+  {{ icon('info') }}
+  <span>Records come from the provincial reference list (<i>EVACUATION-CENTER-2-1.pdf</i>, LGU: Batangas City). Centers stay marked <b>pending verification</b> until an administrator confirms them. Opening status and available space are <b>not</b> confirmed unless shown. Always follow evacuation instructions from the CDRRMO and your barangay.</span>
+</div>
+
+<section class="card planner" aria-labelledby="planner-title">
+  <div class="card-head">
+    <div><h2 id="planner-title">{{ icon('crosshair') }} Where should I go?</h2></div>
+    <span class="tiny muted">Get the nearest evacuation centers and what to do for your location</span>
+  </div>
+  <form id="planner-form" class="planner-form" novalidate>
+    <label class="field">
+      <span>Your location</span>
+      <input id="p-loc" list="p-brgy-list" autocomplete="off" placeholder="Type your barangay, e.g. Alangilan">
+      <datalist id="p-brgy-list">{% for b in all_barangays %}<option value="{{ b }}">{% endfor %}</datalist>
+      <small class="muted">Or <button type="button" class="link-btn" id="p-gps">use my GPS</button>, or tap your spot on the map below.</small>
+    </label>
+    <label class="field">
+      <span>Disaster</span>
+      <select id="p-hazard">
+        <option value="">General (any disaster)</option>
+        {% for c in categories if c.code != 'other' %}<option value="{{ c.code }}" {{ 'selected' if hazard == c.code }}>{{ c.name }}</option>{% endfor %}
+      </select>
+    </label>
+    <fieldset class="field">
+      <legend>Situation</legend>
+      <div class="q-opts">
+        <label class="opt"><input type="radio" name="p-stage" value="prepare" checked><span>Preparing</span></label>
+        <label class="opt opt-danger"><input type="radio" name="p-stage" value="now"><span>Happening now</span></label>
+      </div>
+    </fieldset>
+    <button class="btn btn-red planner-go" type="submit">Get suggestions</button>
+  </form>
+  <div id="planner-result" class="planner-result" aria-live="polite" hidden></div>
+</section>
+
+<div class="evac-layout">
+  <aside class="evac-panel card">
+    <div class="evac-filters">
+      <label class="field">
+        <span>Disaster type</span>
+        <select id="f-hazard">
+          <option value="">All hazards</option>
+          {% for c in categories if c.code != 'other' %}<option value="{{ c.code }}" {{ 'selected' if hazard == c.code }}>{{ c.name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label class="field">
+        <span>Barangay</span>
+        <select id="f-brgy">
+          <option value="">All barangays</option>
+          {% for b in barangays %}<option>{{ b }}</option>{% endfor %}
+        </select>
+      </label>
+      <label class="field search-field">
+        <span class="sr-only">Search centers</span>
+        {{ icon('search') }}<input type="search" id="f-q" placeholder="Search by name or location">
+      </label>
+      <button class="btn btn-red btn-block" id="btn-locate" type="button">{{ icon('crosshair') }} Find centers near me</button>
+      <p class="tiny muted" id="loc-note">Location is used only in your browser to sort centers by distance.</p>
+    </div>
+    <div class="hazard-note" id="hazard-note" hidden></div>
+    <div class="evac-count" id="evac-count">Loading…</div>
+    <ul class="evac-list" id="evac-list" aria-live="polite"></ul>
+  </aside>
+
+  <section class="evac-map-wrap card">
+    <div id="evac-map" class="evac-map" role="application" aria-label="Evacuation center map"></div>
+    <div class="map-legend">
+      <span><i class="lg-user"></i> You</span>
+      <span><i class="lg-center"></i> Evacuation center</span>
+      <span><i class="lg-verified"></i> Admin-verified</span>
+      <span><i class="lg-pending"></i> Pending verification</span>
+    </div>
+    <div class="center-detail" id="center-detail" hidden></div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.js') }}"></script>
+<script>
+  window.ALERTIFY_EVAC = {
+    api: "{{ url_for('api_centers') }}",
+    planApi: "{{ url_for('api_safety_plan') }}",
+    center: {{ city_center|tojson }},
+    hazard: {{ hazard|tojson }},
+    focus: {{ focus|tojson }},
+    user: {{ [ulat, ulng]|tojson }},
+    hazardNames: { {% for c in categories %}"{{ c.code }}": {{ c.name|tojson }}{{ ',' if not loop.last }}{% endfor %} }
+  };
+</script>
+<script src="{{ url_for('static', filename='js/evac.js') }}"></script>
+<script src="{{ url_for('static', filename='js/planner.js') }}"></script>
+{% endblock %}

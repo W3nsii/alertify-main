@@ -1,0 +1,46 @@
+{% extends "app_layout.html" %}
+{% block title %}Offline{% endblock %}
+{% block page_title %}You are offline{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>{{ icon('alert') }} No internet connection</h2>
+  <p>You can still call emergency hotlines — phone calls do not need internet.</p>
+  <a class="btn btn-red btn-xl" href="tel:911">{{ icon('phone') }} Call 911</a>
+</div>
+<div class="two-col">
+  <section class="card">
+    <h3>{{ icon('phone') }} Saved emergency contacts</h3>
+    <ul class="quick-dial" id="off-contacts"><li class="muted">No saved contacts on this device yet.</li></ul>
+  </section>
+  <section class="card">
+    <h3>{{ icon('file') }} Your last emergency guidance</h3>
+    <div id="off-report"><p class="muted">No saved guidance on this device yet.</p></div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var esc = function (s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
+  try {
+    var c = JSON.parse(localStorage.getItem('alertify_contacts') || 'null');
+    if (c && c.length) {
+      document.getElementById('off-contacts').innerHTML = c.map(function (x) {
+        return '<li><div><b>' + esc(x.organization) + '</b><small>' + esc(x.category) + '</small></div>' +
+          x.numbers.map(function (n) { return '<a class="dial dial-sm" href="tel:' + n.replace(/[^0-9+]/g, '') + '">' + esc(n) + '</a>'; }).join(' ') + '</li>';
+      }).join('');
+    }
+    var r = JSON.parse(localStorage.getItem('alertify_last_report') || 'null');
+    if (r) {
+      var html = '<p><b>' + esc(r.disaster) + '</b> · ' + esc(r.at) + ' · ' + esc(r.ref) + '</p>';
+      Object.keys(r.sections).forEach(function (k) {
+        if (!r.sections[k].length) return;
+        html += '<h4>' + esc(k.charAt(0).toUpperCase() + k.slice(1)) + '</h4><ol>' +
+          r.sections[k].map(function (i) { return '<li>' + esc(i.text) + '</li>'; }).join('') + '</ol>';
+      });
+      document.getElementById('off-report').innerHTML = html;
+    }
+  } catch (e) {}
+})();
+</script>
+{% endblock %}

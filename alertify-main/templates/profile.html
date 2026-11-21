@@ -1,0 +1,41 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Profile{% endblock %}
+{% block page_title %}Profile &amp; Account Settings{% endblock %}
+{% block content %}
+<div class="profile-head card">
+  <span class="avatar xl">{{ current_user.initials }}</span>
+  <div>
+    <h2>{{ current_user.full_name }}</h2>
+    <p class="muted">{{ current_user.email }} · Member since {{ current_user.created_at|ph('%b %Y') }}</p>
+  </div>
+  <div class="profile-stats">
+    <div><b>{{ stats.total }}</b><span>Reports</span></div>
+    <div><b>{{ stats.open }}</b><span>Open</span></div>
+  </div>
+</div>
+<div class="two-col">
+  <form class="card form" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="action" value="info">
+    <h3>{{ icon('user') }} Personal information</h3>
+    <label class="field"><span>Full name</span><input name="full_name" value="{{ current_user.full_name }}" required maxlength="120"></label>
+    <label class="field"><span>Email</span><input value="{{ current_user.email }}" disabled></label>
+    <label class="field"><span>Mobile number</span><input name="phone" value="{{ current_user.phone or '' }}" placeholder="09XX XXX XXXX" maxlength="20"></label>
+    <label class="field"><span>Home barangay</span>
+      <select name="barangay"><option value="">— Select —</option>{% for b in barangays %}<option {{ 'selected' if current_user.barangay == b }}>{{ b }}</option>{% endfor %}</select>
+    </label>
+    <p class="tiny muted">Your barangay is used to show you barangay-specific announcements.</p>
+    <button class="btn btn-red">Save changes</button>
+  </form>
+  <form class="card form" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="action" value="password">
+    <h3>{{ icon('lock') }} Change password</h3>
+    <label class="field"><span>Current password</span><input type="password" name="current" required autocomplete="current-password"></label>
+    <label class="field"><span>New password</span><input type="password" name="password" required minlength="8" autocomplete="new-password"></label>
+    <label class="field"><span>Confirm new password</span><input type="password" name="password2" required minlength="8" autocomplete="new-password"></label>
+    <button class="btn btn-dark">Update password</button>
+  </form>
+</div>
+{% endblock %}

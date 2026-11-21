@@ -1,0 +1,173 @@
+{% extends "app_layout.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Dashboard{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.css') }}">{% endblock %}
+{% block page_title %}{% if current_user.is_authenticated %}Hello, {{ current_user.full_name.split()[0] }}{% else %}Emergency Dashboard{% endif %}{% endblock %}
+{% block page_sub %}<p>Report your situation and get guidance for Batangas City.</p>{% endblock %}
+{% block content %}
+
+<div class="danger-strip">
+  <div>{{ icon('alert') }} <b>In immediate danger, trapped, or seriously injured?</b> Call for help first — then use ALERTIFY.</div>
+  <div class="danger-strip-actions">
+    <a class="btn btn-white btn-sm" href="tel:911">{{ icon('phone') }} 911</a>
+    {% for c in primary_contacts if 'CDRRMO' in c.organization %}<a class="btn btn-glass btn-sm" href="tel:{{ c.number_list[0]|replace(' ','')|replace('(','')|replace(')','')|replace('-','') }}">CDRRMO</a>{% endfor %}
+  </div>
+</div>
+
+{% if not current_user.is_authenticated %}
+  <div class="note note-info">{{ icon('info') }} You can report without an account. <a href="{{ url_for('login', next=request.path) }}">Log in</a> or <a href="{{ url_for('register') }}">sign up</a> anytime to save reports to <b>My History</b> — reports you make now will be linked automatically.</div>
+{% endif %}
+
+<div class="dash-grid">
+  <div class="dash-main">
+    <!-- A. CURRENT LOCATION -->
+    <section class="card" id="loc-card" aria-labelledby="loc-title">
+      <div class="card-head">
+        <div><span class="step-badge">1</span><h2 id="loc-title">Your current location</h2></div>
+        <span class="chip" id="loc-chip">Not set</span>
+      </div>
+      <div class="loc-grid">
+        <div class="mini-map-wrap">
+          <div id="mini-map" class="mini-map" role="application" aria-label="Map of Batangas City. Tap to pin your location when pin mode is on."></div>
+          <div class="map-hint" id="pin-hint" hidden>{{ icon('crosshair') }} Tap the map to pin your location</div>
+        </div>
+        <div class="loc-controls">
+          <button type="button" class="btn btn-red btn-block" id="btn-geo">{{ icon('crosshair') }} Use my current location</button>
+          <p class="tiny muted">Your browser will ask for permission. Location is used only to find nearby evacuation centers and is attached to your report only when you submit it.</p>
+          <button type="button" class="btn btn-outline btn-block" id="btn-pin">{{ icon('pin') }} Pin my location on the map</button>
+          <label class="field">
+            <span>Or select your barangay</span>
+            <select id="barangay" aria-label="Barangay">
+              <option value="">— Select barangay —</option>
+              {% for b in barangays %}<option {{ 'selected' if current_user.is_authenticated and current_user.barangay == b }}>{{ b }}</option>{% endfor %}
+            </select>
+          </label>
+          <dl class="loc-info">
+            <div><dt>Current location</dt><dd id="li-status">Not shared yet</dd></div>
+            <div><dt>Barangay</dt><dd id="li-brgy">—</dd></div>
+            <div><dt>Coordinates</dt><dd id="li-coords">—</dd></div>
+            <div><dt>Accuracy / source</dt><dd id="li-acc">—</dd></div>
+          </dl>
+          <button type="button" class="link-btn" id="btn-clear-loc" hidden>Clear location</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. DISASTER STATUS REPORTING -->
+    <section class="card report-card" aria-labelledby="sit-title">
+      <div class="card-head">
+        <div><span class="step-badge">2</span><h2 id="sit-title" class="caps">What is your current situation?</h2></div>
+      </div>
+      <form id="report-form" novalidate>
+        <fieldset class="disaster-pick">
+          <legend class="sr-only">Select the disaster you are experiencing</legend>
+          {% for c in categories %}
+            <label class="dz dz-{{ c.code }}">
+              <input type="radio" name="category" value="{{ c.code }}">
+              <span class="dz-ic">{{ icon(c.code) }}</span>
+              <span class="dz-name">{{ c.name }}</span>
+            </label>
+          {% endfor %}
+        </fieldset>
+
+        <div id="questions" class="questions" aria-live="polite">
+          <div class="empty-q">{{ icon('chevron') }} Select a disaster above to see questions about your situation.</div>
+        </div>
+
+        <div id="extra" class="extra" hidden>
+          <div class="extra-grid">
+            <label class="field">
+              <span>Number of people with you (including you)</span>
+              <div class="stepper">
+                <button type="button" data-step="-1" aria-label="Decrease">−</button>
+                <input type="number" id="people" min="1" max="500" value="1" inputmode="numeric">
+                <button type="button" data-step="1" aria-label="Increase">+</button>
+              </div>
+            </label>
+            <fieldset class="field">
+              <legend>Are there children, elderly people, pregnant individuals, or persons with disabilities with you? Any special assistance needed?</legend>
+              <div class="checks">
+                {% for k, label in special %}
+                  <label class="check-pill"><input type="checkbox" name="special" value="{{ k }}"><span>{{ label }}</span></label>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+          <label class="field">
+            <span>Describe your situation <em class="muted">(optional)</em></span>
+            <textarea id="description" rows="3" maxlength="1000" placeholder="e.g. Water entered our house 30 minutes ago; my grandmother uses a wheelchair."></textarea>
+          </label>
+          <div class="form-error" id="form-error" role="alert" hidden></div>
+          <button type="submit" class="btn btn-red btn-xl btn-block submit-btn" id="submit-btn">
+            <span class="btn-label">{{ icon('radio') }} SUBMIT MY STATUS</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+          <p class="tiny muted center">Your answers generate automated guidance. It does not replace official evacuation orders or emergency responders.</p>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <aside class="dash-side">
+    <section class="card">
+      <div class="card-head"><h2>{{ icon('phone') }} Quick hotlines</h2><a class="link" href="{{ url_for('contacts') }}">All</a></div>
+      <ul class="quick-dial">
+        {% for c in primary_contacts %}
+          <li>
+            <div><b>{{ c.organization }}</b><small>{{ c.category }}</small></div>
+            {{ m.dial(c.number_list[0], 'dial-sm') }}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><h2>{{ icon('megaphone') }} Announcements</h2><a class="link" href="{{ url_for('notifications') }}">All</a></div>
+      {% for n in nav_notifications[:3] %}
+        <div class="mini-notif lvl-{{ n.level }}">
+          <b>{{ n.title }}</b>
+          <p>{{ n.body|truncate(120) }}</p>
+          <small>{{ n.source or 'Administrator announcement' }} · {{ n.created_at|ph('%b %d') }}</small>
+        </div>
+      {% else %}
+        <p class="muted">No announcements at the moment. Official advisories posted by administrators will appear here.</p>
+      {% endfor %}
+    </section>
+
+    <section class="card">
+      <div class="card-head"><h2>{{ icon('clock') }} Recent reports</h2>{% if current_user.is_authenticated %}<a class="link" href="{{ url_for('history') }}">History</a>{% endif %}</div>
+      {% if current_user.is_authenticated %}
+        {% for r in recent %}
+          <a class="mini-report" href="{{ url_for('history_detail', ref=r.reference) }}">
+            <span class="hz-ic sm hz-{{ r.category.code }}">{{ icon(r.category.code) }}</span>
+            <span><b>{{ r.category.name }}</b><small>{{ r.created_at|ph('%b %d, %I:%M %p') }}</small></span>
+            {{ m.severity_badge(r.severity) }}
+          </a>
+        {% else %}
+          <p class="muted">You have not submitted any reports yet.</p>
+        {% endfor %}
+      {% else %}
+        <p class="muted">Log in to see your saved reports.</p>
+      {% endif %}
+    </section>
+
+    <section class="card card-tint">
+      <h2>{{ icon('pin') }} Evacuation centers</h2>
+      <p class="muted">{{ center_count }} evacuation center records in Batangas City.</p>
+      <a class="btn btn-outline btn-block" href="{{ url_for('evacuation_centers') }}">Open the map {{ icon('arrow') }}</a>
+    </section>
+  </aside>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.js') }}"></script>
+<script>
+  window.ALERTIFY_DASH = {
+    questions: {{ questions|tojson }},
+    bounds: {{ city_bounds|tojson }},
+    center: {{ city_center|tojson }},
+    submitUrl: "{{ url_for('api_create_report') }}"
+  };
+</script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

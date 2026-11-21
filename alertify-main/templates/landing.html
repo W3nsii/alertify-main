@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m with context %}
+{% block title %}Be Aware. Be Prepared. Stay Safe.{% endblock %}
+{% block body_class %}landing{% endblock %}
+{% block body %}
+<header class="lnav" id="lnav">
+  <a class="brand light" href="{{ url_for('index') }}">
+    <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="34" height="34">
+    <span><b>ALERTIFY</b><small>Batangas City</small></span>
+  </a>
+  <nav class="lnav-links" id="lnav-links">
+    <a href="{{ url_for('index') }}" class="active">Home</a>
+    <a href="{{ url_for('dashboard') }}" data-start>Dashboard</a>
+    <a href="{{ url_for('guide') }}">Disaster Guide</a>
+    <a href="{{ url_for('evacuation_centers') }}">Evacuation Centers</a>
+    <a href="{{ url_for('contacts') }}">Emergency Contacts</a>
+    <a href="{{ url_for('history') }}">My History</a>
+    <a href="{{ url_for('about') }}">About</a>
+  </nav>
+  <div class="lnav-actions">
+    {% if current_user.is_authenticated %}
+      <a class="btn btn-glass" href="{{ url_for('dashboard') }}">{{ icon('grid') }} My dashboard</a>
+    {% else %}
+      <a class="btn btn-glass" href="{{ url_for('login') }}" data-login>{{ icon('user') }} Log in</a>
+    {% endif %}
+    <button class="icon-btn light only-mobile" id="lnav-toggle" aria-label="Menu" aria-expanded="false">{{ icon('menu') }}</button>
+  </div>
+</header>
+
+<main id="main">
+  {{ m.flashes() }}
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <svg class="topo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <g fill="none" stroke="currentColor" stroke-width="1.2">
+          <path class="t1" d="M-50 620C120 560 210 640 380 600s260-150 430-120 240 110 440 60"/>
+          <path class="t2" d="M-50 560C140 500 240 580 400 540s250-170 420-140 260 120 430 70"/>
+          <path class="t3" d="M-50 500C150 440 250 520 420 480s240-190 410-160 270 130 420 80"/>
+          <path class="t1" d="M-50 440C160 380 270 460 440 420s230-210 400-180 280 140 410 90"/>
+          <path class="t2" d="M-50 380C170 320 280 400 460 360s220-230 390-200 290 150 400 100"/>
+          <path class="t3" d="M-50 320C180 260 300 340 480 300s210-250 380-220 300 160 390 110"/>
+          <path class="t1" d="M-50 260C190 200 320 280 500 240s200-270 370-240 310 170 380 120"/>
+          <path class="t2" d="M-50 200C200 140 340 220 520 180s190-290 360-260 320 180 370 130"/>
+          <ellipse class="t3" cx="930" cy="250" rx="120" ry="70"/>
+          <ellipse class="t1" cx="930" cy="250" rx="80" ry="44"/>
+          <ellipse class="t2" cx="930" cy="250" rx="40" ry="20"/>
+          <ellipse class="t3" cx="230" cy="650" rx="140" ry="60"/>
+          <ellipse class="t1" cx="230" cy="650" rx="90" ry="36"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-chip">Multi-hazard preparedness · Batangas City</div>
+      <h1 id="hero-title" class="alertify-title" aria-label="ALERTIFY">{% for ch in "ALERTIFY" %}<span class="ltr" style="--i:{{ loop.index0 }}" aria-hidden="true">{{ ch }}</span>{% endfor %}</h1>
+      <p class="hero-sub-title">A Multi-Hazard Web-Based Disaster Preparedness Assistant</p>
+      <p class="tagline">Be Aware. Be Prepared. Stay Safe.</p>
+      <p class="hero-copy">Your personal disaster preparedness companion. Know what to do, where to go, and how to stay safe when disasters strike.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-red btn-xl" href="{{ url_for('dashboard') }}" data-start>{{ icon('radio') }} GET STARTED / OPEN DASHBOARD</a>
+        <a class="btn btn-glass btn-xl" href="{{ url_for('contacts') }}">{{ icon('phone') }} Emergency hotlines</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>{{ stats.centers }}</b><span>evacuation center records</span></div>
+        <div><b>{{ stats.barangays }}</b><span>barangays covered</span></div>
+        <div><b>{{ stats.contacts }}</b><span>emergency contacts</span></div>
+        <div><b>6</b><span>hazard types</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-section" id="features">
+    <div class="l-head">
+      <span class="eyebrow">What ALERTIFY does</span>
+      <h2>Everything you need when every minute counts</h2>
+      <p>Report what is happening, get step-by-step guidance for your exact situation, and find the nearest designated evacuation center in Batangas City.</p>
+    </div>
+    <div class="feature-grid">
+      {% for ic, t, d, ep in [
+        ('radio', 'Report your situation', 'Choose the disaster you are facing and answer a few quick questions — no account required in an emergency.', 'dashboard'),
+        ('alert', 'Personalized instructions', 'Get immediate actions, things to avoid, what to bring, and when to evacuate — based on your answers.', 'dashboard'),
+        ('pin', 'Evacuation center map', 'Interactive map of Batangas City evacuation centers with capacities, distances and directions.', 'evacuation_centers'),
+        ('phone', 'One-tap hotlines', 'Fire, police, hospitals, CDRRMO, utilities and Red Cross — organized and ready to call.', 'contacts'),
+        ('book', 'Disaster guide', 'What to do before, during, and after floods, typhoons, earthquakes, fires, volcanic activity and landslides.', 'guide'),
+        ('clock', 'My disaster history', 'Every report you submit is saved to your account so you can revisit the actions recommended.', 'history'),
+      ] %}
+        <a class="feature reveal" href="{{ url_for(ep) }}" style="--d:{{ loop.index0 * 70 }}ms">
+          <span class="feature-ic">{{ icon(ic) }}</span>
+          <h3>{{ t }}</h3>
+          <p>{{ d }}</p>
+          <span class="feature-go">Open {{ icon('arrow') }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="l-section steps-wrap">
+    <div class="l-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps to your safety plan</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span class="step-n">1</span><h3>Share your location</h3><p>Allow location access, pin yourself on the map, or simply pick your barangay. Nothing is collected without your permission.</p></li>
+      <li class="reveal" style="--d:100ms"><span class="step-n">2</span><h3>Tell us your situation</h3><p>Select the hazard and answer quick questions about water level, damage, injuries, and who is with you.</p></li>
+      <li class="reveal" style="--d:200ms"><span class="step-n">3</span><h3>Act on clear guidance</h3><p>Follow your instructions, call the right hotline, and head to the nearest evacuation center when advised.</p></li>
+    </ol>
+  </section>
+
+  <section class="l-section hazards">
+    <div class="l-head">
+      <span class="eyebrow">Hazards covered</span>
+      <h2>Prepared for the threats Batangas City faces</h2>
+    </div>
+    <div class="hazard-row">
+      {% for c in categories if c.code != 'other' %}
+        <a class="hazard reveal" href="{{ url_for('guide_detail', code=c.code) }}" style="--d:{{ loop.index0 * 60 }}ms">
+          <span class="hz-ic hz-{{ c.code }}">{{ icon(c.code) }}</span>
+          <b>{{ c.name }}</b>
+          <small>{{ c.description }}</small>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="l-section">
+    <div class="cta-band reveal">
+      <div>
+        <h2>In immediate danger?</h2>
+        <p>Call the national emergency hotline now. ALERTIFY's quick-dial hotlines are available on every page.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-white btn-xl" href="tel:911">{{ icon('phone') }} Call 911</a>
+        <a class="btn btn-glass btn-xl" href="{{ url_for('dashboard') }}" data-start>Report my situation</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="lfoot">
+  <div class="lfoot-inner">
+    <div>
+      <a class="brand light" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="30" height="30"><span><b>ALERTIFY</b><small>Be Aware. Be Prepared. Stay Safe.</small></span></a>
+      <p class="disclaimer">ALERTIFY supplements, but does not replace, official government emergency instructions and professional responders. Evacuation center and contact data are reference records pending administrator verification unless marked verified.</p>
+    </div>
+    <div class="lfoot-links">
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('guide') }}">Disaster Guide</a>
+      <a href="{{ url_for('evacuation_centers') }}">Evacuation Centers</a>
+      <a href="{{ url_for('contacts') }}">Emergency Contacts</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </div>
+</footer>
+{% if not current_user.is_authenticated %}
+<dialog class="start-modal" id="start-modal" aria-labelledby="start-title">
+  <form method="dialog" class="start-x-form"><button class="icon-btn sm start-x" aria-label="Close">✕</button></form>
+  <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="44" height="44">
+  <h2 id="start-title">Log in to ALERTIFY</h2>
+  <p class="muted">Save your reports to <b>My Disaster History</b> and get notifications.</p>
+
+  <form method="post" action="{{ url_for('login', next=url_for('dashboard')) }}" class="start-login" novalidate data-validate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
+    <label class="field"><span>Password</span><input type="password" name="password" required autocomplete="current-password"></label>
+    <div class="form-row">
+      <label class="check"><input type="checkbox" name="remember"> Remember me</label>
+      <a class="link" href="{{ url_for('forgot_password') }}">Forgot password?</a>
+    </div>
+    <button class="btn btn-red btn-block">Log in</button>
+  </form>
+
+  <div class="start-or"><span>or</span></div>
+  <div class="start-actions">
+    <a class="btn btn-outline btn-block" href="{{ url_for('register', next=url_for('dashboard')) }}">Create account</a>
+    <a class="btn btn-ghost btn-block" href="{{ url_for('dashboard') }}" id="start-later">Maybe later, continue as guest</a>
+  </div>
+</dialog>
+{% endif %}
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/landing.js') }}"></script>{% endblock %}

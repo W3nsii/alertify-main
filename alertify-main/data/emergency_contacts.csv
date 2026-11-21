@@ -1,0 +1,22 @@
+﻿organization,category,numbers,description,is_primary
+Philippine National Emergency Hotline,General Emergency Services,911,"Nationwide 24/7 emergency hotline for police, fire, and medical emergencies.",True
+Mayor's Action Center,General Emergency Services,(043) 723-1511,Batangas City government action center for public assistance.,False
+EBD Emergency Health Hotline (24/7),General Emergency Services,0999-222-6626,24/7 emergency health hotline.,False
+BFP Batangas City,Fire and Police,(043) 425-7163 / 301-7996 / 0915-602-1984,"Bureau of Fire Protection — fire suppression, rescue and fire emergencies.",True
+BFP Alangilan Substation,Fire and Police,(043) 702-1973,Bureau of Fire Protection substation serving the Alangilan area.,False
+PNP Batangas City,Fire and Police,(043) 408-8023 / 0917-847-5757 / 0916-429-1515,"Philippine National Police — crime, public safety and security.",True
+Batangas Medical Center,Hospitals,(043) 723-0911 / 740-8307,Government tertiary hospital in Batangas City.,False
+St. Patrick's Hospital & Medical Center,Hospitals,(043) 723-1605 / 723-7089 / 723-7090 / 723-7091 / 723-7092,Private hospital and medical center (trunk lines 723-7089 to 723-7092).,False
+Jesus of Nazareth Hospital,Hospitals,(043) 723-4144,Private hospital.,False
+Golden Gate General Hospital,Hospitals,(043) 723-2508 / 341-3112,Private general hospital.,False
+Batangas Healthcare Specialists Medical Center,Hospitals,(043) 403-8642 / 741-2088,Private medical center.,False
+United Doctors of St. Camillus de Lellis Hospital and Medical Center,Hospitals,0918-994-2074,Private hospital and medical center.,False
+City Disaster Risk Reduction and Management Office (CDRRMO),Utilities and Disaster Management,(043) 702-3902,"Coordinates local disaster response, rescue and evacuation in Batangas City.",True
+Meralco,Utilities and Disaster Management,16211 / 1622-2847,"Power outages, fallen or sparking electric lines.",False
+National Power Corporation – National Highway,Utilities and Disaster Management,300-3592,National Power Corporation office.,False
+PrimeWater Batangas City,Utilities and Disaster Management,0949-414-2633 / 980-6928,Water supply concerns and pipe leaks.,False
+VAWC Batangas City,VAWC,0956-826-7017,Violence Against Women and their Children desk — protection and assistance.,False
+Philippine Red Cross – General Hotline,Philippine Red Cross – Batangas Chapter,143,Philippine Red Cross nationwide hotline.,True
+Philippine Red Cross – Batangas City Branch Office,Philippine Red Cross – Batangas Chapter,0917-135-6219,Batangas City branch office.,False
+Philippine Red Cross – Emergency Medical Services / ERU,Philippine Red Cross – Batangas Chapter,0951-282-0000,"Ambulance, emergency medical and emergency response unit.",False
+Philippine Red Cross – Blood Center,Philippine Red Cross – Batangas Chapter,0917-773-4912 / 0998-851-1107,Blood requests and blood donation.,False
